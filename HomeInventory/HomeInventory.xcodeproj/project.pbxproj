@@ -12,6 +12,12 @@
 		6D6AB9B327DA609E005C21BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6AB9B127DA609E005C21BE /* Main.storyboard */; };
 		6D6AB9B527DA609F005C21BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D6AB9B427DA609F005C21BE /* Assets.xcassets */; };
 		6D6AB9B827DA609F005C21BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6AB9B627DA609F005C21BE /* LaunchScreen.storyboard */; };
+		6D6AB9C527DA69A2005C21BE /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6AB9C427DA69A2005C21BE /* LoginView.storyboard */; };
+		6D6AB9C727DA69B5005C21BE /* SignUpView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6AB9C627DA69B5005C21BE /* SignUpView.storyboard */; };
+		6D6AB9C927DA69C5005C21BE /* ResetPasswordView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6AB9C827DA69C5005C21BE /* ResetPasswordView.storyboard */; };
+		6D6AB9CB27DA6A28005C21BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AB9CA27DA6A28005C21BE /* LoginViewController.swift */; };
+		6D6AB9CD27DA6BBE005C21BE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AB9CC27DA6BBE005C21BE /* SignUpViewController.swift */; };
+		6D6AB9CF27DA6CA4005C21BE /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AB9CE27DA6CA4005C21BE /* ResetPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		6D6AB9B427DA609F005C21BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D6AB9B727DA609F005C21BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D6AB9B927DA609F005C21BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D6AB9C427DA69A2005C21BE /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
+		6D6AB9C627DA69B5005C21BE /* SignUpView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpView.storyboard; sourceTree = "<group>"; };
+		6D6AB9C827DA69C5005C21BE /* ResetPasswordView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResetPasswordView.storyboard; sourceTree = "<group>"; };
+		6D6AB9CA27DA6A28005C21BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6D6AB9CC27DA6BBE005C21BE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		6D6AB9CE27DA6CA4005C21BE /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 		6D6AB9AA27DA609E005C21BE /* HomeInventory */ = {
 			isa = PBXGroup;
 			children = (
+				6D6AB9C027DA68D2005C21BE /* Authentication */,
 				6D6AB9BF27DA64DA005C21BE /* Resources */,
 				6D6AB9B127DA609E005C21BE /* Main.storyboard */,
 				6D6AB9B627DA609F005C21BE /* LaunchScreen.storyboard */,
@@ -70,6 +83,43 @@
 				6D6AB9B927DA609F005C21BE /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		6D6AB9C027DA68D2005C21BE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				6D6AB9C327DA695B005C21BE /* Login */,
+				6D6AB9C227DA6953005C21BE /* SignUp */,
+				6D6AB9C127DA68E4005C21BE /* ResetPassword */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		6D6AB9C127DA68E4005C21BE /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				6D6AB9C827DA69C5005C21BE /* ResetPasswordView.storyboard */,
+				6D6AB9CE27DA6CA4005C21BE /* ResetPasswordViewController.swift */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		6D6AB9C227DA6953005C21BE /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				6D6AB9C627DA69B5005C21BE /* SignUpView.storyboard */,
+				6D6AB9CC27DA6BBE005C21BE /* SignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		6D6AB9C327DA695B005C21BE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6D6AB9C427DA69A2005C21BE /* LoginView.storyboard */,
+				6D6AB9CA27DA6A28005C21BE /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,9 +180,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D6AB9C927DA69C5005C21BE /* ResetPasswordView.storyboard in Resources */,
 				6D6AB9B827DA609F005C21BE /* LaunchScreen.storyboard in Resources */,
 				6D6AB9B527DA609F005C21BE /* Assets.xcassets in Resources */,
+				6D6AB9C727DA69B5005C21BE /* SignUpView.storyboard in Resources */,
 				6D6AB9B327DA609E005C21BE /* Main.storyboard in Resources */,
+				6D6AB9C527DA69A2005C21BE /* LoginView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +196,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D6AB9CB27DA6A28005C21BE /* LoginViewController.swift in Sources */,
 				6D6AB9AC27DA609E005C21BE /* AppDelegate.swift in Sources */,
+				6D6AB9CF27DA6CA4005C21BE /* ResetPasswordViewController.swift in Sources */,
+				6D6AB9CD27DA6BBE005C21BE /* SignUpViewController.swift in Sources */,
 				6D6AB9AE27DA609E005C21BE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
