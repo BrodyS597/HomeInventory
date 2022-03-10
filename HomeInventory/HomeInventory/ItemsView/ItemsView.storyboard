@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home Inventory-->
+        <scene sceneID="B0N-pa-22X">
+            <objects>
+                <viewController title="Home Inventory" id="n5d-s7-0lz" customClass="ItemsViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lzb-gh-n0S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vHe-at-Fq6">
+                                <rect key="frame" x="10" y="96" width="394" height="711"/>
+                                <color key="backgroundColor" red="0.48985636230000001" green="0.88621413709999997" blue="0.81903934479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RUe-k5-YZk">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dOq-Bl-JSZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qhZ-e1-mWW">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhm-hm-Y3t">
+                                <rect key="frame" x="10" y="807" width="394" height="65"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="7Pf-2q-YgV"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="ALL" image="house" catalog="system" id="ceS-lI-D7s">
+                                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <imageReference key="selectedImage" image="house" catalog="system" symbolScale="medium"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="Report" image="dollarsign.circle" catalog="system" id="F7A-0S-rob"/>
+                                    <tabBarItem title="Search" image="text.magnifyingglass" catalog="system" id="RNE-RP-zlx"/>
+                                    <tabBarItem title="Account" image="person" catalog="system" selectedImage="person" id="eht-cp-tH0"/>
+                                </items>
+                                <color key="tintColor" red="0.48985636230000001" green="0.88621413709999997" blue="0.81903934479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.99980872870000004" green="0.9797020555" blue="0.98312717679999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEL-Zy-X2t">
+                                <rect key="frame" x="10" y="44" width="394" height="52"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Room/Group name">
+                                        <attributes>
+                                            <color key="NSColor" red="0.48985636230000001" green="0.88621413709999997" blue="0.81903934479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="38" name="Futura-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" systemColor="tintColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="3" height="-2"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NxL-RI-ee6"/>
+                        <color key="backgroundColor" red="0.16783997419999999" green="0.17210808399999999" blue="0.15751066799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.16783997419999999" green="0.17210808399999999" blue="0.15751066799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Lhm-hm-Y3t" firstAttribute="leading" secondItem="NxL-RI-ee6" secondAttribute="leading" constant="10" id="PgX-s6-bJK"/>
+                            <constraint firstItem="xEL-Zy-X2t" firstAttribute="top" secondItem="NxL-RI-ee6" secondAttribute="top" id="URk-PZ-OiY"/>
+                            <constraint firstItem="NxL-RI-ee6" firstAttribute="trailing" secondItem="xEL-Zy-X2t" secondAttribute="trailing" constant="10" id="aUF-bQ-kO3"/>
+                            <constraint firstItem="xEL-Zy-X2t" firstAttribute="leading" secondItem="NxL-RI-ee6" secondAttribute="leading" constant="10" id="f61-71-HIq"/>
+                            <constraint firstItem="NxL-RI-ee6" firstAttribute="trailing" secondItem="vHe-at-Fq6" secondAttribute="trailing" constant="10" id="ix4-Ep-hmJ"/>
+                            <constraint firstItem="vHe-at-Fq6" firstAttribute="leading" secondItem="NxL-RI-ee6" secondAttribute="leading" constant="10" id="kjy-up-DFg"/>
+                            <constraint firstItem="Lhm-hm-Y3t" firstAttribute="top" secondItem="vHe-at-Fq6" secondAttribute="bottom" id="lma-1x-41R"/>
+                            <constraint firstItem="Lhm-hm-Y3t" firstAttribute="bottom" secondItem="NxL-RI-ee6" secondAttribute="bottom" constant="10" id="miI-O0-1kg"/>
+                            <constraint firstItem="vHe-at-Fq6" firstAttribute="top" secondItem="xEL-Zy-X2t" secondAttribute="bottom" id="sTw-gO-qDF"/>
+                            <constraint firstItem="NxL-RI-ee6" firstAttribute="trailing" secondItem="Lhm-hm-Y3t" secondAttribute="trailing" constant="10" id="wG7-EN-QIb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dS7-zB-y9h"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJf-0t-wLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-542" y="153"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="text.magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
