@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		6D0324FF27DBAE0B003B2069 /* SearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0324FE27DBAE0B003B2069 /* SearchView.storyboard */; };
 		6D03250127DBAFBA003B2069 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D03250027DBAFBA003B2069 /* SearchViewController.swift */; };
-		6D03250327DBAFCB003B2069 /* SearchViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D03250227DBAFCB003B2069 /* SearchViewCell.xib */; };
-		6D03250527DBB002003B2069 /* SearchViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D03250427DBB002003B2069 /* SearchViewCollectionViewCell.swift */; };
+		6D03250827DBB1D3003B2069 /* ReportView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D03250727DBB1D3003B2069 /* ReportView.storyboard */; };
+		6D03250A27DBE3B5003B2069 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D03250927DBE3B5003B2069 /* ReportViewController.swift */; };
 		6D446F3027DA8BBF006D115E /* HomeAddCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D446F2F27DA8BBF006D115E /* HomeAddCellView.xib */; };
 		6D446F3227DA8C70006D115E /* HomeAddCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D446F3127DA8C70006D115E /* HomeAddCellCollectionViewCell.swift */; };
 		6D446F3527DA9541006D115E /* ItemsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D446F3427DA9541006D115E /* ItemsView.storyboard */; };
@@ -41,8 +41,8 @@
 /* Begin PBXFileReference section */
 		6D0324FE27DBAE0B003B2069 /* SearchView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchView.storyboard; sourceTree = "<group>"; };
 		6D03250027DBAFBA003B2069 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		6D03250227DBAFCB003B2069 /* SearchViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewCell.xib; sourceTree = "<group>"; };
-		6D03250427DBB002003B2069 /* SearchViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		6D03250727DBB1D3003B2069 /* ReportView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReportView.storyboard; sourceTree = "<group>"; };
+		6D03250927DBE3B5003B2069 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		6D446F2F27DA8BBF006D115E /* HomeAddCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAddCellView.xib; sourceTree = "<group>"; };
 		6D446F3127DA8C70006D115E /* HomeAddCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAddCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		6D446F3427DA9541006D115E /* ItemsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemsView.storyboard; sourceTree = "<group>"; };
@@ -88,10 +88,17 @@
 			children = (
 				6D0324FE27DBAE0B003B2069 /* SearchView.storyboard */,
 				6D03250027DBAFBA003B2069 /* SearchViewController.swift */,
-				6D03250227DBAFCB003B2069 /* SearchViewCell.xib */,
-				6D03250427DBB002003B2069 /* SearchViewCollectionViewCell.swift */,
 			);
 			path = SearchView;
+			sourceTree = "<group>";
+		};
+		6D03250627DBB1C4003B2069 /* ReportView */ = {
+			isa = PBXGroup;
+			children = (
+				6D03250727DBB1D3003B2069 /* ReportView.storyboard */,
+				6D03250927DBE3B5003B2069 /* ReportViewController.swift */,
+			);
+			path = ReportView;
 			sourceTree = "<group>";
 		};
 		6D446F3327DA950D006D115E /* ItemsView */ = {
@@ -135,6 +142,7 @@
 		6D6AB9AA27DA609E005C21BE /* HomeInventory */ = {
 			isa = PBXGroup;
 			children = (
+				6D03250627DBB1C4003B2069 /* ReportView */,
 				6D0324FD27DBADE7003B2069 /* SearchView */,
 				6D446F4027DAA684006D115E /* CreateItem */,
 				6D446F3327DA950D006D115E /* ItemsView */,
@@ -269,6 +277,7 @@
 				6D6AB9C927DA69C5005C21BE /* ResetPasswordView.storyboard in Resources */,
 				6D0324FF27DBAE0B003B2069 /* SearchView.storyboard in Resources */,
 				6D6AB9D227DA7E92005C21BE /* HomeView.storyboard in Resources */,
+				6D03250827DBB1D3003B2069 /* ReportView.storyboard in Resources */,
 				6D446F4227DAA6D7006D115E /* CreateItemView.storyboard in Resources */,
 				6D6AB9B827DA609F005C21BE /* LaunchScreen.storyboard in Resources */,
 				6D6AB9B527DA609F005C21BE /* Assets.xcassets in Resources */,
@@ -276,7 +285,6 @@
 				6D6AB9DA27DA8039005C21BE /* HomeViewCell.xib in Resources */,
 				6D446F3927DA9627006D115E /* ItemsViewCell.xib in Resources */,
 				6D446F3527DA9541006D115E /* ItemsView.storyboard in Resources */,
-				6D03250327DBAFCB003B2069 /* SearchViewCell.xib in Resources */,
 				6D6AB9B327DA609E005C21BE /* Main.storyboard in Resources */,
 				6D446F3027DA8BBF006D115E /* HomeAddCellView.xib in Resources */,
 				6D6AB9C527DA69A2005C21BE /* LoginView.storyboard in Resources */,
@@ -297,6 +305,7 @@
 				6D6AB9AC27DA609E005C21BE /* AppDelegate.swift in Sources */,
 				6D6AB9CF27DA6CA4005C21BE /* ResetPasswordViewController.swift in Sources */,
 				6D446F3727DA958A006D115E /* ItemsViewController.swift in Sources */,
+				6D03250A27DBE3B5003B2069 /* ReportViewController.swift in Sources */,
 				6D6AB9CD27DA6BBE005C21BE /* SignUpViewController.swift in Sources */,
 				6D446F4427DAB059006D115E /* CreateItemViewController.swift in Sources */,
 				6D03250127DBAFBA003B2069 /* SearchViewController.swift in Sources */,
@@ -304,7 +313,6 @@
 				6D6AB9D427DA7F40005C21BE /* HomeViewController.swift in Sources */,
 				6D446F3F27DA999A006D115E /* ItemsViewAddCellCollectionViewCell.swift in Sources */,
 				6D446F3227DA8C70006D115E /* HomeAddCellCollectionViewCell.swift in Sources */,
-				6D03250527DBB002003B2069 /* SearchViewCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
