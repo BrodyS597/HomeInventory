@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,30 +11,11 @@
         <!--Home Inventory-->
         <scene sceneID="giR-mJ-oY6">
             <objects>
-                <viewController title="Home Inventory" id="1kJ-ZU-qps" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReportView" title="Home Inventory" id="1kJ-ZU-qps" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6cA-7l-YTo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJz-if-o0l">
-                                <rect key="frame" x="0.0" y="807" width="414" height="65"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="bTf-fY-iCf"/>
-                                </constraints>
-                                <items>
-                                    <tabBarItem title="ALL" image="house" catalog="system" id="INA-Qw-ykR">
-                                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <imageReference key="selectedImage" image="house" catalog="system" symbolScale="medium"/>
-                                    </tabBarItem>
-                                    <tabBarItem title="Report" image="dollarsign.circle" catalog="system" id="Xd1-hH-jUn"/>
-                                    <tabBarItem title="Search" image="text.magnifyingglass" catalog="system" id="S8k-zh-k2Q"/>
-                                    <tabBarItem title="Account" image="person" catalog="system" selectedImage="person" id="qxz-mH-jaa"/>
-                                </items>
-                                <color key="tintColor" red="0.48985636230000001" green="0.88621413709999997" blue="0.81903934479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="barTintColor" red="0.99980872870000004" green="0.9797020555" blue="0.98312717679999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tabBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7U-o8-QvO">
                                 <rect key="frame" x="10" y="44" width="394" height="52"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -146,10 +126,8 @@
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="KcS-ZM-o1O" secondAttribute="trailing" constant="10" id="R7i-Nh-hak"/>
                             <constraint firstItem="uLK-7i-9hR" firstAttribute="top" secondItem="m7U-o8-QvO" secondAttribute="bottom" constant="50" id="R9Q-KK-cNO"/>
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="Dx7-Rf-m0T" secondAttribute="trailing" constant="20" id="Rvm-FE-cbV"/>
-                            <constraint firstItem="SJz-if-o0l" firstAttribute="bottom" secondItem="5dE-Ns-MuF" secondAttribute="bottom" constant="10" id="SdL-jB-zV6"/>
                             <constraint firstItem="qDl-rG-Kw9" firstAttribute="leading" secondItem="5dE-Ns-MuF" secondAttribute="leading" constant="10" id="SqJ-AL-U76"/>
                             <constraint firstItem="xgK-KP-ZDf" firstAttribute="top" secondItem="uLK-7i-9hR" secondAttribute="bottom" constant="10" id="TEq-cp-8wd"/>
-                            <constraint firstItem="SJz-if-o0l" firstAttribute="leading" secondItem="5dE-Ns-MuF" secondAttribute="leading" id="UAw-bv-1WM"/>
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="NwR-2L-A2g" secondAttribute="trailing" constant="20" id="YDv-Wx-F67"/>
                             <constraint firstItem="Dx7-Rf-m0T" firstAttribute="leading" secondItem="5dE-Ns-MuF" secondAttribute="leading" constant="20" id="ZmV-gE-BGa"/>
                             <constraint firstItem="Sab-hW-yZz" firstAttribute="leading" secondItem="5dE-Ns-MuF" secondAttribute="leading" constant="10" id="csN-5O-t8P"/>
@@ -163,7 +141,6 @@
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="zvm-51-wcM" secondAttribute="trailing" constant="10" id="lKO-jL-dGy"/>
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="Lar-T2-iVZ" secondAttribute="trailing" constant="20" id="mqN-a6-0JV"/>
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="9cs-Ym-MSx" secondAttribute="trailing" constant="10" id="nSt-mJ-USX"/>
-                            <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="SJz-if-o0l" secondAttribute="trailing" id="oxI-qW-l5X"/>
                             <constraint firstItem="0ZD-ap-HSf" firstAttribute="leading" secondItem="5dE-Ns-MuF" secondAttribute="leading" constant="20" id="qSz-h9-GD9"/>
                             <constraint firstItem="zvm-51-wcM" firstAttribute="top" secondItem="xgK-KP-ZDf" secondAttribute="bottom" constant="50" id="qb1-kk-QaM"/>
                             <constraint firstItem="m7U-o8-QvO" firstAttribute="leading" secondItem="5dE-Ns-MuF" secondAttribute="leading" constant="10" id="teB-3x-XPM"/>
@@ -174,7 +151,9 @@
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="xgK-KP-ZDf" secondAttribute="trailing" constant="10" id="zyC-FI-XYR"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Report" image="dollarsign.circle" catalog="system" id="ny8-pQ-44m"/>
                     <navigationItem key="navigationItem" id="9Ef-44-OJV"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuZ-8y-l1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,12 +162,6 @@
     </scenes>
     <resources>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
-        <image name="house" catalog="system" width="128" height="106"/>
-        <image name="person" catalog="system" width="128" height="117"/>
-        <image name="text.magnifyingglass" catalog="system" width="128" height="115"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

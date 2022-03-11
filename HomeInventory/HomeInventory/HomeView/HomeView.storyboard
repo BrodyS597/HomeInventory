@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -13,13 +12,13 @@
         <!--Home Inventory-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController title="Home Inventory" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeView" title="Home Inventory" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YN4-2I-Vea">
-                                <rect key="frame" x="10" y="95.5" width="394" height="711.5"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YN4-2I-Vea">
+                                <rect key="frame" x="0.0" y="95.5" width="414" height="701.5"/>
                                 <color key="backgroundColor" red="0.48985636230000001" green="0.88621413709999997" blue="0.81903934479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aiF-Wn-7He">
                                     <size key="itemSize" width="128" height="128"/>
@@ -38,25 +37,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqH-8i-FQL">
-                                <rect key="frame" x="10" y="807" width="394" height="65"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="Stb-HL-IL2"/>
-                                </constraints>
-                                <items>
-                                    <tabBarItem title="ALL" image="house" catalog="system" id="H1J-c3-uxf">
-                                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <imageReference key="selectedImage" image="house" catalog="system" symbolScale="medium"/>
-                                    </tabBarItem>
-                                    <tabBarItem title="Report" image="dollarsign.circle" catalog="system" id="4YC-UO-h7x"/>
-                                    <tabBarItem title="Search" image="text.magnifyingglass" catalog="system" id="728-86-Jbb"/>
-                                    <tabBarItem title="Account" image="person" catalog="system" selectedImage="person" id="4lM-dV-xnH"/>
-                                </items>
-                                <color key="tintColor" red="0.48985636230000001" green="0.88621413709999997" blue="0.81903934479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="barTintColor" red="0.99980872870000004" green="0.9797020555" blue="0.98312717679999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tabBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4w-vV-zWl">
                                 <rect key="frame" x="10" y="44" width="394" height="51.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,19 +59,17 @@
                         <color key="backgroundColor" red="0.16783997419999999" green="0.17210808399999999" blue="0.15751066799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.16783997419999999" green="0.17210808399999999" blue="0.15751066799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mqH-8i-FQL" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="10" id="2m3-V0-kmi"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YN4-2I-Vea" secondAttribute="trailing" constant="10" id="3sF-zx-GY8"/>
-                            <constraint firstItem="mqH-8i-FQL" firstAttribute="top" secondItem="YN4-2I-Vea" secondAttribute="bottom" id="4hL-pZ-I7I"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mqH-8i-FQL" secondAttribute="trailing" constant="10" id="Byi-Z3-WX3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YN4-2I-Vea" secondAttribute="trailing" id="3sF-zx-GY8"/>
                             <constraint firstItem="i4w-vV-zWl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="RlO-Yv-VYu"/>
                             <constraint firstItem="i4w-vV-zWl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="Wwe-g4-nOm"/>
                             <constraint firstItem="YN4-2I-Vea" firstAttribute="top" secondItem="i4w-vV-zWl" secondAttribute="bottom" id="cQn-Ze-aRN"/>
-                            <constraint firstItem="YN4-2I-Vea" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="jHx-35-2Bh"/>
-                            <constraint firstItem="mqH-8i-FQL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="luA-Ab-oUM"/>
+                            <constraint firstItem="YN4-2I-Vea" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jHx-35-2Bh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="i4w-vV-zWl" secondAttribute="trailing" constant="10" id="zWw-9M-7qd"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="TEST ITEM" image="house" catalog="system" id="sR4-66-TKR"/>
                     <navigationItem key="navigationItem" id="ABP-ZZ-h3T"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,13 +77,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="person" catalog="system" width="128" height="117"/>
-        <image name="text.magnifyingglass" catalog="system" width="128" height="115"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

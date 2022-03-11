@@ -37,6 +37,8 @@
 		6D6AB9D427DA7F40005C21BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AB9D327DA7F40005C21BE /* HomeViewController.swift */; };
 		6D6AB9D627DA7F8B005C21BE /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AB9D527DA7F8B005C21BE /* HomeCollectionViewCell.swift */; };
 		6D6AB9DA27DA8039005C21BE /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6AB9D927DA8039005C21BE /* HomeViewCell.xib */; };
+		6DC970F927DBFD80006146AF /* AccountView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DC970F827DBFD80006146AF /* AccountView.storyboard */; };
+		6DC970FC27DBFEC6006146AF /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC970FB27DBFEC6006146AF /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		6D6AB9D327DA7F40005C21BE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6D6AB9D527DA7F8B005C21BE /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		6D6AB9D927DA8039005C21BE /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
+		6DC970F827DBFD80006146AF /* AccountView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountView.storyboard; sourceTree = "<group>"; };
+		6DC970FB27DBFEC6006146AF /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				6D03250B27DBE530003B2069 /* Models */,
+				6DC970FA27DBFD86006146AF /* AccountView */,
 				6D03250627DBB1C4003B2069 /* ReportView */,
 				6D0324FD27DBADE7003B2069 /* SearchView */,
 				6D446F4027DAA684006D115E /* CreateItem */,
@@ -227,6 +232,15 @@
 			path = HomeView;
 			sourceTree = "<group>";
 		};
+		6DC970FA27DBFD86006146AF /* AccountView */ = {
+			isa = PBXGroup;
+			children = (
+				6DC970F827DBFD80006146AF /* AccountView.storyboard */,
+				6DC970FB27DBFEC6006146AF /* AccountViewController.swift */,
+			);
+			path = AccountView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -290,6 +304,7 @@
 				6D6AB9D227DA7E92005C21BE /* HomeView.storyboard in Resources */,
 				6D03250827DBB1D3003B2069 /* ReportView.storyboard in Resources */,
 				6D446F4227DAA6D7006D115E /* CreateItemView.storyboard in Resources */,
+				6DC970F927DBFD80006146AF /* AccountView.storyboard in Resources */,
 				6D6AB9B827DA609F005C21BE /* LaunchScreen.storyboard in Resources */,
 				6D6AB9B527DA609F005C21BE /* Assets.xcassets in Resources */,
 				6D6AB9C727DA69B5005C21BE /* SignUpView.storyboard in Resources */,
@@ -312,6 +327,7 @@
 			files = (
 				6D6AB9D627DA7F8B005C21BE /* HomeCollectionViewCell.swift in Sources */,
 				6D6AB9CB27DA6A28005C21BE /* LoginViewController.swift in Sources */,
+				6DC970FC27DBFEC6006146AF /* AccountViewController.swift in Sources */,
 				6D446F3B27DA9875006D115E /* ItemsViewCellCollectionViewCell.swift in Sources */,
 				6D6AB9AC27DA609E005C21BE /* AppDelegate.swift in Sources */,
 				6D6AB9CF27DA6CA4005C21BE /* ResetPasswordViewController.swift in Sources */,
