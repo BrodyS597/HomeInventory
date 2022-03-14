@@ -9,11 +9,19 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    //needs item view model
+    
+    // MARK: -IBOutlets
+    @IBOutlet weak var searchCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: -IBActions
+    @IBOutlet weak var searchButtonTapped: UISearchBar!
     
 
     /*
@@ -27,3 +35,12 @@ class SearchViewController: UIViewController {
     */
 
 }
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked() {
+        
+    }
+    
+}
+    

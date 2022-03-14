@@ -12,7 +12,7 @@
         <!--Home Inventory-->
         <scene sceneID="B0N-pa-22X">
             <objects>
-                <viewController title="Home Inventory" id="n5d-s7-0lz" sceneMemberID="viewController">
+                <viewController title="Home Inventory" id="n5d-s7-0lz" customClass="ItemsViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lzb-gh-n0S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,6 +68,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dS7-zB-y9h"/>
+                    <connections>
+                        <outlet property="groupNameLabel" destination="xEL-Zy-X2t" id="15R-PD-p2H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJf-0t-wLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,7 +11,7 @@
         <!--Home Inventory-->
         <scene sceneID="giR-mJ-oY6">
             <objects>
-                <viewController storyboardIdentifier="ReportView" title="Home Inventory" id="1kJ-ZU-qps" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReportView" title="Home Inventory" id="1kJ-ZU-qps" customClass="ReportViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6cA-7l-YTo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,6 +154,13 @@
                     <tabBarItem key="tabBarItem" title="Report" image="dollarsign.circle" catalog="system" id="ny8-pQ-44m"/>
                     <navigationItem key="navigationItem" id="9Ef-44-OJV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="itemHighLabel" destination="0ZD-ap-HSf" id="m1h-zT-PlL"/>
+                        <outlet property="itemLowLabel" destination="NwR-2L-A2g" id="08r-aQ-YTd"/>
+                        <outlet property="roomHighLabel" destination="Dx7-Rf-m0T" id="V0d-tg-AaR"/>
+                        <outlet property="roomLowLabel" destination="Lar-T2-iVZ" id="uA6-tv-ptc"/>
+                        <outlet property="totalValueLabel" destination="xgK-KP-ZDf" id="N8p-5R-zow"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuZ-8y-l1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

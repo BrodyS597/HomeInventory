@@ -9,21 +9,19 @@ import UIKit
 
 class ReportViewController: UIViewController {
 
+// MARK: -IBOutlets
+    @IBOutlet weak var totalValueLabel: UILabel!
+    @IBOutlet weak var roomHighLabel: UILabel!
+    @IBOutlet weak var roomLowLabel: UILabel!
+    @IBOutlet weak var itemHighLabel: UILabel!
+    @IBOutlet weak var itemLowLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

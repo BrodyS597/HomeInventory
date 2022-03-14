@@ -9,4 +9,20 @@ import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
     
+    // MARK: -IBOutlets
+    @IBOutlet weak var groupImageView: UIImageView!
+    @IBOutlet weak var cellLabel: UILabel!
+    
+    
+    override func awakeFromNib() {
+        
+    }
+    
+    public func configure(with image: UIImage) {
+        groupImageView.image = image
+    }
+    
+    static func nib() -> UINib {
+        return UINib(nibName: "", bundle: nil)
+    }
 }

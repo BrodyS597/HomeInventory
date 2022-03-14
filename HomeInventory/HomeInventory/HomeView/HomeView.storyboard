@@ -70,6 +70,9 @@
                     <tabBarItem key="tabBarItem" title="TEST ITEM" image="house" catalog="system" id="sR4-66-TKR"/>
                     <navigationItem key="navigationItem" id="ABP-ZZ-h3T"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="groupCollectionView" destination="YN4-2I-Vea" id="azr-Bk-2hJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
