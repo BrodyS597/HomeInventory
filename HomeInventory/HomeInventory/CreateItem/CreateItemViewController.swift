@@ -40,7 +40,6 @@ class CreateItemViewController: UIViewController {
         //set all fields to empty and delete item/group
     }
     
-    
     @objc func itemImageViewTapped() {
         //picker
     }
