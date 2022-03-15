@@ -44,6 +44,8 @@
             <size key="customSize" width="163" height="213"/>
             <connections>
                 <outlet property="CellLabel" destination="BP9-CG-3HA" id="zAu-UZ-NnR"/>
+                <outlet property="cellLabel" destination="BP9-CG-3HA" id="QYY-oh-Dc5"/>
+                <outlet property="groupImageView" destination="WZZ-67-h0o" id="hYA-eh-oEf"/>
                 <outlet property="imageView" destination="WZZ-67-h0o" id="CdK-UA-zro"/>
             </connections>
             <point key="canvasLocation" x="219.56521739130437" y="207.92410714285714"/>

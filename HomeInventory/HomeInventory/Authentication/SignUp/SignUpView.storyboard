@@ -11,7 +11,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="sc8-0Y-3VY">
             <objects>
-                <viewController storyboardIdentifier="signUp" id="LFI-ob-O0L" customClass="SignUpViewController" customModule="MyBills_RTDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUp" id="LFI-ob-O0L" customClass="SignUpViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cwo-mH-CJR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="signUpButtonTapped:" destination="LFI-ob-O0L" eventType="touchUpInside" id="PN4-6x-0kp"/>
+                                    <action selector="signUpButtonTapped:" destination="LFI-ob-O0L" eventType="touchUpInside" id="EU5-Fr-VpP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9u-y5-QBi">
@@ -69,6 +69,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="LFI-ob-O0L" eventType="touchUpInside" id="6xG-vr-ZPR"/>
+                                    <action selector="returnToLoginButtonTapped:" destination="LFI-ob-O0L" eventType="touchUpInside" id="UsJ-sA-Fvq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -95,8 +96,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="EC1-iC-6Z7"/>
                     <connections>
-                        <outlet property="emailAddressTextField" destination="srJ-7U-jeI" id="kcE-uo-aIm"/>
-                        <outlet property="passwordTextField" destination="UEh-Gd-RLT" id="5vh-Dv-OZd"/>
+                        <outlet property="emailAddressTextField" destination="srJ-7U-jeI" id="7c4-yL-5bo"/>
+                        <outlet property="passwordTextField" destination="UEh-Gd-RLT" id="3QO-gW-HxG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XdS-IH-WTX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

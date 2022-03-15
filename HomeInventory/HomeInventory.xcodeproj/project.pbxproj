@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D0324FF27DBAE0B003B2069 /* SearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0324FE27DBAE0B003B2069 /* SearchView.storyboard */; };
+		6D03250127DBAFBA003B2069 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D03250027DBAFBA003B2069 /* SearchViewController.swift */; };
+		6D03250827DBB1D3003B2069 /* ReportView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D03250727DBB1D3003B2069 /* ReportView.storyboard */; };
+		6D03250A27DBE3B5003B2069 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D03250927DBE3B5003B2069 /* ReportViewController.swift */; };
+		6D03250D27DBE670003B2069 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D03250C27DBE670003B2069 /* Collection.swift */; };
 		6D446F3027DA8BBF006D115E /* HomeAddCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D446F2F27DA8BBF006D115E /* HomeAddCellView.xib */; };
-		6D446F3227DA8C70006D115E /* HomeAddCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D446F3127DA8C70006D115E /* HomeAddCellCollectionViewCell.swift */; };
 		6D446F3527DA9541006D115E /* ItemsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D446F3427DA9541006D115E /* ItemsView.storyboard */; };
 		6D446F3727DA958A006D115E /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D446F3627DA958A006D115E /* ItemsViewController.swift */; };
 		6D446F3927DA9627006D115E /* ItemsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D446F3827DA9627006D115E /* ItemsViewCell.xib */; };
 		6D446F3B27DA9875006D115E /* ItemsViewCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D446F3A27DA9875006D115E /* ItemsViewCellCollectionViewCell.swift */; };
 		6D446F3D27DA98B5006D115E /* ItemsViewAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D446F3C27DA98B5006D115E /* ItemsViewAddCell.xib */; };
-		6D446F3F27DA999A006D115E /* ItemsViewAddCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D446F3E27DA999A006D115E /* ItemsViewAddCellCollectionViewCell.swift */; };
 		6D446F4227DAA6D7006D115E /* CreateItemView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D446F4127DAA6D7006D115E /* CreateItemView.storyboard */; };
 		6D446F4427DAB059006D115E /* CreateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D446F4327DAB059006D115E /* CreateItemViewController.swift */; };
 		6D6AB9AC27DA609E005C21BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AB9AB27DA609E005C21BE /* AppDelegate.swift */; };
@@ -32,17 +35,29 @@
 		6D6AB9D427DA7F40005C21BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AB9D327DA7F40005C21BE /* HomeViewController.swift */; };
 		6D6AB9D627DA7F8B005C21BE /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AB9D527DA7F8B005C21BE /* HomeCollectionViewCell.swift */; };
 		6D6AB9DA27DA8039005C21BE /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6AB9D927DA8039005C21BE /* HomeViewCell.xib */; };
+		6DC4E8DB27DFA3C3005920A5 /* HomeVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC4E8DA27DFA3C3005920A5 /* HomeVCModel.swift */; };
+		6DC4E8DD27DFA489005920A5 /* ItemVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC4E8DC27DFA489005920A5 /* ItemVCModel.swift */; };
+		6DC4E8DF27DFA56C005920A5 /* CreateItemVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC4E8DE27DFA56C005920A5 /* CreateItemVCModel.swift */; };
+		6DC4E8E627DFA78D005920A5 /* FIrebaseStorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC4E8E527DFA78D005920A5 /* FIrebaseStorageController.swift */; };
+		6DC4E8E827DFA7E4005920A5 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC4E8E727DFA7E4005920A5 /* FirebaseController.swift */; };
+		6DC4E8EC27DFE97B005920A5 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC4E8EB27DFE97B005920A5 /* ReportViewModel.swift */; };
+		6DC4E8EE27DFE9C4005920A5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC4E8ED27DFE9C4005920A5 /* SearchViewModel.swift */; };
+		6DC970F927DBFD80006146AF /* AccountView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DC970F827DBFD80006146AF /* AccountView.storyboard */; };
+		6DC970FC27DBFEC6006146AF /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC970FB27DBFEC6006146AF /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D0324FE27DBAE0B003B2069 /* SearchView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchView.storyboard; sourceTree = "<group>"; };
+		6D03250027DBAFBA003B2069 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		6D03250727DBB1D3003B2069 /* ReportView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReportView.storyboard; sourceTree = "<group>"; };
+		6D03250927DBE3B5003B2069 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		6D03250C27DBE670003B2069 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		6D446F2F27DA8BBF006D115E /* HomeAddCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAddCellView.xib; sourceTree = "<group>"; };
-		6D446F3127DA8C70006D115E /* HomeAddCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAddCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		6D446F3427DA9541006D115E /* ItemsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemsView.storyboard; sourceTree = "<group>"; };
 		6D446F3627DA958A006D115E /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		6D446F3827DA9627006D115E /* ItemsViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsViewCell.xib; sourceTree = "<group>"; };
 		6D446F3A27DA9875006D115E /* ItemsViewCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		6D446F3C27DA98B5006D115E /* ItemsViewAddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsViewAddCell.xib; sourceTree = "<group>"; };
-		6D446F3E27DA999A006D115E /* ItemsViewAddCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewAddCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		6D446F4127DAA6D7006D115E /* CreateItemView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateItemView.storyboard; sourceTree = "<group>"; };
 		6D446F4327DAB059006D115E /* CreateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewController.swift; sourceTree = "<group>"; };
 		6D6AB9A827DA609E005C21BE /* HomeInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +77,15 @@
 		6D6AB9D327DA7F40005C21BE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6D6AB9D527DA7F8B005C21BE /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		6D6AB9D927DA8039005C21BE /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
+		6DC4E8DA27DFA3C3005920A5 /* HomeVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCModel.swift; sourceTree = "<group>"; };
+		6DC4E8DC27DFA489005920A5 /* ItemVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemVCModel.swift; sourceTree = "<group>"; };
+		6DC4E8DE27DFA56C005920A5 /* CreateItemVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemVCModel.swift; sourceTree = "<group>"; };
+		6DC4E8E527DFA78D005920A5 /* FIrebaseStorageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrebaseStorageController.swift; sourceTree = "<group>"; };
+		6DC4E8E727DFA7E4005920A5 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		6DC4E8EB27DFE97B005920A5 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		6DC4E8ED27DFE9C4005920A5 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		6DC970F827DBFD80006146AF /* AccountView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountView.storyboard; sourceTree = "<group>"; };
+		6DC970FB27DBFEC6006146AF /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,15 +99,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D0324FD27DBADE7003B2069 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				6DC4E8ED27DFE9C4005920A5 /* SearchViewModel.swift */,
+				6D0324FE27DBAE0B003B2069 /* SearchView.storyboard */,
+				6D03250027DBAFBA003B2069 /* SearchViewController.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		6D03250627DBB1C4003B2069 /* ReportView */ = {
+			isa = PBXGroup;
+			children = (
+				6DC4E8EB27DFE97B005920A5 /* ReportViewModel.swift */,
+				6D03250727DBB1D3003B2069 /* ReportView.storyboard */,
+				6D03250927DBE3B5003B2069 /* ReportViewController.swift */,
+			);
+			path = ReportView;
+			sourceTree = "<group>";
+		};
+		6D03250B27DBE530003B2069 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6D03250C27DBE670003B2069 /* Collection.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		6D446F3327DA950D006D115E /* ItemsView */ = {
 			isa = PBXGroup;
 			children = (
+				6DC4E8DC27DFA489005920A5 /* ItemVCModel.swift */,
 				6D446F3427DA9541006D115E /* ItemsView.storyboard */,
 				6D446F3627DA958A006D115E /* ItemsViewController.swift */,
 				6D446F3827DA9627006D115E /* ItemsViewCell.xib */,
 				6D446F3A27DA9875006D115E /* ItemsViewCellCollectionViewCell.swift */,
 				6D446F3C27DA98B5006D115E /* ItemsViewAddCell.xib */,
-				6D446F3E27DA999A006D115E /* ItemsViewAddCellCollectionViewCell.swift */,
 			);
 			path = ItemsView;
 			sourceTree = "<group>";
@@ -91,6 +143,7 @@
 		6D446F4027DAA684006D115E /* CreateItem */ = {
 			isa = PBXGroup;
 			children = (
+				6DC4E8DE27DFA56C005920A5 /* CreateItemVCModel.swift */,
 				6D446F4127DAA6D7006D115E /* CreateItemView.storyboard */,
 				6D446F4327DAB059006D115E /* CreateItemViewController.swift */,
 			);
@@ -116,6 +169,11 @@
 		6D6AB9AA27DA609E005C21BE /* HomeInventory */ = {
 			isa = PBXGroup;
 			children = (
+				6DC4E8E427DFA76C005920A5 /* Firebase */,
+				6D03250B27DBE530003B2069 /* Models */,
+				6DC970FA27DBFD86006146AF /* AccountView */,
+				6D03250627DBB1C4003B2069 /* ReportView */,
+				6D0324FD27DBADE7003B2069 /* SearchView */,
 				6D446F4027DAA684006D115E /* CreateItem */,
 				6D446F3327DA950D006D115E /* ItemsView */,
 				6D6AB9D027DA7E5F005C21BE /* HomeView */,
@@ -178,14 +236,32 @@
 		6D6AB9D027DA7E5F005C21BE /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				6DC4E8DA27DFA3C3005920A5 /* HomeVCModel.swift */,
 				6D6AB9D127DA7E92005C21BE /* HomeView.storyboard */,
 				6D6AB9D327DA7F40005C21BE /* HomeViewController.swift */,
 				6D6AB9D927DA8039005C21BE /* HomeViewCell.xib */,
 				6D6AB9D527DA7F8B005C21BE /* HomeCollectionViewCell.swift */,
 				6D446F2F27DA8BBF006D115E /* HomeAddCellView.xib */,
-				6D446F3127DA8C70006D115E /* HomeAddCellCollectionViewCell.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		6DC4E8E427DFA76C005920A5 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				6DC4E8E527DFA78D005920A5 /* FIrebaseStorageController.swift */,
+				6DC4E8E727DFA7E4005920A5 /* FirebaseController.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		6DC970FA27DBFD86006146AF /* AccountView */ = {
+			isa = PBXGroup;
+			children = (
+				6DC970F827DBFD80006146AF /* AccountView.storyboard */,
+				6DC970FB27DBFEC6006146AF /* AccountViewController.swift */,
+			);
+			path = AccountView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,8 +323,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D6AB9C927DA69C5005C21BE /* ResetPasswordView.storyboard in Resources */,
+				6D0324FF27DBAE0B003B2069 /* SearchView.storyboard in Resources */,
 				6D6AB9D227DA7E92005C21BE /* HomeView.storyboard in Resources */,
+				6D03250827DBB1D3003B2069 /* ReportView.storyboard in Resources */,
 				6D446F4227DAA6D7006D115E /* CreateItemView.storyboard in Resources */,
+				6DC970F927DBFD80006146AF /* AccountView.storyboard in Resources */,
 				6D6AB9B827DA609F005C21BE /* LaunchScreen.storyboard in Resources */,
 				6D6AB9B527DA609F005C21BE /* Assets.xcassets in Resources */,
 				6D6AB9C727DA69B5005C21BE /* SignUpView.storyboard in Resources */,
@@ -271,16 +350,25 @@
 			files = (
 				6D6AB9D627DA7F8B005C21BE /* HomeCollectionViewCell.swift in Sources */,
 				6D6AB9CB27DA6A28005C21BE /* LoginViewController.swift in Sources */,
+				6DC970FC27DBFEC6006146AF /* AccountViewController.swift in Sources */,
 				6D446F3B27DA9875006D115E /* ItemsViewCellCollectionViewCell.swift in Sources */,
+				6DC4E8EC27DFE97B005920A5 /* ReportViewModel.swift in Sources */,
 				6D6AB9AC27DA609E005C21BE /* AppDelegate.swift in Sources */,
+				6DC4E8DD27DFA489005920A5 /* ItemVCModel.swift in Sources */,
 				6D6AB9CF27DA6CA4005C21BE /* ResetPasswordViewController.swift in Sources */,
 				6D446F3727DA958A006D115E /* ItemsViewController.swift in Sources */,
+				6D03250D27DBE670003B2069 /* Collection.swift in Sources */,
+				6DC4E8DF27DFA56C005920A5 /* CreateItemVCModel.swift in Sources */,
+				6D03250A27DBE3B5003B2069 /* ReportViewController.swift in Sources */,
 				6D6AB9CD27DA6BBE005C21BE /* SignUpViewController.swift in Sources */,
 				6D446F4427DAB059006D115E /* CreateItemViewController.swift in Sources */,
+				6DC4E8E827DFA7E4005920A5 /* FirebaseController.swift in Sources */,
+				6DC4E8EE27DFE9C4005920A5 /* SearchViewModel.swift in Sources */,
+				6DC4E8DB27DFA3C3005920A5 /* HomeVCModel.swift in Sources */,
+				6DC4E8E627DFA78D005920A5 /* FIrebaseStorageController.swift in Sources */,
+				6D03250127DBAFBA003B2069 /* SearchViewController.swift in Sources */,
 				6D6AB9AE27DA609E005C21BE /* SceneDelegate.swift in Sources */,
 				6D6AB9D427DA7F40005C21BE /* HomeViewController.swift in Sources */,
-				6D446F3F27DA999A006D115E /* ItemsViewAddCellCollectionViewCell.swift in Sources */,
-				6D446F3227DA8C70006D115E /* HomeAddCellCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

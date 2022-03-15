@@ -44,7 +44,9 @@
             <size key="customSize" width="163" height="213"/>
             <connections>
                 <outlet property="CellLabel" destination="4jq-ei-VTb" id="LbS-yn-u0O"/>
+                <outlet property="cellLabel" destination="4jq-ei-VTb" id="cyp-NP-6g3"/>
                 <outlet property="imageView" destination="lpy-5E-WBg" id="njQ-JQ-9Z9"/>
+                <outlet property="itemImageView" destination="lpy-5E-WBg" id="g36-Vc-FSP"/>
             </connections>
             <point key="canvasLocation" x="219.56521739130437" y="207.92410714285714"/>
         </collectionViewCell>

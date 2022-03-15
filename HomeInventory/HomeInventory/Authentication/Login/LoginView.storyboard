@@ -19,11 +19,19 @@
                                 <rect key="frame" x="10" y="176.5" width="394" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="emailAddressTextField:" destination="4qg-S7-ptW" eventType="editingDidEnd" id="SfU-Tc-gH9"/>
+                                    <action selector="emailAddressTextField:" destination="cJj-Uy-TJM" eventType="editingDidEnd" id="e37-aH-47k"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6G-Lg-vLS">
                                 <rect key="frame" x="10" y="220.5" width="394" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="passwordTextField:" destination="cJj-Uy-TJM" eventType="editingDidEnd" id="P0T-qR-HrI"/>
+                                    <action selector="passwordTextField:" destination="4qg-S7-ptW" eventType="editingDidEnd" id="k3I-DD-NjC"/>
+                                </connections>
                             </textField>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIb-1m-Er1">
                                 <rect key="frame" x="10" y="294.5" width="394" height="31"/>
@@ -37,7 +45,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginButtonTapped:" destination="cJj-Uy-TJM" eventType="touchUpInside" id="NK4-2G-VhV"/>
+                                    <action selector="loginButtonTapped:" destination="cJj-Uy-TJM" eventType="touchUpInside" id="xOZ-EW-2oi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Inventory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vae-5c-RC3">
@@ -74,7 +82,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="signUpButtonTapped:" destination="cJj-Uy-TJM" eventType="touchUpInside" id="2Vg-Da-hNa"/>
+                                    <action selector="signUpButtonTapped:" destination="cJj-Uy-TJM" eventType="touchUpInside" id="ddm-fE-Ho3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8Z-iF-TXQ">
@@ -89,6 +97,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="forgotPasswordButtonTapped:" destination="cJj-Uy-TJM" eventType="touchUpInside" id="GFC-qS-9tg"/>
                                     <action selector="signUpButtonTapped:" destination="cJj-Uy-TJM" eventType="touchUpInside" id="Ia1-MI-lrr"/>
                                 </connections>
                             </button>
@@ -119,11 +128,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="7xU-py-Oe6"/>
                     <connections>
-                        <outlet property="emailAddressTextField" destination="WtE-Nd-c1a" id="dNW-mD-W3t"/>
-                        <outlet property="passwordTextField" destination="z6G-Lg-vLS" id="x7q-sk-T8U"/>
+                        <outlet property="emailAddressTextField" destination="WtE-Nd-c1a" id="bNj-tg-TgM"/>
+                        <outlet property="passwordTextField" destination="z6G-Lg-vLS" id="V6N-oE-5QS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSm-kc-Ss3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="4qg-S7-ptW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="295.6521739130435" y="128.57142857142856"/>
         </scene>
