@@ -22,9 +22,19 @@ class LoginViewController: UIViewController {
 // MARK: -IBActions
     @IBAction func loginButtonTapped(_ sender: Any) {
     }
+    
     @IBAction func signUpButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "SignUpView", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "signUp")
+        viewController.modalPresentationStyle = .overFullScreen
+        present(viewController, animated: true)
     }
+    
     @IBAction func forgotPasswordButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "ResetPasswordView", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "resetPassword")
+        viewController.modalPresentationStyle = .overFullScreen
+        present(viewController, animated: true)
     }
     
     func checkUserInfo() {

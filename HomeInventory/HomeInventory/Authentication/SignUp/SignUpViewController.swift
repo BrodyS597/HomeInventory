@@ -23,12 +23,13 @@ class SignUpViewController: UIViewController {
     @IBAction func signUpButtonTapped(_ sender: Any) {
     }
     @IBAction func returnToLoginButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "login")
+        viewController.modalPresentationStyle = .overFullScreen
+        present(viewController, animated: true)
     }
     
     func signUp(){
         
     }
-
-    
-
 }
