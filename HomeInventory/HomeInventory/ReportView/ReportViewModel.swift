@@ -9,6 +9,9 @@ import Foundation
 
 class ReportViewModel {
     
+    init() {
+        
+    }
     
     func calculateTotalValue() {
         

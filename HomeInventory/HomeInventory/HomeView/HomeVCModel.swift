@@ -11,6 +11,9 @@ class HomeVCModel {
     
     // MARK: -Properties
     
+    init() {
+        
+    }
     
     private func fetchGroups(){
         //from firebase

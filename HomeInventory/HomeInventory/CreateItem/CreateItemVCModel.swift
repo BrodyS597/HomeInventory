@@ -12,6 +12,10 @@ class CreateItemVCModel {
     
     // MARK: -Properties
     
+    init() {
+        
+    }
+    
     func saveItem() {
         //name = name, value = value etc
         //save to firebase using save func in FBC file

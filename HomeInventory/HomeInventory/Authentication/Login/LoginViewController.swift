@@ -10,12 +10,9 @@ import UIKit
 class LoginViewController: UIViewController {
 
     // MARK: -IBOutlets
-    @IBAction func emailAddressTextField(_ sender: Any) {
-    }
-    @IBAction func passwordTextField(_ sender: Any) {
-    }
-    
-    
+    @IBOutlet weak var emailAddressTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,7 +27,6 @@ class LoginViewController: UIViewController {
     @IBAction func forgotPasswordButtonTapped(_ sender: Any) {
     }
     
-    
     func checkUserInfo() {
       //ensure the email ecists for a user and the password is valid
         //needs closure for either event, user exists or not.
@@ -43,5 +39,4 @@ class LoginViewController: UIViewController {
     func segueToSignUp() {
         
     }
-
 }

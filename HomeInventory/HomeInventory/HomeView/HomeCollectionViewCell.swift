@@ -13,7 +13,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var groupImageView: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
     
-    
     override func awakeFromNib() {
         
     }

@@ -20,9 +20,7 @@ class CreateItemViewController: UIViewController {
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var notesTextField: UITextView!
     
-    
     // MARK: -Properties
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

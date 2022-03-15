@@ -11,6 +11,10 @@ class ItemVCModel {
     
     // MARK: -Properties
     
+    init() {
+        
+    }
+    
     private func fetchItems(){
         //from firebase
     }

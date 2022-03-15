@@ -9,6 +9,10 @@ import Foundation
 
 class SearchViewModel {
     
+    init() {
+        
+    }
+    
     func search() {
         
     }

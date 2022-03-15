@@ -128,8 +128,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="7xU-py-Oe6"/>
                     <connections>
-                        <outlet property="emailAddressTextField" destination="WtE-Nd-c1a" id="dNW-mD-W3t"/>
-                        <outlet property="passwordTextField" destination="z6G-Lg-vLS" id="x7q-sk-T8U"/>
+                        <outlet property="emailAddressTextField" destination="WtE-Nd-c1a" id="bNj-tg-TgM"/>
+                        <outlet property="passwordTextField" destination="z6G-Lg-vLS" id="V6N-oE-5QS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSm-kc-Ss3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
