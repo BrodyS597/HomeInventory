@@ -7,12 +7,18 @@
 
 import Foundation
 
+protocol HomeVCDelegate: HomeViewController {
+    
+}
+
 class HomeVCModel {
     
     // MARK: -Properties
+    var collection = [Collection]()
+    private weak var delegate: HomeVCDelegate?
     
-    init() {
-        
+    init(delegate: HomeVCDelegate) {
+        self.delegate = delegate
     }
     
     private func fetchGroups(){

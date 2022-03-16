@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCollectionViewCell" id="k4e-ac-qYE" customClass="HomeCollectionViewCell" customModule="HomeInventory" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeViewCell" id="k4e-ac-qYE" customClass="HomeCollectionViewCell" customModule="HomeInventory" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="163" height="213"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -31,6 +31,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="vR7-zD-TjJ"/>
+            <color key="backgroundColor" red="0.76266571969999997" green="0.27642324060000001" blue="0.29070573030000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="BP9-CG-3HA" secondAttribute="bottom" constant="10" id="Iha-me-Tgv"/>
                 <constraint firstItem="BP9-CG-3HA" firstAttribute="leading" secondItem="k4e-ac-qYE" secondAttribute="leading" constant="10" id="Ry1-e6-OsB"/>
@@ -46,7 +47,6 @@
                 <outlet property="CellLabel" destination="BP9-CG-3HA" id="zAu-UZ-NnR"/>
                 <outlet property="cellLabel" destination="BP9-CG-3HA" id="QYY-oh-Dc5"/>
                 <outlet property="groupImageView" destination="WZZ-67-h0o" id="hYA-eh-oEf"/>
-                <outlet property="imageView" destination="WZZ-67-h0o" id="CdK-UA-zro"/>
             </connections>
             <point key="canvasLocation" x="219.56521739130437" y="207.92410714285714"/>
         </collectionViewCell>
