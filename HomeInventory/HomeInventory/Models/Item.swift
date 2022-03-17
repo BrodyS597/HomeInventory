@@ -17,12 +17,12 @@ class Item {
     var serialNumber: String
     var purchasePrice: Double
     var valuePrice: Double
-    var purchaseDate: Date
+    var purchaseDate: String
     var itemCategory: String
     var notes: String
 
     // MARK: -INIT
-    init(itemName: String, itemPhotoURL: URL? = nil, model: String, serialNumber: String, purchasePrice: Double, valuePrice: Double, purchaseDate: Date = Date (), itemCategory: String, notes: String) {
+    init(itemName: String, itemPhotoURL: URL? = nil, model: String, serialNumber: String, purchasePrice: Double, valuePrice: Double, purchaseDate: String, itemCategory: String, notes: String) {
         self.itemName = itemName
         self.itemPhotoURL = itemPhotoURL
         self.model = model
