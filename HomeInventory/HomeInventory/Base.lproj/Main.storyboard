@@ -9,7 +9,7 @@
         <!--HomeView-->
         <scene sceneID="E8J-cJ-a4X">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="HomeView" storyboardName="HomeView" referencedIdentifier="HomeView" id="hXx-lT-wux" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="HomeView" storyboardName="HomeView" id="hXx-lT-wux" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="EuU-VS-cSr">
                         <color key="badgeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>

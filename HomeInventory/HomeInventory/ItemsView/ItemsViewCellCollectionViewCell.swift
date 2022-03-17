@@ -14,11 +14,13 @@ class ItemsViewCellCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellLabel: UILabel!
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         
     }
     
-    public func configure(with image: UIImage) {
-        itemImageView.image = image
+    public func configure(with name: String) { // image: UIImage
+        //itemImageView.image = image
+        cellLabel.text = name
     }
     
     static func nib() -> UINib {
