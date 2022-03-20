@@ -35,6 +35,7 @@ class CreateItemViewController: UIViewController {
     
     // MARK: -IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
+        //save item func 
         //make sure name field not empty
     }
     @IBAction func discardButtonTapped(_ sender: Any) {

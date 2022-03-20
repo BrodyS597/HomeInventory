@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // MARK: -Properties
     var viewModel: HomeVCModel!
-    let dataSource: [Collection] = [ Collection(name: "testCollection1", value: 23.00, items: [Item(itemName: "testTV", itemPhotoURL: nil, model: "testmodel#", serialNumber: "testSerial#", purchasePrice: 23.00, valuePrice: 23.00, purchaseDate: "01/01/01", itemCategory: "testCategory", notes: "These are test notes")]), Collection(name: "testCollection2", value: 50.00, items: [Item(itemName: "testItem2", itemPhotoURL: nil, model: "testModel#", serialNumber: "testSerial#", purchasePrice: 50.00, valuePrice: 50.00, purchaseDate: "02/02/02", itemCategory: "testCategory", notes: "These are more test notes")])]
+    let dataSource: [Collection] = [ Collection(name: "testCollection1", items: [Item(itemName: "testTV", itemPhotoURL: nil, model: "testmodel#", serialNumber: "testSerial#", purchasePrice: 23.00, valuePrice: 23.00, purchaseDate: "01/01/01", itemCategory: "testCategory", notes: "These are test notes"), Item(itemName: "testItem2", itemPhotoURL: nil, model: "123M", serialNumber: "456789", purchasePrice: 90.00, valuePrice: 90.00, purchaseDate: "02/02/02", itemCategory: "cat2", notes: "item 2 notes")]), Collection(name: "testCollection2", items: [Item(itemName: "testItem2", itemPhotoURL: nil, model: "testModel#", serialNumber: "testSerial#", purchasePrice: 50.00, valuePrice: 50.00, purchaseDate: "02/02/02", itemCategory: "testCategory", notes: "These are more test notes")])]
     
     override func viewDidLoad() {
         super.viewDidLoad()

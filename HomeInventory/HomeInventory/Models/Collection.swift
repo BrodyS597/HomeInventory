@@ -10,13 +10,18 @@ import Foundation
 class Collection {
     // MARK: -Properties
     var name: String
-    var value: Double
     var items: [Item]
+    var value: Double {
+        var totalValue = 0.0
+        for item in items {
+            totalValue += item.valuePrice
+        }
+        return totalValue
+    }
 
     // MARK: -INIT
-    init(name: String, value: Double, items: [Item]) {
+    init(name: String, items: [Item]) {
         self.name = name
-        self.value = value
         self.items = items
     }
 }
