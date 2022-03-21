@@ -7,13 +7,13 @@
 
 import Foundation
 
+
+
 class HomeVCModel {
     
     // MARK: -Properties
-    
-    init() {
-        
-    }
+    var collection = [Collection]()
+   
     
     private func fetchGroups(){
         //from firebase

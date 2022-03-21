@@ -35,6 +35,7 @@
 		6D6AB9D427DA7F40005C21BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AB9D327DA7F40005C21BE /* HomeViewController.swift */; };
 		6D6AB9D627DA7F8B005C21BE /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AB9D527DA7F8B005C21BE /* HomeCollectionViewCell.swift */; };
 		6D6AB9DA27DA8039005C21BE /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6AB9D927DA8039005C21BE /* HomeViewCell.xib */; };
+		6D78045127E1324F0054CB94 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D78045027E1324F0054CB94 /* Item.swift */; };
 		6DC4E8DB27DFA3C3005920A5 /* HomeVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC4E8DA27DFA3C3005920A5 /* HomeVCModel.swift */; };
 		6DC4E8DD27DFA489005920A5 /* ItemVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC4E8DC27DFA489005920A5 /* ItemVCModel.swift */; };
 		6DC4E8DF27DFA56C005920A5 /* CreateItemVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC4E8DE27DFA56C005920A5 /* CreateItemVCModel.swift */; };
@@ -77,6 +78,7 @@
 		6D6AB9D327DA7F40005C21BE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6D6AB9D527DA7F8B005C21BE /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		6D6AB9D927DA8039005C21BE /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
+		6D78045027E1324F0054CB94 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6DC4E8DA27DFA3C3005920A5 /* HomeVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCModel.swift; sourceTree = "<group>"; };
 		6DC4E8DC27DFA489005920A5 /* ItemVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemVCModel.swift; sourceTree = "<group>"; };
 		6DC4E8DE27DFA56C005920A5 /* CreateItemVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemVCModel.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				6D03250C27DBE670003B2069 /* Collection.swift */,
+				6D78045027E1324F0054CB94 /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				6D446F3B27DA9875006D115E /* ItemsViewCellCollectionViewCell.swift in Sources */,
 				6DC4E8EC27DFE97B005920A5 /* ReportViewModel.swift in Sources */,
 				6D6AB9AC27DA609E005C21BE /* AppDelegate.swift in Sources */,
+				6D78045127E1324F0054CB94 /* Item.swift in Sources */,
 				6DC4E8DD27DFA489005920A5 /* ItemVCModel.swift in Sources */,
 				6D6AB9CF27DA6CA4005C21BE /* ResetPasswordViewController.swift in Sources */,
 				6D446F3727DA958A006D115E /* ItemsViewController.swift in Sources */,

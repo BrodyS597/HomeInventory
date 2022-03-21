@@ -11,14 +11,28 @@ import UIKit
 class CreateItemVCModel {
     
     // MARK: -Properties
+    var item: Item?
+    //private weak var delegate: ItemVCDelegate?
     
-    init() {
-        
-    }
+    init(item: Item) {
+        self.item = item
+   }
     
-    func saveItem() {
-        //name = name, value = value etc
-        //save to firebase using save func in FBC file
+    func saveItem(itemName: String, itemPhotoURL: URL?, model: String, serialNumber: String, purchasePrice: Double, valuePrice: Double, purchaseDate: String, itemCategory: String, notes: String) {
+        if let item = item {
+            item.itemName = itemName
+            item.itemPhotoURL = itemPhotoURL
+            item.model = model
+            item.serialNumber = serialNumber
+            item.purchasePrice = purchasePrice
+            item.valuePrice = valuePrice
+            item.purchaseDate = purchaseDate
+            item.itemCategory = itemCategory
+            item.notes = notes
+        } else {
+            item = Item(itemName: itemName, itemPhotoURL: itemPhotoURL, model: model, serialNumber: serialNumber, purchasePrice: purchasePrice, valuePrice: valuePrice, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
+        }
+        //save to firebase using save func in FBC file ie. FirebaseController().saveItem etc 
     }
     
     func saveImage() {

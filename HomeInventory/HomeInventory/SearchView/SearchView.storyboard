@@ -77,7 +77,6 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchButtonTapped" destination="1hF-iE-rTX" id="ziH-Ij-qgi"/>
-                        <outlet property="searchCollecitonView" destination="nob-yF-Spg" id="jHc-3R-T7U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
