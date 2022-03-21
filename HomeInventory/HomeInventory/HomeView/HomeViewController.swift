@@ -21,46 +21,54 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         viewModel = HomeVCModel()
         groupCollectionView.dataSource = self
         groupCollectionView.delegate = self
-    
-        //Registering the custom cell
-        self.groupCollectionView.register(UINib(nibName: "HomeViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeViewCell")
         
+        //Registering the custom collection view with the custom item cell and custom add cell
+        self.groupCollectionView.register(UINib(nibName: "HomeViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeViewCell")
+        self.groupCollectionView.register(HomeAddCellViewController.nib(), forCellWithReuseIdentifier: "HomeAddCell")
         groupCollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(dataSource.count)
-        return self.dataSource.count
+        return self.dataSource.count + 1
         //viewModel.collection.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeViewCell", for: indexPath) as? HomeCollectionViewCell {
-            customCell.configure(with: dataSource[indexPath.row].name)
-            //customCell.groupImageView.image = UIImage
-            customCell.layer.cornerRadius = customCell.frame.height / 10
-            return customCell
-            
+        if indexPath.row == 0 {
+            if let customAddCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeAddCell", for: indexPath) as? HomeAddCellViewController {
+                //customCell.groupImageView.image = UIImage
+                customAddCell.layer.cornerRadius = customAddCell.frame.height / 10
+                return customAddCell
+            }
+        } else {
+                 if let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeViewCell", for: indexPath) as? HomeCollectionViewCell {
+                    customCell.configure(with: dataSource[indexPath.row - 1 ].name)
+                    //customCell.groupImageView.image = UIImage
+                    customCell.layer.cornerRadius = customCell.frame.height / 10
+                    return customCell
+                }
         }
-        return UICollectionViewCell()
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "HomeViewCell", for: indexPath)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(dataSource[indexPath.row])
         
-        let storyboard = UIStoryboard(name: "ItemsView", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "ItemsViewController") as? ItemsViewController else { return }
-        let collection = dataSource[indexPath.row].items
-        viewController.viewModel = ItemVCModel(items: collection)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            if indexPath.row == 0 {
+                let storyboard = UIStoryboard(name: "CreateCollectionView", bundle: nil)
+                guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateCollectionViewController") as? CreateCollectionViewController else { return }
+                let collection = dataSource[indexPath.row]
+                viewController.viewModel = CreateCollectionVCModel(collection: collection)
+                self.navigationController?.pushViewController(viewController, animated: true)
+            } else {
+                let storyboard = UIStoryboard(name: "ItemsView", bundle: nil)
+                guard let viewController = storyboard.instantiateViewController(withIdentifier: "ItemsViewController") as? ItemsViewController else { return }
+                let collection = dataSource[indexPath.row].items
+                viewController.viewModel = ItemVCModel(items: collection)
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        }
+        
+        func numberOfSections(in collectionView: UICollectionView) -> Int {
+            return 1
+        }
     }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-//    override func viewWillAppear() {
-//
-//    }
-
-}
