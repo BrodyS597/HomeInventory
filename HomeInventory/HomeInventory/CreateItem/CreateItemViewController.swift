@@ -58,12 +58,9 @@ class CreateItemViewController: UIViewController {
             //self.itemImageView.image = item.itemPhotoURL
             self.modelTextField.text = item.model
             self.serialTextField.text = item.serialNumber
-            let purchasePriceString = String(item.purchasePrice)
-            self.purchasePriceTextField.text = purchasePriceString
-            let valuePriceString = String(item.valuePrice)
-            self.valuePriceTextField.text = valuePriceString
-            let purchaseDateString = String(item.purchaseDate)
-            self.purchaseDateTextField.text = purchaseDateString
+            self.purchasePriceTextField.text = String(item.purchasePrice)
+            self.valuePriceTextField.text = String(item.valuePrice)
+            self.purchaseDateTextField.text = String(item.purchaseDate)
             self.categoryTextField.text = item.itemCategory
             self.notesTextField.text = item.notes
         }

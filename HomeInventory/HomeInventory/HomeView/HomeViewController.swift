@@ -18,7 +18,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = HomeVCModel(delegate: self)
+        viewModel = HomeVCModel()
         groupCollectionView.dataSource = self
         groupCollectionView.delegate = self
     
@@ -63,8 +63,4 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 //
 //    }
 
-}
-
-extension HomeViewController: HomeVCDelegate {
-    
 }
