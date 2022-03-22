@@ -8,7 +8,7 @@
 import UIKit
 
 class CreateItemViewController: UIViewController {
-
+    
     // MARK: -IBOutlets
     @IBOutlet weak var itemNameTextField: UITextField!
     @IBOutlet weak var itemImageView: UIImageView!
@@ -35,7 +35,19 @@ class CreateItemViewController: UIViewController {
     
     // MARK: -IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
-        //save item func 
+        guard let itemName = itemNameTextField.text,
+              !itemName.isEmpty,
+              let itemPhotoURL = itemImageView.image,
+              let model = modelTextField.text,
+              let serialNumber = serialTextField.text,
+              let purchasePrice = purchasePriceTextField.text,
+              let valuePrice = valuePriceTextField.text,
+              let purchaseDate = purchasePriceTextField.text,
+              let itemCategory = categoryTextField.text,
+              let notes = notesTextField.text
+        else { return }
+        viewModel.saveItem(itemName: itemName, itemPhotoURL: itemImageView.image, model: model, serialNumber: serialNumber, purchasePrice: Double(purchasePrice) ?? 0.00, valuePrice: Double(valuePrice) ?? 0.00, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
+        //save item func
         //make sure name field not empty
     }
     @IBAction func discardButtonTapped(_ sender: Any) {

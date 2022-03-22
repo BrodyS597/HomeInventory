@@ -55,13 +55,13 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
             let storyboard = UIStoryboard(name: "CreateItemView", bundle: nil)
             guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateItemView") as? CreateItemViewController else { return }
             let items = viewModel.items[indexPath.row]
-            viewController.viewModel = CreateItemVCModel(item: items)
+            viewController.viewModel = CreateItemVCModel(item: items, ItemVCModel: self.viewModel)
             self.navigationController?.pushViewController(viewController, animated: true)
         } else {
         let storyboard = UIStoryboard(name: "CreateItemView", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateItemView") as? CreateItemViewController else { return }
         let item = self.viewModel.items[indexPath.row - 1]
-        viewController.viewModel = CreateItemVCModel(item: item)
+            viewController.viewModel = CreateItemVCModel(item: item, ItemVCModel: self.viewModel)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

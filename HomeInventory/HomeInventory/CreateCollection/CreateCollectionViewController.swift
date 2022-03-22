@@ -30,6 +30,11 @@ class CreateCollectionViewController: UIViewController {
     
     // MARK: -IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let collectionName = collectionNameTextField.text,
+              !collectionName.isEmpty,
+              let itemPhotoURL = collectionImageView.image
+        else { return }
+        viewModel.saveCollection(name: collectionName)
         //save collection func
         //make sure name field not empty
     }

@@ -12,16 +12,18 @@ class CreateItemVCModel {
     
     // MARK: -Properties
     var item: Item?
+    private let viewModel: ItemVCModel
     //private weak var delegate: ItemVCDelegate?
     
-    init(item: Item) {
+    init(item: Item, ItemVCModel: ItemVCModel) {
         self.item = item
+        self.viewModel = ItemVCModel
    }
     
-    func saveItem(itemName: String, itemPhotoURL: URL?, model: String, serialNumber: String, purchasePrice: Double, valuePrice: Double, purchaseDate: String, itemCategory: String, notes: String) {
+    func saveItem(itemName: String, itemPhotoURL: UIImage?, model: String, serialNumber: String, purchasePrice: Double, valuePrice: Double, purchaseDate: String, itemCategory: String, notes: String) {
         if let item = item {
             item.itemName = itemName
-            item.itemPhotoURL = itemPhotoURL
+            //item.itemPhotoURL = itemPhotoURL
             item.model = model
             item.serialNumber = serialNumber
             item.purchasePrice = purchasePrice
@@ -30,7 +32,8 @@ class CreateItemVCModel {
             item.itemCategory = itemCategory
             item.notes = notes
         } else {
-            item = Item(itemName: itemName, itemPhotoURL: itemPhotoURL, model: model, serialNumber: serialNumber, purchasePrice: purchasePrice, valuePrice: valuePrice, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
+            item = Item(itemName: itemName, model: model, serialNumber: serialNumber, purchasePrice: purchasePrice, valuePrice: valuePrice, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
+            viewModel.items.append(self.item!)
         }
         //save to firebase using save func in FBC file ie. FirebaseController().saveItem etc 
     }
