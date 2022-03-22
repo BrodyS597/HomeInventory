@@ -24,6 +24,7 @@
 		6D6697EF27E8FF88001683B6 /* CreateCollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6697EE27E8FF88001683B6 /* CreateCollectionView.storyboard */; };
 		6D6697F127E8FFA3001683B6 /* CreateCollectionVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6697F027E8FFA3001683B6 /* CreateCollectionVCModel.swift */; };
 		6D6697F327E90AFB001683B6 /* HomeAddCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6697F227E90AFB001683B6 /* HomeAddCellViewController.swift */; };
+		6D6697F527E927EF001683B6 /* ItemsViewAddCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6697F427E927EF001683B6 /* ItemsViewAddCellView.swift */; };
 		6D6AB9AC27DA609E005C21BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AB9AB27DA609E005C21BE /* AppDelegate.swift */; };
 		6D6AB9AE27DA609E005C21BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6AB9AD27DA609E005C21BE /* SceneDelegate.swift */; };
 		6D6AB9B327DA609E005C21BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6AB9B127DA609E005C21BE /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 		6D6697EE27E8FF88001683B6 /* CreateCollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateCollectionView.storyboard; sourceTree = "<group>"; };
 		6D6697F027E8FFA3001683B6 /* CreateCollectionVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCollectionVCModel.swift; sourceTree = "<group>"; };
 		6D6697F227E90AFB001683B6 /* HomeAddCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAddCellViewController.swift; sourceTree = "<group>"; };
+		6D6697F427E927EF001683B6 /* ItemsViewAddCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewAddCellView.swift; sourceTree = "<group>"; };
 		6D6AB9A827DA609E005C21BE /* HomeInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6AB9AB27DA609E005C21BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D6AB9AD27DA609E005C21BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				6D446F3827DA9627006D115E /* ItemsViewCell.xib */,
 				6D446F3A27DA9875006D115E /* ItemsViewCellCollectionViewCell.swift */,
 				6D446F3C27DA98B5006D115E /* ItemsViewAddCell.xib */,
+				6D6697F427E927EF001683B6 /* ItemsViewAddCellView.swift */,
 			);
 			path = ItemsView;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				6D6AB9CD27DA6BBE005C21BE /* SignUpViewController.swift in Sources */,
 				6D446F4427DAB059006D115E /* CreateItemViewController.swift in Sources */,
 				6DC4E8E827DFA7E4005920A5 /* FirebaseController.swift in Sources */,
+				6D6697F527E927EF001683B6 /* ItemsViewAddCellView.swift in Sources */,
 				6DC4E8EE27DFE9C4005920A5 /* SearchViewModel.swift in Sources */,
 				6DC4E8DB27DFA3C3005920A5 /* HomeVCModel.swift in Sources */,
 				6DC4E8E627DFA78D005920A5 /* FIrebaseStorageController.swift in Sources */,

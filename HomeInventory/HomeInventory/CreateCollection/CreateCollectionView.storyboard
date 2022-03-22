@@ -11,7 +11,7 @@
         <!--Create Collection View Controller-->
         <scene sceneID="JhA-vw-OoQ">
             <objects>
-                <viewController storyboardIdentifier="CreateCollectionViewController" id="1l3-WD-mbL" customClass="CreateCollectionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateCollectionView" id="1l3-WD-mbL" customClass="CreateCollectionViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5OY-Tj-OEk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,9 +44,6 @@
                                 <rect key="frame" x="10" y="115.5" width="394" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="itemNameTextField:" destination="zp3-YN-Emt" eventType="editingDidEnd" id="FRI-ju-GM5"/>
-                                </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gCw-j7-NMO">
                                 <rect key="frame" x="10" y="791" width="394" height="31"/>
@@ -58,7 +55,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Discard"/>
                                         <connections>
-                                            <action selector="discardButtonTapped:" destination="1l3-WD-mbL" eventType="touchUpInside" id="Kli-TN-r4R"/>
+                                            <action selector="discardButtonTapped:" destination="1l3-WD-mbL" eventType="touchUpInside" id="PYA-Qr-ue8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eaz-hf-cyu">
@@ -67,6 +64,9 @@
                                         <color key="tintColor" red="0.99980872870000004" green="0.9797020555" blue="0.98312717679999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Save Item"/>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="1l3-WD-mbL" eventType="touchUpInside" id="bt9-Fb-Ski"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -89,12 +89,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionImageView" destination="0c8-uB-8b2" id="vF9-Je-7Qy"/>
-                        <outlet property="collectionNameTextFIeld" destination="YYc-IW-zyz" id="xC3-PW-ZdO"/>
+                        <outlet property="collectionImageView" destination="0c8-uB-8b2" id="JWp-kY-WcY"/>
+                        <outlet property="collectionNameTextField" destination="YYc-IW-zyz" id="ybn-Qz-fQT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRt-UY-eZ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="zp3-YN-Emt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>

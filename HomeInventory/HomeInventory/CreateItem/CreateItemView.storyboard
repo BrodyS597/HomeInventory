@@ -11,7 +11,7 @@
         <!--Create Item View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="CreateItemViewController" id="Y6W-OH-hqX" customClass="CreateItemViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateItemView" id="Y6W-OH-hqX" customClass="CreateItemViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,6 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="itemNameTextField:" destination="KKB-aV-IJq" eventType="editingDidEnd" id="WBf-Dh-Sfb"/>
-                                    <action selector="itemNameTextField:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="bbd-wM-FMk"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7si-vQ-PKN">
@@ -133,7 +132,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Discard"/>
                                         <connections>
-                                            <action selector="discardButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VkP-9I-Vrl"/>
+                                            <action selector="discardButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tmV-Jw-EWZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgx-XG-K2V">
@@ -143,7 +142,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Save Item"/>
                                         <connections>
-                                            <action selector="saveButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vBR-sP-fLD"/>
+                                            <action selector="saveButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ilT-Sl-TMP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -216,15 +215,15 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="categoryTextField" destination="ThI-ZI-fwz" id="gur-Z7-H9N"/>
-                        <outlet property="itemImageView" destination="eta-G9-qUL" id="skY-hG-HBc"/>
-                        <outlet property="itemNameTextField" destination="xAU-8s-vgb" id="pfb-RX-z5B"/>
-                        <outlet property="modelTextField" destination="oMe-1q-wlg" id="HBm-Yh-WkA"/>
-                        <outlet property="notesTextField" destination="dsN-dA-MI7" id="Lle-NB-7vV"/>
-                        <outlet property="purchaseDateTextField" destination="AcI-QD-7jZ" id="q0S-eI-dgc"/>
-                        <outlet property="purchasePriceTextField" destination="udm-WM-gtD" id="SfE-u7-dpf"/>
-                        <outlet property="serialTextField" destination="OYT-Cb-2qK" id="dK4-93-Ha8"/>
-                        <outlet property="valuePriceTextField" destination="S9o-rh-oZF" id="75C-SF-eqg"/>
+                        <outlet property="categoryTextField" destination="ThI-ZI-fwz" id="kZi-iM-GSA"/>
+                        <outlet property="itemImageView" destination="eta-G9-qUL" id="nUZ-pj-iZi"/>
+                        <outlet property="itemNameTextField" destination="xAU-8s-vgb" id="789-Xv-3rN"/>
+                        <outlet property="modelTextField" destination="oMe-1q-wlg" id="0UG-Ed-NtZ"/>
+                        <outlet property="notesTextField" destination="dsN-dA-MI7" id="vfG-H3-9h5"/>
+                        <outlet property="purchaseDateTextField" destination="AcI-QD-7jZ" id="JfS-hK-vi3"/>
+                        <outlet property="purchasePriceTextField" destination="udm-WM-gtD" id="aYI-0n-BYT"/>
+                        <outlet property="serialTextField" destination="OYT-Cb-2qK" id="cuh-U8-UEa"/>
+                        <outlet property="valuePriceTextField" destination="S9o-rh-oZF" id="sRb-AF-mJE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

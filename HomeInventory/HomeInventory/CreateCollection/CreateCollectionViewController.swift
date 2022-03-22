@@ -11,8 +11,9 @@ import UIKit
 class CreateCollectionViewController: UIViewController {
 
     // MARK: -IBOutlets
-    @IBOutlet weak var collectionNameTextFIeld: UITextField!
     @IBOutlet weak var collectionImageView: UIImageView!
+    @IBOutlet weak var collectionNameTextField: UITextField!
+    
     
     // MARK: -Properties
     var viewModel: CreateCollectionVCModel!
@@ -48,7 +49,7 @@ class CreateCollectionViewController: UIViewController {
     // MARK: -helper Func
     private func updateUI() {
         if let collection = viewModel.collection {
-            self.collectionNameTextFIeld.text = collection.name
+            self.collectionNameTextField.text = collection.name
             //self.collectionImageView.image = collection.collectionPhotoURL
             
         }
