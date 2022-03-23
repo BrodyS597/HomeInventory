@@ -12,7 +12,7 @@ class CreateCollectionVCModel {
     // MARK: -Properties
     var collection: Collection?
     
-    init(collection: Collection) {
+    init(collection: Collection? = nil) {
         self.collection = collection
    }
     

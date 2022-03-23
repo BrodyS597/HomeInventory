@@ -46,10 +46,11 @@ class CreateItemViewController: UIViewController {
               let itemCategory = categoryTextField.text,
               let notes = notesTextField.text
         else { return }
-        viewModel.saveItem(itemName: itemName, itemPhotoURL: itemImageView.image, model: model, serialNumber: serialNumber, purchasePrice: Double(purchasePrice) ?? 0.00, valuePrice: Double(valuePrice) ?? 0.00, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
+        viewModel.saveItem(itemName: itemName, itemPhotoURL: itemPhotoURL, model: model, serialNumber: serialNumber, purchasePrice: Double(purchasePrice) ?? 0.00, valuePrice: Double(valuePrice) ?? 0.00, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
         //save item func
         //make sure name field not empty
     }
+    
     @IBAction func discardButtonTapped(_ sender: Any) {
         //set all fields to empty and delete item/group
     }
@@ -88,5 +89,4 @@ extension CreateItemViewController: UINavigationControllerDelegate, UIImagePicke
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
 }

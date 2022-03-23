@@ -70,6 +70,4 @@ extension CreateCollectionViewController: UINavigationControllerDelegate, UIImag
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
 }
-

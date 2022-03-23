@@ -35,7 +35,9 @@ class CreateItemVCModel {
             item = Item(itemName: itemName, model: model, serialNumber: serialNumber, purchasePrice: purchasePrice, valuePrice: valuePrice, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
             viewModel.items.append(self.item!)
         }
-        //save to firebase using save func in FBC file ie. FirebaseController().saveItem etc 
+//        firebaseController().saveItem(self.item!)
+//        guard let imagedata = image?.pngData() else { return }
+//        FirebaseStorageController().save(imagedata, toItem: item!)
     }
     
     func saveImage() {
