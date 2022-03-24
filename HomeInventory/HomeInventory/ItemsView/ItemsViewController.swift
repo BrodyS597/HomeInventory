@@ -27,6 +27,11 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
         itemCollectionView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        itemCollectionView.reloadData()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(viewModel.items.count)
         return viewModel.items.count + 1
@@ -54,14 +59,14 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
         if indexPath.row == 0 {
             let storyboard = UIStoryboard(name: "CreateItemView", bundle: nil)
             guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateItemView") as? CreateItemViewController else { return }
-            let items = viewModel.items[indexPath.row]
-            viewController.viewModel = CreateItemVCModel(item: items, ItemVCModel: self.viewModel)
+            //let items = viewModel.items[indexPath.row]
+            viewController.viewModel = CreateItemVCModel(viewModel: viewModel)
             self.navigationController?.pushViewController(viewController, animated: true)
         } else {
         let storyboard = UIStoryboard(name: "CreateItemView", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateItemView") as? CreateItemViewController else { return }
         let item = self.viewModel.items[indexPath.row - 1]
-            viewController.viewModel = CreateItemVCModel(item: item, ItemVCModel: self.viewModel)
+            viewController.viewModel = CreateItemVCModel(item: item, viewModel: self.viewModel)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

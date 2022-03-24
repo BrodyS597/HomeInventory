@@ -15,9 +15,9 @@ class CreateItemVCModel {
     private let viewModel: ItemVCModel
     //private weak var delegate: ItemVCDelegate?
     
-    init(item: Item, ItemVCModel: ItemVCModel) {
+    init(item: Item? = nil, viewModel: ItemVCModel) {
         self.item = item
-        self.viewModel = ItemVCModel
+        self.viewModel = viewModel
    }
     
     func saveItem(itemName: String, itemPhotoURL: UIImage?, model: String, serialNumber: String, purchasePrice: Double, valuePrice: Double, purchaseDate: String, itemCategory: String, notes: String) {
@@ -35,7 +35,7 @@ class CreateItemVCModel {
             item = Item(itemName: itemName, model: model, serialNumber: serialNumber, purchasePrice: purchasePrice, valuePrice: valuePrice, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
             viewModel.items.append(self.item!)
         }
-//        firebaseController().saveItem(self.item!)
+        firebaseController().saveItem(self.item!)
 //        guard let imagedata = image?.pngData() else { return }
 //        FirebaseStorageController().save(imagedata, toItem: item!)
     }

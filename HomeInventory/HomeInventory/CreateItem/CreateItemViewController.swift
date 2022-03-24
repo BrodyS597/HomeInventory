@@ -47,6 +47,7 @@ class CreateItemViewController: UIViewController {
               let notes = notesTextField.text
         else { return }
         viewModel.saveItem(itemName: itemName, itemPhotoURL: itemPhotoURL, model: model, serialNumber: serialNumber, purchasePrice: Double(purchasePrice) ?? 0.00, valuePrice: Double(valuePrice) ?? 0.00, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
+        self.navigationController?.popViewController(animated: true)
         //save item func
         //make sure name field not empty
     }

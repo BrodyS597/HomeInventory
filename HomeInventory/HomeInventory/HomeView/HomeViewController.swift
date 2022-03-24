@@ -18,13 +18,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = HomeVCModel()
+        viewModel = HomeVCModel(delegate: self)
         groupCollectionView.dataSource = self
         groupCollectionView.delegate = self
         
         //Registering the custom collection view with the custom item cell and custom add cell
         self.groupCollectionView.register(UINib(nibName: "HomeViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeViewCell")
         self.groupCollectionView.register(HomeAddCellViewController.nib(), forCellWithReuseIdentifier: "HomeAddCell")
+        groupCollectionView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         groupCollectionView.reloadData()
     }
     
@@ -54,7 +59,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             if indexPath.row == 0 {
                 let storyboard = UIStoryboard(name: "CreateCollectionView", bundle: nil)
                 guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateCollectionView") as? CreateCollectionViewController else { return }
-                viewController.viewModel = CreateCollectionVCModel()
+                viewController.viewModel = CreateCollectionVCModel(viewModel: viewModel)
                 self.navigationController?.pushViewController(viewController, animated: true)
             } else {
                 let storyboard = UIStoryboard(name: "ItemsView", bundle: nil)
@@ -69,3 +74,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             return 1
         }
     }
+
+extension HomeViewController: HomeVCModelDelegate {
+    func updateViews() {
+        DispatchQueue.main.async {
+            self.groupCollectionView.reloadData()
+        }
+    }
+}

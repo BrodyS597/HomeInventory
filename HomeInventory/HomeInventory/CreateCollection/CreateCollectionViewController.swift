@@ -35,8 +35,7 @@ class CreateCollectionViewController: UIViewController {
               let itemPhotoURL = collectionImageView.image
         else { return }
         viewModel.saveCollection(name: collectionName)
-        //save collection func
-        //make sure name field not empty
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func discardButtonTapped(_ sender: Any) {
         //set all fields to empty and delete collection
