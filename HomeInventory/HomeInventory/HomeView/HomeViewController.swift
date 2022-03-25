@@ -64,8 +64,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             } else {
                 let storyboard = UIStoryboard(name: "ItemsView", bundle: nil)
                 guard let viewController = storyboard.instantiateViewController(withIdentifier: "ItemsViewController") as? ItemsViewController else { return }
-                let collection = viewModel.collection[indexPath.row - 1 ].items
-                viewController.viewModel = ItemVCModel(items: collection)
+                //let collection = viewModel.collection[indexPath.row - 1 ].items
+                viewController.viewModel = ItemVCModel(collection: viewModel.collection[indexPath.row - 1], delegate: viewController)
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
         }

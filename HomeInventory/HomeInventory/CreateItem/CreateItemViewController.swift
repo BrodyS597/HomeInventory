@@ -22,6 +22,7 @@ class CreateItemViewController: UIViewController {
     
     // MARK: -Properties
     var viewModel: CreateItemVCModel!
+    var collection: Collection?
     
     override func viewDidLoad() {
         itemImageView.contentMode = .scaleAspectFit
@@ -44,16 +45,20 @@ class CreateItemViewController: UIViewController {
               let valuePrice = valuePriceTextField.text,
               let purchaseDate = purchasePriceTextField.text,
               let itemCategory = categoryTextField.text,
-              let notes = notesTextField.text
+              let notes = notesTextField.text,
+              let collection = viewModel.collection
         else { return }
-        viewModel.saveItem(itemName: itemName, itemPhotoURL: itemPhotoURL, model: model, serialNumber: serialNumber, purchasePrice: Double(purchasePrice) ?? 0.00, valuePrice: Double(valuePrice) ?? 0.00, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
+        viewModel.saveItem(toCollection: collection, itemName: itemName, itemPhotoURL: itemPhotoURL, model: model, serialNumber: serialNumber, purchasePrice: Double(purchasePrice) ?? 0.00, valuePrice: Double(valuePrice) ?? 0.00, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
         self.navigationController?.popViewController(animated: true)
         //save item func
         //make sure name field not empty
     }
     
     @IBAction func discardButtonTapped(_ sender: Any) {
-        //set all fields to empty and delete item/group
+        //guard let collection = collection else { return }
+       // viewModel.deleteItem()
+       // self.navigationController?.popViewController(animated: true)
+        //AC for confirmaiton if ok, delete item/group
     }
     
     @objc func itemImageViewTapped() {

@@ -24,12 +24,11 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
         //registering the custom cell
         self.itemCollectionView.register(UINib(nibName: "ItemsViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemsViewCell")
         self.itemCollectionView.register(UINib(nibName: "ItemsViewAddCell", bundle: nil), forCellWithReuseIdentifier: "ItemsViewAddCell")
-        itemCollectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        itemCollectionView.reloadData()
+        viewModel.fetchItems()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,7 +65,7 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
         let storyboard = UIStoryboard(name: "CreateItemView", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateItemView") as? CreateItemViewController else { return }
         let item = self.viewModel.items[indexPath.row - 1]
-            viewController.viewModel = CreateItemVCModel(item: item, viewModel: self.viewModel)
+            viewController.viewModel = CreateItemVCModel(viewModel: self.viewModel)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
@@ -76,10 +75,11 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     // MARK: -Configure Cell
-    //self.firstText = groupname etc
-    //sizing
+    //sizing?
 }
 
 extension ItemsViewController: ItemVCDelegate {
-    
+    func itemsFetchedSuccessfully() {
+        itemCollectionView.reloadData()
+    }
 }

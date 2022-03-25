@@ -48,6 +48,5 @@ struct FireBaseStorageController {
     
     func deleteImage(fromItem item: Item) {
         storage.child(item.imagePath).delete(completion: nil)
-
     }
 }

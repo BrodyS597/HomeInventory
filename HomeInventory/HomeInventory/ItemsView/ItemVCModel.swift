@@ -8,25 +8,32 @@
 import Foundation
 
 protocol ItemVCDelegate: ItemsViewController {
-    
+    func itemsFetchedSuccessfully()
 }
 
 class ItemVCModel {
     
     // MARK: -Properties
     var items: [Item]
-    //private weak var delegate: ItemVCDelegate?
+    var collection: Collection
+    private weak var delegate: ItemVCDelegate?
     
-    init(items: [Item]) {
-        self.items = items
+    init(collection: Collection, delegate: ItemVCDelegate) {
+        self.collection = collection
+        self.items = collection.items
+        self.delegate = delegate
     }
     
-//    init(delegate: ItemVCDelegate) {
-//        self.delegate = delegate
-//    }
-    
-    private func fetchItems(){
-        //from firebase
+    func fetchItems() {
+        FirebaseController().getItemsFromCollection(collection: collection) { result in
+            switch result {
+            case .success(let items):
+                self.items = items
+                self.delegate?.itemsFetchedSuccessfully()
+            case .failure(let error):
+                print(error.errorDescription)
+            }
+        }
     }
     
     func search() {

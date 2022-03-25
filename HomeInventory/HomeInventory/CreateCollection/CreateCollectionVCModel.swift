@@ -26,7 +26,7 @@ class CreateCollectionVCModel {
             collection = Collection(name: name, items: [])
             viewModel.collection.append(self.collection!)
         }
-        firebaseController().saveCollection(self.collection!)
+        FirebaseController().saveCollection(self.collection!)
         
 //        guard let imagedata = image?.pngData() else { return }
 //        FirebaseStorageController().save(imagedata, toCollection: collection!)
