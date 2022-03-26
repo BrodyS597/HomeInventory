@@ -17,9 +17,10 @@ class CreateItemVCModel {
     //private let collectionViewModel: HomeVCModel
     //private weak var delegate: ItemVCDelegate?
     
-    init(viewModel: ItemVCModel) {
+    init(item: Item?, viewModel: ItemVCModel) {
         self.viewModel = viewModel
         self.collection = viewModel.collection
+        self.item = item
         //self.collectionViewModel = collectionViewModel
    }
     

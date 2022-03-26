@@ -22,7 +22,9 @@ class CreateItemViewController: UIViewController {
     
     // MARK: -Properties
     var viewModel: CreateItemVCModel!
+    var itemViewModel: ItemVCModel!
     var collection: Collection?
+    //var item: Item?
     
     override func viewDidLoad() {
         itemImageView.contentMode = .scaleAspectFit
@@ -31,7 +33,7 @@ class CreateItemViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(itemImageViewTapped))
         itemImageView.addGestureRecognizer(tapGesture)
         super.viewDidLoad()
-        updateUI()
+        fillItemDetails()
     }
     
     // MARK: -IBActions
@@ -71,7 +73,7 @@ class CreateItemViewController: UIViewController {
     }
     
     // MARK: -helper Func
-    private func updateUI() {
+    private func fillItemDetails() {
         if let item = viewModel.item {
             self.itemNameTextField.text = item.itemName
             //self.itemImageView.image = item.itemPhotoURL
