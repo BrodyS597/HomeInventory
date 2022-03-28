@@ -15,7 +15,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //initialization code
     }
     
     public func configure(with name: String, image: UIImage?) {

@@ -35,12 +35,4 @@ class ItemVCModel {
             }
         }
     }
-    
-    func search() {
-        
-    }
-    
-    func deleteItem() {
-        
-    }
 }

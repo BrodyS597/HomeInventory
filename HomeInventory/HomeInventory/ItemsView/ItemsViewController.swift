@@ -56,7 +56,16 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
             }
         } else {
             if let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsViewCell", for: indexPath) as? ItemsViewCellCollectionViewCell {
-                customCell.configure(with: viewModel.items[indexPath.row - 1].itemName)
+                FireBaseStorageController().loadImageFromItem(fromItem: viewModel.items[indexPath.row - 1]) { result in
+                    switch result {
+                    case .success(let image):
+                        customCell.configure(with: self.viewModel.items[indexPath.row - 1].itemName, image: image)
+                        
+                    case .failure(let error):
+                        print(error)
+                        customCell.configure(with: self.viewModel.items[indexPath.row - 1].itemName, image: nil)
+                    }
+                }
                 customCell.layer.cornerRadius = customCell.frame.height / 10
                 return customCell
             }

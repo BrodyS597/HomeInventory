@@ -25,7 +25,7 @@ class Item {
     }
     
     var imagePath: String {
-        "images\(self.uuid)"
+        "itemImages\(self.uuid)"
     }
     
     // MARK: -Properties

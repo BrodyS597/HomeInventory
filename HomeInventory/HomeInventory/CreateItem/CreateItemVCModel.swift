@@ -27,7 +27,7 @@ class CreateItemVCModel {
     func saveItem(toCollection: Collection, itemName: String, itemPhotoURL: UIImage?, model: String, serialNumber: String, purchasePrice: Double, valuePrice: Double, purchaseDate: String, itemCategory: String, notes: String) {
         if let item = item {
             item.itemName = itemName
-            //item.itemPhotoURL = itemPhotoURL
+            //item.itemPhotoURL = itemPhotoURL?
             item.model = model
             item.serialNumber = serialNumber
             item.purchasePrice = purchasePrice
@@ -38,8 +38,11 @@ class CreateItemVCModel {
         } else {
             let item = Item(itemName: itemName, model: model, serialNumber: serialNumber, purchasePrice: purchasePrice, valuePrice: valuePrice, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
             collection?.items.append(item)
-
             FirebaseController().saveItemToCollection(item: item, collection: collection!)
+            
+            guard let imageData = itemPhotoURL?.pngData() else { return }
+            FireBaseStorageController().saveImageDataToItem(imageData, toItem: item)
+
             
 //            guard let imagedata = image?.pngData() else { return }
 //            FirebaseStorageController().saveImageDataToItem(imagedata, toItem: item!)
@@ -69,6 +72,5 @@ class CreateItemVCModel {
                 completion(nil)
             }
         }
-
     }
 }

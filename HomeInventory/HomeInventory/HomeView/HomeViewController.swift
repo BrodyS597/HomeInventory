@@ -24,7 +24,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         //Registering the custom collection view with the custom item cell and custom add cell
         self.groupCollectionView.register(UINib(nibName: "HomeViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeViewCell")
         self.groupCollectionView.register(HomeAddCellViewController.nib(), forCellWithReuseIdentifier: "HomeAddCell")
-        groupCollectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,10 +72,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             viewController.viewModel = ItemVCModel(collection: viewModel.collections[indexPath.row - 1], delegate: viewController)
             self.navigationController?.pushViewController(viewController, animated: true)
         }
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
     }
 }
 

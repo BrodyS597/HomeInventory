@@ -46,6 +46,22 @@ struct FireBaseStorageController {
 
     }
     
+    func saveImageDataToItem(_ imageData: Data, toItem item: Item) {
+        storage.child(item.imagePath).putData(imageData, metadata: nil) { _, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            self.storage.child(item.imagePath).downloadURL { url, error in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                item.itemPhotoURL = url
+            }
+        }
+    }
+    
     func loadImageFromItem(fromItem item: Item, completion: @escaping (Result<UIImage, FirebaseError>) -> Void) {
         storage.child(item.imagePath).getData(maxSize: 4000 * 4000) { data, error in
             if let error = error {
