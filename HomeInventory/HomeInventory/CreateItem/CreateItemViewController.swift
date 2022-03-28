@@ -21,7 +21,7 @@ class CreateItemViewController: UIViewController {
     @IBOutlet weak var notesTextField: UITextView!
     
     // MARK: -Properties
-    var viewModel: CreateItemVCModel!
+    var viewModel: CreateItemVCModel?
     var itemViewModel: ItemVCModel!
     var collection: Collection?
     //var item: Item?
@@ -48,18 +48,15 @@ class CreateItemViewController: UIViewController {
               let purchaseDate = purchasePriceTextField.text,
               let itemCategory = categoryTextField.text,
               let notes = notesTextField.text,
-              let collection = viewModel.collection
+              let collection = viewModel?.collection
         else { return }
-        viewModel.saveItem(toCollection: collection, itemName: itemName, itemPhotoURL: itemPhotoURL, model: model, serialNumber: serialNumber, purchasePrice: Double(purchasePrice) ?? 0.00, valuePrice: Double(valuePrice) ?? 0.00, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
+        viewModel?.saveItem(toCollection: collection, itemName: itemName, itemPhotoURL: itemPhotoURL, model: model, serialNumber: serialNumber, purchasePrice: Double(purchasePrice) ?? 0.00, valuePrice: Double(valuePrice) ?? 0.00, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
         self.navigationController?.popViewController(animated: true)
-        //save item func
-        //make sure name field not empty
     }
     
     @IBAction func discardButtonTapped(_ sender: Any) {
-        //guard let collection = collection else { return }
-       // viewModel.deleteItem()
-       // self.navigationController?.popViewController(animated: true)
+        viewModel?.deleteItem()
+        self.navigationController?.popViewController(animated: true)
         //AC for confirmaiton if ok, delete item/group
     }
     
@@ -69,14 +66,12 @@ class CreateItemViewController: UIViewController {
         picker.delegate = self
         picker.sourceType = .photoLibrary
         present(picker, animated: true)
-        //picker
     }
     
     // MARK: -helper Func
     private func fillItemDetails() {
-        if let item = viewModel.item {
+        if let item = viewModel?.item {
             self.itemNameTextField.text = item.itemName
-            //self.itemImageView.image = item.itemPhotoURL
             self.modelTextField.text = item.model
             self.serialTextField.text = item.serialNumber
             self.purchasePriceTextField.text = String(item.purchasePrice)
@@ -84,6 +79,12 @@ class CreateItemViewController: UIViewController {
             self.purchaseDateTextField.text = String(item.purchaseDate)
             self.categoryTextField.text = item.itemCategory
             self.notesTextField.text = item.notes
+            
+            viewModel?.fetchImage { image in
+                if let image = image {
+                    self.itemImageView.image = image
+                }
+            }
         }
     }
 }
@@ -91,7 +92,9 @@ class CreateItemViewController: UIViewController {
 extension CreateItemViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        //dismiss, set image
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
+        self.itemImageView.image = image
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

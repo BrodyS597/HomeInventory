@@ -17,29 +17,20 @@ class CreateCollectionVCModel {
     init(collection: Collection? = nil, viewModel: HomeVCModel) {
         self.collection = collection
         self.viewModel = viewModel
-   }
-    
-    func saveCollection(name: String) {
-        if let collection = collection {
-            collection.name = name
-        } else {
-            collection = Collection(name: name, items: [])
-            viewModel.collection.append(self.collection!)
-        }
-        FirebaseController().saveCollection(self.collection!)
-        
-//        guard let imagedata = image?.pngData() else { return }
-//        FirebaseStorageController().save(imagedata, toCollection: collection!)
-        //save to firebase using save func in FBC file ie. FirebaseController().saveCollection etc
     }
     
-    func saveImage() {
-        //save image when first set
+    func saveCollection(image: UIImage?) {
+        guard let collection = collection else { return }
+        viewModel.collections.append(collection)
+        FirebaseController().saveCollection(collection)
+        
+        guard let imageData = image?.pngData() else { return }
+        FireBaseStorageController().saveImageDataToCollection(imageData, toCollection: collection)
     }
     
     func fetchImage(completion: @escaping (UIImage?) -> Void) {
         guard let collection = collection else { return }
-        FireBaseStorageController().loadImage(fromCollection: collection) { result in
+        FireBaseStorageController().loadImageFromCollection(fromCollection: collection) { result in
             switch result {
             case .success(let image):
                 completion(image)
@@ -48,6 +39,5 @@ class CreateCollectionVCModel {
                 completion(nil)
             }
         }
-        //from firebase when item is loaded
     }
 }

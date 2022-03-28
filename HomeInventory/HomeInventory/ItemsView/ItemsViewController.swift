@@ -24,11 +24,23 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
         //registering the custom cell
         self.itemCollectionView.register(UINib(nibName: "ItemsViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemsViewCell")
         self.itemCollectionView.register(UINib(nibName: "ItemsViewAddCell", bundle: nil), forCellWithReuseIdentifier: "ItemsViewAddCell")
+        updateViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.fetchItems()
+        guard let controllersInStack = self.navigationController?.viewControllers else { return }
+        
+        for viewController in controllersInStack{
+            if( viewController.isKind(of: CreateCollectionViewController.self) ){
+                viewController.removeFromParent()
+            }
+        }
+    }
+    
+    func updateViews() {
+        groupNameLabel.text = viewModel.collection.name
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -39,14 +51,12 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             if let customAddCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsViewAddCell", for: indexPath) as? ItemsViewAddCellView {
-                //customCell.groupImageView.image = UIImage
                 customAddCell.layer.cornerRadius = customAddCell.frame.height / 10
                 return customAddCell
             }
         } else {
             if let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsViewCell", for: indexPath) as? ItemsViewCellCollectionViewCell {
                 customCell.configure(with: viewModel.items[indexPath.row - 1].itemName)
-                //customCell.groupImageView.image = UIImage
                 customCell.layer.cornerRadius = customCell.frame.height / 10
                 return customCell
             }
@@ -58,20 +68,14 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
         if indexPath.row == 0 {
             let storyboard = UIStoryboard(name: "CreateItemView", bundle: nil)
             guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateItemView") as? CreateItemViewController else { return }
-            //let items = viewModel.items[indexPath.row]
             viewController.viewModel = CreateItemVCModel(item: nil, viewModel: viewModel)
             self.navigationController?.pushViewController(viewController, animated: true)
         } else {
-        let storyboard = UIStoryboard(name: "CreateItemView", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateItemView") as? CreateItemViewController else { return }
-        //let item = self.viewModel.items[indexPath.row - 1]
+            let storyboard = UIStoryboard(name: "CreateItemView", bundle: nil)
+            guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateItemView") as? CreateItemViewController else { return }
             viewController.viewModel = CreateItemVCModel(item: viewModel.items[indexPath.row - 1], viewModel: self.viewModel)
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-}
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     // MARK: -Configure Cell

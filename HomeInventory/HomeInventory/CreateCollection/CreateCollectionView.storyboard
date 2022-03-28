@@ -63,7 +63,7 @@
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <color key="tintColor" red="0.99980872870000004" green="0.9797020555" blue="0.98312717679999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Save Item"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Create Collection"/>
                                         <connections>
                                             <action selector="saveButtonTapped:" destination="1l3-WD-mbL" eventType="touchUpInside" id="bt9-Fb-Ski"/>
                                         </connections>

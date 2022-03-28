@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class CreateCollectionViewController: UIViewController {
-
+    
     // MARK: -IBOutlets
     @IBOutlet weak var collectionImageView: UIImageView!
     @IBOutlet weak var collectionNameTextField: UITextField!
@@ -17,6 +17,7 @@ class CreateCollectionViewController: UIViewController {
     
     // MARK: -Properties
     var viewModel: CreateCollectionVCModel!
+    var itemViewModel: ItemVCModel!
     
     override func viewDidLoad() {
         collectionImageView.contentMode = .scaleAspectFit
@@ -31,11 +32,17 @@ class CreateCollectionViewController: UIViewController {
     // MARK: -IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let collectionName = collectionNameTextField.text,
-              !collectionName.isEmpty,
-              let itemPhotoURL = collectionImageView.image
+              !collectionName.isEmpty
         else { return }
-        viewModel.saveCollection(name: collectionName)
-        self.navigationController?.popViewController(animated: true)
+        let collection = Collection(name: collectionName, items: [])
+        
+        viewModel.collection = collection
+        viewModel.saveCollection(image: collectionImageView.image)
+        
+        let storyboard = UIStoryboard(name: "ItemsView", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "ItemsViewController") as? ItemsViewController else { return }
+        viewController.viewModel = ItemVCModel(collection: collection, delegate: viewController)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     @IBAction func discardButtonTapped(_ sender: Any) {
         //set all fields to empty and delete collection
@@ -63,7 +70,9 @@ class CreateCollectionViewController: UIViewController {
 extension CreateCollectionViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        //dismiss, set image
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
+        self.collectionImageView.image = image
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

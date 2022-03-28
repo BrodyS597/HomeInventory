@@ -43,9 +43,9 @@ struct FirebaseController {
     }
     
     func deleteItemFromCollection(_ item: Item, collection: Collection) {
-        //database.collection(Collection.Key.collectionType).document(collection.uuid).collection("items").document(item.uuid).delete()
+        database.collection(Collection.Key.collectionType).document(collection.uuid).collection(Collection.Key.items).document(item.uuid).delete()
         //database.collection(Item.Key.collectionType).document(item.uuid).delete()
-        FireBaseStorageController().deleteImage(fromItem: item)
+        FireBaseStorageController().deleteImageFromItem(fromItem: item)
     }
     
     func getCollections(completion: @escaping (Result<[Collection], FirebaseError>) -> Void) {

@@ -38,27 +38,37 @@ class CreateItemVCModel {
         } else {
             let item = Item(itemName: itemName, model: model, serialNumber: serialNumber, purchasePrice: purchasePrice, valuePrice: valuePrice, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
             collection?.items.append(item)
-           //viewModel.items.append(self.item!)
-         //   collectionViewModel.collection.append(self.item!)
 
             FirebaseController().saveItemToCollection(item: item, collection: collection!)
+            
+//            guard let imagedata = image?.pngData() else { return }
+//            FirebaseStorageController().saveImageDataToItem(imagedata, toItem: item!)
         }
         //firebaseController().saveItem(self.item!) //SAVES ITEM OUT OF COLLECTION BODY IN FSDB
         
-//        guard let imagedata = image?.pngData() else { return }
-//        FirebaseStorageController().save(imagedata, toItem: item!)
     }
     
     func deleteItem() {
-//        guard let item = item else { return }
-//        firebaseController().deleteItem(item, collection: collection!)
+        guard let item = item,
+        let collection = collection else { return }
+        FirebaseController().deleteItemFromCollection(item, collection: collection)
     }
     
     func saveImage() {
         //save image when first set
     }
     
-    func fetchImage() {
-        //from firebase when item is loaded
+    func fetchImage(completion: @escaping (UIImage?) -> Void) {
+        guard let item = item else { return }
+        FireBaseStorageController().loadImageFromItem(fromItem: item) { result in
+            switch result {
+            case .success(let image):
+                completion(image)
+            case .failure(let error):
+                print(error.description)
+                completion(nil)
+            }
+        }
+
     }
 }

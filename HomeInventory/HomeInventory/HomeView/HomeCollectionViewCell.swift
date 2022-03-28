@@ -18,8 +18,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
         //initialization code
     }
     
-    public func configure(with name: String) { //image: UIImage, 
-//groupImageView.image = image
+    public func configure(with name: String, image: UIImage?) {
+        groupImageView.image = image
         cellLabel.text = name
     }
     
