@@ -21,7 +21,6 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="emailAddressTextField:" destination="4qg-S7-ptW" eventType="editingDidEnd" id="SfU-Tc-gH9"/>
-                                    <action selector="emailAddressTextField:" destination="cJj-Uy-TJM" eventType="editingDidEnd" id="e37-aH-47k"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6G-Lg-vLS">
@@ -29,7 +28,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
-                                    <action selector="passwordTextField:" destination="cJj-Uy-TJM" eventType="editingDidEnd" id="P0T-qR-HrI"/>
                                     <action selector="passwordTextField:" destination="4qg-S7-ptW" eventType="editingDidEnd" id="k3I-DD-NjC"/>
                                 </connections>
                             </textField>

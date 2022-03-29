@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
@@ -15,12 +17,29 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 // MARK: -IBActions
     @IBAction func loginButtonTapped(_ sender: Any) {
+        
+        if let emailAddress = emailAddressTextField.text, !emailAddress.isEmpty,
+           let password = passwordTextField.text, !password.isEmpty {
+            Auth.auth().signIn(withEmail: emailAddress, password: password) { result, error in
+                switch result {
+                case .none:
+                    let alertController = UIAlertController(title: "Account not found", message: "Please check your username and password", preferredStyle: .alert)
+                    let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alertController.addAction(confirmAction)
+                    self.present(alertController, animated: true, completion: nil)
+                case .some(let userDetails):
+                    print("Welcome back!", userDetails.user.email!)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let navigationController = storyboard.instantiateViewController(withIdentifier: "navCon") as? UINavigationController
+                    navigationController?.modalPresentationStyle = .overFullScreen
+                    self.present(navigationController!, animated: true)
+                }
+            }
+        }
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
@@ -38,15 +57,16 @@ class LoginViewController: UIViewController {
     }
     
     func checkUserInfo() {
-      //ensure the email ecists for a user and the password is valid
-        //needs closure for either event, user exists or not.
+        if Auth.auth().currentUser != nil {
+            print(Auth.auth().currentUser?.uid)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "tabCon")
+            viewController.modalPresentationStyle = .overFullScreen
+            present(viewController, animated: true)
+        }
     }
     
     func segueToHomeView() {
-        
-    }
-    
-    func segueToSignUp() {
         
     }
 }
