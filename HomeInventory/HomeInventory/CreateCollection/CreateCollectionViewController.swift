@@ -39,11 +39,9 @@ class CreateCollectionViewController: UIViewController {
         viewModel.collection = collection
         viewModel.saveCollection(image: collectionImageView.image)
         
-        let storyboard = UIStoryboard(name: "ItemsView", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "ItemsViewController") as? ItemsViewController else { return }
-        viewController.viewModel = ItemVCModel(collection: collection, delegate: viewController)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func discardButtonTapped(_ sender: Any) {
         //set all fields to empty and delete collection
     }

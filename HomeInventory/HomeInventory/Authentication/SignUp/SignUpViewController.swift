@@ -10,7 +10,7 @@ import Firebase
 import FirebaseAuth
 
 class SignUpViewController: UIViewController {
-
+    
     // MARK: -IBOutlets
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -39,7 +39,7 @@ class SignUpViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             return
         }
-
+        
         guard let password = passwordTextField.text else { return }
         if validatePassword(password) == false {
             let alertController = UIAlertController(title: "Password is invalid", message: " Passwords must contain a minimum of 6 characters and no spaces. Please try again.", preferredStyle: .alert)

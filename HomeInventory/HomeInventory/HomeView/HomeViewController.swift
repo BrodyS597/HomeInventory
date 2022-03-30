@@ -43,16 +43,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
         } else {
             if let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeViewCell", for: indexPath) as? HomeCollectionViewCell {
-                FireBaseStorageController().loadImageFromCollection(fromCollection: viewModel.collections[indexPath.row - 1]) { result in
-                    switch result {
-                    case .success(let image):
-                        customCell.configure(with: self.viewModel.collections[indexPath.row - 1 ].name, image: image)
-                        
-                    case.failure(let error):
-                        print(error)
-                        customCell.configure(with: self.viewModel.collections[indexPath.row - 1].name, image: nil)
-                    }
-                }
+                customCell.configure(with: viewModel.collections[indexPath.row - 1])
                 customCell.layer.cornerRadius = customCell.frame.height / 10
                 return customCell
             }

@@ -10,16 +10,16 @@ import Firebase
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
-
+    
     // MARK: -IBOutlets
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-// MARK: -IBActions
+    // MARK: -IBActions
     @IBAction func loginButtonTapped(_ sender: Any) {
         
         if let emailAddress = emailAddressTextField.text, !emailAddress.isEmpty,
@@ -33,10 +33,11 @@ class LoginViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 case .some(let userDetails):
                     print("Welcome back!", userDetails.user.email!)
+                    
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let navigationController = storyboard.instantiateViewController(withIdentifier: "navCon") as? UINavigationController
-                    navigationController?.modalPresentationStyle = .overFullScreen
-                    self.present(navigationController!, animated: true)
+                    guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabCon") as? UITabBarController else { return }
+                    tabBarController.modalPresentationStyle = .overFullScreen
+                    self.present(tabBarController, animated: true)
                 }
             }
         }

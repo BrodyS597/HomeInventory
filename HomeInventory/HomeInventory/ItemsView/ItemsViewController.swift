@@ -30,13 +30,7 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.fetchItems()
-        guard let controllersInStack = self.navigationController?.viewControllers else { return }
         
-        for viewController in controllersInStack{
-            if( viewController.isKind(of: CreateCollectionViewController.self) ){
-                viewController.removeFromParent()
-            }
-        }
     }
     
     func updateViews() {
