@@ -13,12 +13,20 @@ struct FireBaseStorageController {
     let storage = Storage.storage().reference()
     
     func saveImageDataToCollection(_ imageData: Data, toCollection collection: Collection) {
-        storage.child(collection.imagePath).putData(imageData, metadata: nil) { _, error in
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        storage.child("users")
+            .child(uid)
+            .child(collection.imagePath)
+            .putData(imageData, metadata: nil) { _, error in
             if let error = error {
                 print(error)
                 return
             }
-            self.storage.child(collection.imagePath).downloadURL { url, error in
+                guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+                storage.child("users")
+                    .child(uid)
+                    .child(collection.imagePath)
+                    .downloadURL { url, error in
                 if let error = error {
                     print(error)
                     return
@@ -29,7 +37,11 @@ struct FireBaseStorageController {
     }
     
     func loadImageFromCollection(fromCollection collection: Collection, completion: @escaping (Result<UIImage, FirebaseError>) -> Void) {
-        storage.child(collection.imagePath).getData(maxSize: 4000 * 4000) { data, error in
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        storage.child("users")
+            .child(uid)
+            .child(collection.imagePath)
+            .getData(maxSize: 4000 * 4000) { data, error in
             if let error = error {
                 completion(.failure(.failure(error)))
                 return
@@ -42,12 +54,19 @@ struct FireBaseStorageController {
     }
     
     func deleteImageFromCollection(fromCollection collection: Collection) {
-        storage.child(collection.imagePath).delete(completion: nil)
-
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        storage.child("users")
+            .child(uid)
+            .child(collection.imagePath)
+            .delete(completion: nil)
     }
     
     func saveImageDataToItem(_ imageData: Data, toItem item: Item) {
-        storage.child(item.imagePath).putData(imageData, metadata: nil) { _, error in
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        storage.child("users")
+            .child(uid)
+            .child(item.imagePath)
+            .putData(imageData, metadata: nil) { _, error in
             if let error = error {
                 print(error)
                 return
@@ -63,7 +82,11 @@ struct FireBaseStorageController {
     }
     
     func loadImageFromItem(fromItem item: Item, completion: @escaping (Result<UIImage, FirebaseError>) -> Void) {
-        storage.child(item.imagePath).getData(maxSize: 4000 * 4000) { data, error in
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        storage.child("users")
+            .child(uid)
+            .child(item.imagePath)
+            .getData(maxSize: 4000 * 4000) { data, error in
             if let error = error {
                 completion(.failure(.failure(error)))
                 return
@@ -76,6 +99,10 @@ struct FireBaseStorageController {
     }
     
     func deleteImageFromItem(fromItem item: Item) {
-        storage.child(item.imagePath).delete(completion: nil)
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        storage.child("users")
+            .child(uid)
+            .child(item.imagePath)
+            .delete(completion: nil)
     }
 }

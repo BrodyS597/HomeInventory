@@ -15,13 +15,27 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var handle: AuthStateDidChangeListenerHandle?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user {
+              let uid = user.uid
+                UserDefaults.standard.set(uid, forKey: "uid")
+            }
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+    
     // MARK: -IBActions
     @IBAction func loginButtonTapped(_ sender: Any) {
-        
         if let emailAddress = emailAddressTextField.text, !emailAddress.isEmpty,
            let password = passwordTextField.text, !password.isEmpty {
             Auth.auth().signIn(withEmail: emailAddress, password: password) { result, error in

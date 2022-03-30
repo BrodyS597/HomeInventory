@@ -8,13 +8,14 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import simd
 
 class SignUpViewController: UIViewController {
     
     // MARK: -IBOutlets
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -30,7 +31,6 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        //TODO: The password must be 6 characters long or more. AC if password character.count < 6
         if passwordTextField.text?.isEmpty == true {
             print("No text entered in password field")
             let alertController = UIAlertController(title: "Error: Password field is empty", message: "Please enter a valid password", preferredStyle: .alert)
@@ -65,9 +65,10 @@ class SignUpViewController: UIViewController {
                 print(error)
                 return
             }
-            guard (authResult?.user) != nil else {
-                return
-            }
+            
+            guard let user = authResult?.user else { return }
+            UserDefaults.standard.set(user.uid, forKey: "uid")
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabCon") as? UITabBarController else { return }
             tabBarController.modalPresentationStyle = .overFullScreen
@@ -80,7 +81,6 @@ class SignUpViewController: UIViewController {
         if password.count < 6 {
             return false
         }
-        
         //No whitespace characters
         if password.range(of: #"\s+"#, options: .regularExpression) != nil {
             return false

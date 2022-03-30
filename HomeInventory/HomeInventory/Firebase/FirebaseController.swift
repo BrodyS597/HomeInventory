@@ -29,13 +29,22 @@ struct FirebaseController {
     let database = Firestore.firestore()
     
     func saveCollection(_ collection: Collection) {
-        database.collection(Collection.Key.collectionType).document(collection.uuid).setData(collection.CollectionData)
         
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        database.collection("users")
+                .document(uid)
+                .collection(Collection.Key.collectionType)
+                .document(collection.uuid)
+                .setData(collection.CollectionData)
     }
     
     func saveItemToCollection(item: Item, collection: Collection) {
-        //may need to change including array union so this stuff saves nested under collecitonData, specifically under "items" array
-        database.collection(Collection.Key.collectionType).document(collection.uuid).collection(Collection.Key.items).document(item.uuid).setData(item.itemData)
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        database.collection("users")
+                .document(uid)
+                .collection(Collection.Key.collectionType)
+                .document(collection.uuid)
+                .collection(Collection.Key.items).document(item.uuid).setData(item.itemData)
     }
     
     func deleteCollection(_ collection: Collection) {
@@ -43,13 +52,22 @@ struct FirebaseController {
     }
     
     func deleteItemFromCollection(_ item: Item, collection: Collection) {
-        database.collection(Collection.Key.collectionType).document(collection.uuid).collection(Collection.Key.items).document(item.uuid).delete()
-        //database.collection(Item.Key.collectionType).document(item.uuid).delete()
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        database.collection("users")
+            .document(uid)
+            .collection(Collection.Key.collectionType)
+            .document(collection.uuid)
+            .collection(Collection.Key.items)
+            .document(item.uuid).delete()
         FireBaseStorageController().deleteImageFromItem(fromItem: item)
     }
     
     func getCollections(completion: @escaping (Result<[Collection], FirebaseError>) -> Void) {
-        database.collection(Collection.Key.collectionType).getDocuments { snapshot, error in
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        database.collection("users")
+            .document(uid)
+            .collection(Collection.Key.collectionType)
+            .getDocuments { snapshot, error in
             if let error = error {
                 completion(.failure(.failure(error)))
                 return
@@ -62,7 +80,13 @@ struct FirebaseController {
     }
     
     func getItemsFromCollection(collection: Collection, completion: @escaping (Result<[Item], FirebaseError>) -> Void) {
-        database.collection(Collection.Key.collectionType).document(collection.uuid).collection(Collection.Key.items).getDocuments { snapshot, error in
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        database.collection("users")
+            .document(uid)
+            .collection(Collection.Key.collectionType)
+            .document(collection.uuid)
+            .collection(Collection.Key.items)
+            .getDocuments { snapshot, error in
             if let error = error {
                 completion(.failure(.failure(error)))
                 return
