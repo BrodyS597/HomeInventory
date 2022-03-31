@@ -34,8 +34,9 @@
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="3" height="-2"/>
                             </label>
-                            <searchBar contentMode="redraw" placeholder="Search for an item by any key word" translatesAutoresizingMaskIntoConstraints="NO" id="1hF-iE-rTX">
+                            <searchBar opaque="NO" contentMode="redraw" placeholder="Search for an item by any key word" translatesAutoresizingMaskIntoConstraints="NO" id="1hF-iE-rTX">
                                 <rect key="frame" x="10" y="116" width="414" height="51"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nob-yF-Spg">
