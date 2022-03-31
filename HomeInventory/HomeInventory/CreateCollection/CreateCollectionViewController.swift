@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CreateCollectionViewController: UIViewController {
+class CreateCollectionViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: -IBOutlets
     @IBOutlet weak var collectionImageView: UIImageView!
@@ -62,6 +62,11 @@ class CreateCollectionViewController: UIViewController {
             //self.collectionImageView.image = collection.collectionPhotoURL
             
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
 

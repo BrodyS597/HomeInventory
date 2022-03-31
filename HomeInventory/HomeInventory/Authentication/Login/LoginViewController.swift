@@ -143,6 +143,22 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 
                 if let user = authDataResult?.user {
                     print("signed in as \(user.uid), email: \(user.email ?? "unknown email")")
+                    
+                    switch authDataResult {
+                    case .none:
+                        let alertController = UIAlertController(title: "Account not found", message: "Please check your username and password", preferredStyle: .alert)
+                        let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                        alertController.addAction(confirmAction)
+                        self.present(alertController, animated: true, completion: nil)
+                    case .some(let userDetails):
+                        print("Welcome back!", userDetails.user.email!)
+                        
+                        //segue to home
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabCon") as? UITabBarController else { return }
+                        tabBarController.modalPresentationStyle = .overFullScreen
+                        self.present(tabBarController, animated: true)
+                    }
                 }
             }
         }

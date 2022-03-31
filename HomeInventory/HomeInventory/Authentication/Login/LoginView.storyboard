@@ -112,7 +112,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signInWithAppleTapped:" destination="cJj-Uy-TJM" eventType="touchUpInside" id="vh3-vC-8vg"/>
-                                    <action selector="signUpButtonTapped:" destination="cJj-Uy-TJM" eventType="touchUpInside" id="TOA-YN-vj5"/>
                                 </connections>
                             </button>
                         </subviews>

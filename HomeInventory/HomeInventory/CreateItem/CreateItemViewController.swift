@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateItemViewController: UIViewController {
+class CreateItemViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: -IBOutlets
     @IBOutlet weak var itemNameTextField: UITextField!
@@ -86,6 +86,11 @@ class CreateItemViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
 
