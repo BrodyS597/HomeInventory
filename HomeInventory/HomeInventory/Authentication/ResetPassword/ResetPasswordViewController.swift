@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import simd
 
 class ResetPasswordViewController: UIViewController {
     
@@ -28,7 +31,13 @@ class ResetPasswordViewController: UIViewController {
     }
     
     func sendPasswordReset(){
-        
+        guard let emailAddress = emailAddressTextField.text else { return }
+        Auth.auth().sendPasswordReset(withEmail: emailAddress) { error in
+            if let error = error {
+                print(error)
+                return
+            }
+        }
     }
     
     func checkUserInfo(){
