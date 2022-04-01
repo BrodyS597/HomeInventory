@@ -38,6 +38,8 @@ class LoginViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        checkUserInfo()
+        
         handle = Auth.auth().addStateDidChangeListener { auth, user in
             if let user = user {
               let uid = user.uid
@@ -96,9 +98,9 @@ class LoginViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             print(Auth.auth().currentUser?.uid)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "tabCon")
-            viewController.modalPresentationStyle = .overFullScreen
-            present(viewController, animated: true)
+            guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabCon") as? UITabBarController else { return }
+            tabBarController.modalPresentationStyle = .overFullScreen
+            self.present(tabBarController, animated: true)
         }
     }
     
