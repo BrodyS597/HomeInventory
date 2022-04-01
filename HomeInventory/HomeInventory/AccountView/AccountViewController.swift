@@ -7,16 +7,15 @@
 
 import UIKit
 import FirebaseAuth
+import MessageUI
 
-class AccountViewController: UIViewController {
+class AccountViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var userEmailAddressLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        
-        // Do any additional setup after loading the view.
     }
     
     func updateUI() {
@@ -41,7 +40,26 @@ class AccountViewController: UIViewController {
     }
     
     @IBAction func contactUsButtonTapped(_ sender: Any) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["BWS.HomeInventory@gmail.com"])
+            mail.setSubject("")
+            mail.setMessageBody("", isHTML: true)
+            
+            //add attachment
+            if let filePath = Bundle.main.path(forResource: "", ofType: "") {
+                if let data = NSData(contentsOfFile: filePath) {
+                    mail.addAttachmentData(data as Data,
+                                           mimeType: "" , fileName: "")
+                }
+            }
+            present(mail, animated: true)
+        }
     }
     
-    
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
 }
