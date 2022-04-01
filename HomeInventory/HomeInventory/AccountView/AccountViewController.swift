@@ -27,16 +27,26 @@ class AccountViewController: UIViewController, MFMailComposeViewControllerDelega
     }
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
-        }
-        let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "login")
-        viewController.modalPresentationStyle = .overFullScreen
-        present(viewController, animated: true)
+        let logoutAlert = UIAlertController(title: "Are you sure you wish to logout?", message: "This will return you to the login screen", preferredStyle: UIAlertController.Style.alert)
+        logoutAlert.addAction(UIAlertAction(title: "Confirm", style: .destructive , handler: { (action: UIAlertAction!) in
+            //confirm logic
+            let firebaseAuth = Auth.auth()
+            do {
+                try firebaseAuth.signOut()
+            } catch let signOutError as NSError {
+                print("Error signing out: %@", signOutError)
+            }
+            let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "login")
+            viewController.modalPresentationStyle = .overFullScreen
+            self.present(viewController, animated: true)
+        }))
+        
+        logoutAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            //cancel logic
+            return }))
+        
+        present(logoutAlert, animated: true, completion: nil)
     }
     
     @IBAction func contactUsButtonTapped(_ sender: Any) {
