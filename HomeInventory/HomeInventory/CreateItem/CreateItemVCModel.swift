@@ -12,16 +12,22 @@ class CreateItemVCModel {
     
     // MARK: -Properties
     var item: Item?
+    var collection: Collection?
+    private let viewModel: ItemVCModel
+    //private let collectionViewModel: HomeVCModel
     //private weak var delegate: ItemVCDelegate?
     
-    init(item: Item) {
+    init(item: Item?, viewModel: ItemVCModel) {
+        self.viewModel = viewModel
+        self.collection = viewModel.collection
         self.item = item
+        //self.collectionViewModel = collectionViewModel
    }
     
-    func saveItem(itemName: String, itemPhotoURL: URL?, model: String, serialNumber: String, purchasePrice: Double, valuePrice: Double, purchaseDate: String, itemCategory: String, notes: String) {
+    func saveItem(toCollection: Collection, itemName: String, itemPhotoURL: UIImage?, model: String, serialNumber: String, purchasePrice: Double, valuePrice: Double, purchaseDate: String, itemCategory: String, notes: String) {
         if let item = item {
             item.itemName = itemName
-            item.itemPhotoURL = itemPhotoURL
+            //item.itemPhotoURL = itemPhotoURL?
             item.model = model
             item.serialNumber = serialNumber
             item.purchasePrice = purchasePrice
@@ -30,16 +36,41 @@ class CreateItemVCModel {
             item.itemCategory = itemCategory
             item.notes = notes
         } else {
-            item = Item(itemName: itemName, itemPhotoURL: itemPhotoURL, model: model, serialNumber: serialNumber, purchasePrice: purchasePrice, valuePrice: valuePrice, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
+            let item = Item(itemName: itemName, model: model, serialNumber: serialNumber, purchasePrice: purchasePrice, valuePrice: valuePrice, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
+            collection?.items.append(item)
+            FirebaseController().saveItemToCollection(item: item, collection: collection!)
+            
+            guard let imageData = itemPhotoURL?.pngData() else { return }
+            FireBaseStorageController().saveImageDataToItem(imageData, toItem: item)
+
+            
+//            guard let imagedata = image?.pngData() else { return }
+//            FirebaseStorageController().saveImageDataToItem(imagedata, toItem: item!)
         }
-        //save to firebase using save func in FBC file ie. FirebaseController().saveItem etc 
+        //firebaseController().saveItem(self.item!) //SAVES ITEM OUT OF COLLECTION BODY IN FSDB
+        
+    }
+    
+    func deleteItem() {
+        guard let item = item,
+        let collection = collection else { return }
+        FirebaseController().deleteItemFromCollection(item, collection: collection)
     }
     
     func saveImage() {
         //save image when first set
     }
     
-    func fetchImage() {
-        //from firebase when item is loaded
+    func fetchImage(completion: @escaping (UIImage?) -> Void) {
+        guard let item = item else { return }
+        FireBaseStorageController().loadImageFromItem(fromItem: item) { result in
+            switch result {
+            case .success(let image):
+                completion(image)
+            case .failure(let error):
+                print(error.description)
+                completion(nil)
+            }
+        }
     }
 }

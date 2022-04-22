@@ -7,15 +7,31 @@
 
 import Foundation
 
-
+protocol HomeVCModelDelegate: HomeViewController {
+    func updateViews()
+}
 
 class HomeVCModel {
     
     // MARK: -Properties
-    var collection = [Collection]()
-   
+    var collections = [Collection]()
+    var userID: String?
+    private weak var delegate: HomeVCModelDelegate?
     
-    private func fetchGroups(){
-        //from firebase
+    init(delegate: HomeVCModelDelegate) {
+        self.delegate = delegate
+        self.fetchCollections()
+    }
+    
+    private func fetchCollections(){
+        FirebaseController().getCollections { result in
+            switch result {
+            case .success(let collections):
+                self.collections = collections
+                self.delegate?.updateViews()
+            case .failure(let error):
+                print(error.description)
+            }
+        }
     }
 }

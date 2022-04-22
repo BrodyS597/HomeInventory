@@ -6,12 +6,18 @@
 //
 
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        
+        if let user = Auth.auth().currentUser {
+            print("Signed in as \(user.uid), email: \(user.email)")
+        }
         // Override point for customization after application launch.
         return true
     }

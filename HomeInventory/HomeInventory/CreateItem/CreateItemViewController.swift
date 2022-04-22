@@ -7,8 +7,8 @@
 
 import UIKit
 
-class CreateItemViewController: UIViewController {
-
+class CreateItemViewController: UIViewController, UITextFieldDelegate {
+    
     // MARK: -IBOutlets
     @IBOutlet weak var itemNameTextField: UITextField!
     @IBOutlet weak var itemImageView: UIImageView!
@@ -21,7 +21,10 @@ class CreateItemViewController: UIViewController {
     @IBOutlet weak var notesTextField: UITextView!
     
     // MARK: -Properties
-    var viewModel: CreateItemVCModel!
+    var viewModel: CreateItemVCModel?
+    var itemViewModel: ItemVCModel!
+    var collection: Collection?
+    //var item: Item?
     
     override func viewDidLoad() {
         itemImageView.contentMode = .scaleAspectFit
@@ -30,16 +33,31 @@ class CreateItemViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(itemImageViewTapped))
         itemImageView.addGestureRecognizer(tapGesture)
         super.viewDidLoad()
-        updateUI()
+        fillItemDetails()
     }
     
     // MARK: -IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
-        //save item func 
-        //make sure name field not empty
+        guard let itemName = itemNameTextField.text,
+              !itemName.isEmpty,
+              let itemPhotoURL = itemImageView.image,
+              let model = modelTextField.text,
+              let serialNumber = serialTextField.text,
+              let purchasePrice = purchasePriceTextField.text,
+              let valuePrice = valuePriceTextField.text,
+              let purchaseDate = purchasePriceTextField.text,
+              let itemCategory = categoryTextField.text,
+              let notes = notesTextField.text,
+              let collection = viewModel?.collection
+        else { return }
+        viewModel?.saveItem(toCollection: collection, itemName: itemName, itemPhotoURL: itemPhotoURL, model: model, serialNumber: serialNumber, purchasePrice: Double(purchasePrice) ?? 0.00, valuePrice: Double(valuePrice) ?? 0.00, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
+        self.navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func discardButtonTapped(_ sender: Any) {
-        //set all fields to empty and delete item/group
+        viewModel?.deleteItem()
+        self.navigationController?.popViewController(animated: true)
+        //AC for confirmaiton if ok, delete item/group
     }
     
     @objc func itemImageViewTapped() {
@@ -48,14 +66,12 @@ class CreateItemViewController: UIViewController {
         picker.delegate = self
         picker.sourceType = .photoLibrary
         present(picker, animated: true)
-        //picker
     }
     
     // MARK: -helper Func
-    private func updateUI() {
-        if let item = viewModel.item {
+    private func fillItemDetails() {
+        if let item = viewModel?.item {
             self.itemNameTextField.text = item.itemName
-            //self.itemImageView.image = item.itemPhotoURL
             self.modelTextField.text = item.model
             self.serialTextField.text = item.serialNumber
             self.purchasePriceTextField.text = String(item.purchasePrice)
@@ -63,18 +79,30 @@ class CreateItemViewController: UIViewController {
             self.purchaseDateTextField.text = String(item.purchaseDate)
             self.categoryTextField.text = item.itemCategory
             self.notesTextField.text = item.notes
+            
+            viewModel?.fetchImage { image in
+                if let image = image {
+                    self.itemImageView.image = image
+                }
+            }
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
 
 extension CreateItemViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        //dismiss, set image
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
+        self.itemImageView.image = image
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
 }

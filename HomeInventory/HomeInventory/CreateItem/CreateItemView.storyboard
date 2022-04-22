@@ -11,7 +11,7 @@
         <!--Create Item View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="CreateItemViewController" id="Y6W-OH-hqX" customClass="CreateItemViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateItemView" id="Y6W-OH-hqX" customClass="CreateItemViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="itemNameTextField:" destination="KKB-aV-IJq" eventType="editingDidEnd" id="WBf-Dh-Sfb"/>
-                                    <action selector="itemNameTextField:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="bbd-wM-FMk"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="u2q-rk-h82"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7si-vQ-PKN">
@@ -65,6 +65,9 @@
                                 <rect key="frame" x="77" y="403.5" width="327" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="88b-26-b3V"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bd-0X-4Es">
                                 <rect key="frame" x="10" y="447.5" width="114" height="20.5"/>
@@ -76,6 +79,9 @@
                                 <rect key="frame" x="134" y="447.5" width="270" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="v7y-bH-FGz"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkV-HW-DTx">
                                 <rect key="frame" x="10" y="478" width="85" height="20.5"/>
@@ -87,6 +93,9 @@
                                 <rect key="frame" x="105" y="491.5" width="299" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="328-oR-Jao"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9y-Fj-EdA">
                                 <rect key="frame" x="10" y="535.5" width="111.5" height="20.5"/>
@@ -98,6 +107,9 @@
                                 <rect key="frame" x="131.5" y="535.5" width="272.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="Frl-0V-3u3"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIM-aF-KYj">
                                 <rect key="frame" x="10" y="586" width="70.5" height="20.5"/>
@@ -115,6 +127,9 @@
                                 <rect key="frame" x="67.5" y="359.5" width="336.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="SuM-dU-dxj"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter any notes... (Battery type, who you loaned it to. etc)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dsN-dA-MI7">
                                 <rect key="frame" x="10" y="654" width="394" height="127"/>
@@ -122,6 +137,9 @@
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="goO-3V-MkD"/>
+                                </connections>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="b4X-LQ-0AE">
                                 <rect key="frame" x="10" y="791" width="394" height="31"/>
@@ -133,7 +151,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Discard"/>
                                         <connections>
-                                            <action selector="discardButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VkP-9I-Vrl"/>
+                                            <action selector="discardButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tmV-Jw-EWZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgx-XG-K2V">
@@ -143,7 +161,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Save Item"/>
                                         <connections>
-                                            <action selector="saveButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vBR-sP-fLD"/>
+                                            <action selector="saveButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ilT-Sl-TMP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -152,6 +170,9 @@
                                 <rect key="frame" x="90.5" y="579.5" width="313.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="HJU-K6-xuf"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -216,15 +237,15 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="categoryTextField" destination="ThI-ZI-fwz" id="gur-Z7-H9N"/>
-                        <outlet property="itemImageView" destination="eta-G9-qUL" id="skY-hG-HBc"/>
-                        <outlet property="itemNameTextField" destination="xAU-8s-vgb" id="pfb-RX-z5B"/>
-                        <outlet property="modelTextField" destination="oMe-1q-wlg" id="HBm-Yh-WkA"/>
-                        <outlet property="notesTextField" destination="dsN-dA-MI7" id="Lle-NB-7vV"/>
-                        <outlet property="purchaseDateTextField" destination="AcI-QD-7jZ" id="q0S-eI-dgc"/>
-                        <outlet property="purchasePriceTextField" destination="udm-WM-gtD" id="SfE-u7-dpf"/>
-                        <outlet property="serialTextField" destination="OYT-Cb-2qK" id="dK4-93-Ha8"/>
-                        <outlet property="valuePriceTextField" destination="S9o-rh-oZF" id="75C-SF-eqg"/>
+                        <outlet property="categoryTextField" destination="ThI-ZI-fwz" id="kZi-iM-GSA"/>
+                        <outlet property="itemImageView" destination="eta-G9-qUL" id="nUZ-pj-iZi"/>
+                        <outlet property="itemNameTextField" destination="xAU-8s-vgb" id="789-Xv-3rN"/>
+                        <outlet property="modelTextField" destination="oMe-1q-wlg" id="0UG-Ed-NtZ"/>
+                        <outlet property="notesTextField" destination="dsN-dA-MI7" id="vfG-H3-9h5"/>
+                        <outlet property="purchaseDateTextField" destination="AcI-QD-7jZ" id="JfS-hK-vi3"/>
+                        <outlet property="purchasePriceTextField" destination="udm-WM-gtD" id="aYI-0n-BYT"/>
+                        <outlet property="serialTextField" destination="OYT-Cb-2qK" id="cuh-U8-UEa"/>
+                        <outlet property="valuePriceTextField" destination="S9o-rh-oZF" id="sRb-AF-mJE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -18,8 +18,8 @@ class ItemsViewCellCollectionViewCell: UICollectionViewCell {
         
     }
     
-    public func configure(with name: String) { // image: UIImage
-        //itemImageView.image = image
+    public func configure(with name: String, image: UIImage?) {
+        itemImageView.image = image
         cellLabel.text = name
     }
     
