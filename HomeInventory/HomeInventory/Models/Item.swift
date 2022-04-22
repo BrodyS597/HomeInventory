@@ -42,7 +42,7 @@ class Item {
     
     var itemData: [String: Any] {
         [Key.itemName : self.itemName,
-         Key.itemPhotoURL : self.itemPhotoURL?.absoluteString ?? nil,
+         Key.itemPhotoURL : self.itemPhotoURL?.absoluteString as Any,
          Key.model : self.model,
          Key.serialNumber : self.serialNumber,
          Key.purchasePrice : self.purchasePrice,
