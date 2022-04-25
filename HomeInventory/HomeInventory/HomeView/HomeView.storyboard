@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5KB-SS-aDl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5KB-SS-aDl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YN4-2I-Vea">
-                                <rect key="frame" x="0.0" y="139.5" width="414" height="653.5"/>
+                                <rect key="frame" x="0.0" y="139.5" width="414" height="673.5"/>
                                 <color key="backgroundColor" red="0.48985636230000001" green="0.88621413709999997" blue="0.81903934479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aiF-Wn-7He">
                                     <size key="itemSize" width="128" height="128"/>
@@ -118,7 +118,7 @@
                         <color key="tintColor" red="0.16783997419999999" green="0.17210808399999999" blue="0.15751066799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YN4-2I-Vea" secondAttribute="trailing" id="3sF-zx-GY8"/>
-                            <constraint firstItem="YN4-2I-Vea" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="-20" id="HIa-Bn-NFg"/>
+                            <constraint firstItem="YN4-2I-Vea" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="HIa-Bn-NFg"/>
                             <constraint firstItem="i4w-vV-zWl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="RlO-Yv-VYu"/>
                             <constraint firstItem="i4w-vV-zWl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="Wwe-g4-nOm"/>
                             <constraint firstItem="YN4-2I-Vea" firstAttribute="top" secondItem="i4w-vV-zWl" secondAttribute="bottom" id="cQn-Ze-aRN"/>
