@@ -21,12 +21,12 @@ class ReportViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = ReportViewModel()
-        updateUI()
+        viewModel = ReportViewModel(delegate: self)
+        
     }
     
     private func updateUI() {
-        self.totalValueLabel.text = "\(viewModel.calculateNumberOfItems()) items totaling $\(viewModel.calculateTotalValue())"
+       self.totalValueLabel.text = "\(viewModel.calculateNumberOfItems()) items totaling $\(viewModel.calculateTotalValue())"
         
         guard let unwrappedItemHigh = viewModel.calculateItemHigh() else { return }
         self.itemHighLabel.text = "\(unwrappedItemHigh.itemName),   $\(unwrappedItemHigh.valuePrice)"
@@ -39,5 +39,11 @@ class ReportViewController: UIViewController {
         
         guard let unwrappedLowestCollection = viewModel.calculateRoomLow() else { return }
         self.roomLowLabel.text = "\(unwrappedLowestCollection.name),   $\(unwrappedLowestCollection.value)"
+    }
+}
+
+extension ReportViewController: ReportViewModelDelegate {
+    func reportHasData() {
+        updateUI()
     }
 }
