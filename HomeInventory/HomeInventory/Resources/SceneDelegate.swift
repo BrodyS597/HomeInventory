@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AuthenticationServices
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,7 +17,54 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        if UserDefaults.standard.string(forKey: "uid") != nil {
+        guard let windowScene = scene as? UIWindowScene else { return }
+        let window = UIWindow(windowScene: windowScene)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "tabCon")
+        window.rootViewController = viewController
+        self.window = window
+        window.makeKeyAndVisible()
+        }
+        
+        if let userID = UserDefaults.standard.string(forKey: "userID") {
+            ASAuthorizationAppleIDProvider().getCredentialState(forUserID: userID, completion: {
+                credentialState, error in
+
+                switch(credentialState){
+                case .authorized:
+                    print("user remained logged in, proceeding to home view")
+                    guard let windowScene = scene as? UIWindowScene else { return }
+                    let window = UIWindow(windowScene: windowScene)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let viewController = storyboard.instantiateViewController(withIdentifier: "tabCon")
+                    window.rootViewController = viewController
+                    self.window = window
+                    window.makeKeyAndVisible()
+                    
+                case .revoked:
+                    print("user logged in before but revoked")
+                    let revokedAlert = UIAlertController(title: "Your Apple ID was revoked from Elden Bling", message: "Please return to the login screen and sign in again.", preferredStyle: UIAlertController.Style.alert)
+                    revokedAlert.addAction(UIAlertAction(title: "Okay", style: .default , handler: { (action: UIAlertAction!) in
+                    
+                    guard let windowScene = scene as? UIWindowScene else { return }
+                    let window = UIWindow(windowScene: windowScene)
+                    let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
+                    let viewController = storyboard.instantiateViewController(withIdentifier: "login")
+                    let navigationController = UINavigationController(rootViewController: viewController)
+                    window.rootViewController = navigationController
+                    self.window = window
+                    window.makeKeyAndVisible()
+                }))
+                    
+                case .notFound:
+                    print("user hasn't logged in before")
+                    
+                default:
+                    print("unknown state")
+                }
+            })
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

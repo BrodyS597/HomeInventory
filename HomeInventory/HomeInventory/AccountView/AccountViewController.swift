@@ -30,12 +30,8 @@ class AccountViewController: UIViewController, MFMailComposeViewControllerDelega
         let logoutAlert = UIAlertController(title: "Are you sure you wish to logout?", message: "This will return you to the login screen", preferredStyle: UIAlertController.Style.alert)
         logoutAlert.addAction(UIAlertAction(title: "Confirm", style: .destructive , handler: { (action: UIAlertAction!) in
             //confirm logic
-            let firebaseAuth = Auth.auth()
-            do {
-                try firebaseAuth.signOut()
-            } catch let signOutError as NSError {
-                print("Error signing out: %@", signOutError)
-            }
+            self.logout()
+            //set to LoginView
             let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "login")
             viewController.modalPresentationStyle = .overFullScreen
@@ -71,5 +67,16 @@ class AccountViewController: UIViewController, MFMailComposeViewControllerDelega
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
+    }
+    
+    func logout() {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+        UserDefaults.standard.removeObject(forKey: "uid")
+        UserDefaults.standard.removeObject(forKey: "email")
     }
 }
