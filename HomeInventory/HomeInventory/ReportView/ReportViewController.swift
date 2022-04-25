@@ -21,23 +21,33 @@ class ReportViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = ReportViewModel()
-        updateUI()
+        viewModel = ReportViewModel(delegate: self)
+        
     }
     
     private func updateUI() {
-        self.totalValueLabel.text = "\(viewModel.calculateNumberOfItems()) items totaling $\(viewModel.calculateTotalValue())"
+       self.totalValueLabel.text = "\(viewModel.calculateNumberOfItems()) items totaling $\(viewModel.calculateTotalValue())"
         
-        guard let unwrappedItemHigh = viewModel.calculateItemHigh() else { return }
-        self.itemHighLabel.text = "\(unwrappedItemHigh.itemName),   $\(unwrappedItemHigh.valuePrice)"
+        if let unwrappedItemHigh = viewModel.calculateItemHigh() {
+            self.itemHighLabel.text = "\(unwrappedItemHigh.itemName),   $\(unwrappedItemHigh.valuePrice)"
+        }
         
-        guard let unwrappedItemLow = viewModel.calculateItemLow() else { return }
-        self.itemLowLabel.text = "\(unwrappedItemLow.itemName),   $\(unwrappedItemLow.valuePrice)"
+        if let unwrappedItemLow = viewModel.calculateItemLow() {
+            self.itemLowLabel.text = "\(unwrappedItemLow.itemName),   $\(unwrappedItemLow.valuePrice)"
+        }
         
-        guard let unwrappedHighestCollection = viewModel.calculateRoomHigh() else { return }
-        self.roomHighLabel.text = "\(unwrappedHighestCollection.name),   $\(unwrappedHighestCollection.value)"
+        if let unwrappedHighestCollection = viewModel.calculateRoomHigh() {
+            self.roomHighLabel.text = "\(unwrappedHighestCollection.name),   $\(unwrappedHighestCollection.value)"
+        }
         
-        guard let unwrappedLowestCollection = viewModel.calculateRoomLow() else { return }
-        self.roomLowLabel.text = "\(unwrappedLowestCollection.name),   $\(unwrappedLowestCollection.value)"
+        if let unwrappedLowestCollection = viewModel.calculateRoomLow() {
+            self.roomLowLabel.text = "\(unwrappedLowestCollection.name),   $\(unwrappedLowestCollection.value)"
+        }
+    }
+}
+
+extension ReportViewController: ReportViewModelDelegate {
+    func reportHasData() {
+        updateUI()
     }
 }
