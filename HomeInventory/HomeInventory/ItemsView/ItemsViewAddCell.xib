@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,8 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcX-7t-17s">
-                        <rect key="frame" x="5" y="5" width="190" height="190"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcX-7t-17s">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.99980872870000004" green="0.9797020555" blue="0.98312717679999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -27,10 +27,10 @@
             </view>
             <viewLayoutGuide key="safeArea" id="qGh-fC-Foo"/>
             <constraints>
-                <constraint firstItem="HcX-7t-17s" firstAttribute="top" secondItem="9aT-oA-Tr7" secondAttribute="top" constant="5" id="Csu-1I-YsO"/>
-                <constraint firstAttribute="bottom" secondItem="HcX-7t-17s" secondAttribute="bottom" constant="5" id="EjU-FW-zns"/>
-                <constraint firstAttribute="trailing" secondItem="HcX-7t-17s" secondAttribute="trailing" constant="5" id="c9F-pD-d5N"/>
-                <constraint firstItem="HcX-7t-17s" firstAttribute="leading" secondItem="9aT-oA-Tr7" secondAttribute="leading" constant="5" id="uDh-hi-dSi"/>
+                <constraint firstItem="HcX-7t-17s" firstAttribute="top" secondItem="9aT-oA-Tr7" secondAttribute="top" id="Csu-1I-YsO"/>
+                <constraint firstAttribute="bottom" secondItem="HcX-7t-17s" secondAttribute="bottom" id="EjU-FW-zns"/>
+                <constraint firstAttribute="trailing" secondItem="HcX-7t-17s" secondAttribute="trailing" id="c9F-pD-d5N"/>
+                <constraint firstItem="HcX-7t-17s" firstAttribute="leading" secondItem="9aT-oA-Tr7" secondAttribute="leading" id="uDh-hi-dSi"/>
             </constraints>
             <size key="customSize" width="200" height="200"/>
             <point key="canvasLocation" x="246.37681159420291" y="203.57142857142856"/>
