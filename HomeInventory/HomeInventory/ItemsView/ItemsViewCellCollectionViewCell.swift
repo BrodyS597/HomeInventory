@@ -18,6 +18,11 @@ class ItemsViewCellCollectionViewCell: UICollectionViewCell {
         
     }
     
+    override func prepareForReuse() {
+        itemImageView.image = nil
+        cellLabel.text = nil
+    }
+    
     public func configure(with name: String, image: UIImage?) {
         itemImageView.image = image
         cellLabel.text = name
