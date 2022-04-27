@@ -27,7 +27,6 @@ class CreateItemVCModel {
     func saveItem(toCollection: Collection, itemName: String, itemPhotoURL: UIImage?, model: String, serialNumber: String, purchasePrice: Double, valuePrice: Double, purchaseDate: String, itemCategory: String, notes: String) {
         if let item = item {
             item.itemName = itemName
-            //item.itemPhotoURL = itemPhotoURL?
             item.model = model
             item.serialNumber = serialNumber
             item.purchasePrice = purchasePrice
@@ -35,23 +34,23 @@ class CreateItemVCModel {
             item.purchaseDate = purchaseDate
             item.itemCategory = itemCategory
             item.notes = notes
+            
+            collection?.items.append(item)
+            FirebaseController().saveItemToCollection(item: item, collection: collection!)
+            if let itemPhotoURL = itemPhotoURL {
+                Network.shared.cache.setObject(itemPhotoURL, forKey: item.uuid as NSString)
+                FireBaseStorageController().saveImageDataToItem(image: itemPhotoURL, toItem: item)
+            }
         } else {
             let item = Item(itemName: itemName, model: model, serialNumber: serialNumber, purchasePrice: purchasePrice, valuePrice: valuePrice, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
             collection?.items.append(item)
             FirebaseController().saveItemToCollection(item: item, collection: collection!)
             
-            //guard let imageData = itemPhotoURL?.pngData() else { return }
             if let itemPhotoURL = itemPhotoURL {
                 Network.shared.cache.setObject(itemPhotoURL, forKey: item.uuid as NSString)
                 FireBaseStorageController().saveImageDataToItem(image: itemPhotoURL, toItem: item)
             }
-
-            
-//            guard let imagedata = image?.pngData() else { return }
-//            FirebaseStorageController().saveImageDataToItem(imagedata, toItem: item!)
         }
-        //firebaseController().saveItem(self.item!) //SAVES ITEM OUT OF COLLECTION BODY IN FSDB
-        
     }
     
     func deleteItem() {
