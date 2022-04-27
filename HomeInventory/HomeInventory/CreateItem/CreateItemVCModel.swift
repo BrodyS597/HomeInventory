@@ -41,6 +41,9 @@ class CreateItemVCModel {
             FirebaseController().saveItemToCollection(item: item, collection: collection!)
             
             guard let imageData = itemPhotoURL?.pngData() else { return }
+            if let itemPhotoURL = itemPhotoURL {
+                Network.shared.cache.setObject(itemPhotoURL, forKey: item.uuid as NSString)
+            }
             FireBaseStorageController().saveImageDataToItem(imageData, toItem: item)
 
             
@@ -55,10 +58,6 @@ class CreateItemVCModel {
         guard let item = item,
         let collection = collection else { return }
         FirebaseController().deleteItemFromCollection(item, collection: collection)
-    }
-    
-    func saveImage() {
-        //save image when first set
     }
     
     func fetchImage(completion: @escaping (UIImage?) -> Void) {
