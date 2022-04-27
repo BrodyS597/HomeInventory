@@ -50,13 +50,27 @@ class CreateItemViewController: UIViewController, UITextFieldDelegate {
               let notes = notesTextField.text,
               let collection = viewModel?.collection
         else { return }
-        viewModel?.saveItem(toCollection: collection, itemName: itemName, itemPhotoURL: itemPhotoURL, model: model, serialNumber: serialNumber, purchasePrice: Double(purchasePrice) ?? 0.00, valuePrice: Double(valuePrice) ?? 0.00, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
-        self.navigationController?.popViewController(animated: true)
+        if itemImageView.image == UIImage(systemName: "camera.shutter.button") {
+            viewModel?.saveItem(toCollection: collection, itemName: itemName, itemPhotoURL: nil, model: model, serialNumber: serialNumber, purchasePrice: Double(purchasePrice) ?? 0.00, valuePrice: Double(valuePrice) ?? 0.00, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            viewModel?.saveItem(toCollection: collection, itemName: itemName, itemPhotoURL: itemPhotoURL, model: model, serialNumber: serialNumber, purchasePrice: Double(purchasePrice) ?? 0.00, valuePrice: Double(valuePrice) ?? 0.00, purchaseDate: purchaseDate, itemCategory: itemCategory, notes: notes)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func discardButtonTapped(_ sender: Any) {
-        viewModel?.deleteItem()
-        self.navigationController?.popViewController(animated: true)
+        
+        let alertController = UIAlertController(title: "Are you sure?", message: "The deletion cannot be undone", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "DELETE", style: .destructive) { _ in
+            self.viewModel?.deleteItem()
+            self.navigationController?.popViewController(animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(cancelAction)
+        alertController.addAction(confirmAction)
+        self.present(alertController, animated: true)
+        
         //AC for confirmaiton if ok, delete item/group
     }
     

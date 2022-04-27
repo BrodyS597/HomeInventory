@@ -36,10 +36,22 @@ class CreateCollectionViewController: UIViewController, UITextFieldDelegate {
         else { return }
         let collection = Collection(name: collectionName, items: [])
         
+        if collectionImageView.image == UIImage(systemName: "camera.shutter.button") {
+            let alertController = UIAlertController(title: "No photo selected", message: "You have not selected an image for this collection. An image cannot be set after creation. Would you like to continue?", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "Yes", style: .default) { _ in
+                self.viewModel.collection = collection
+                self.viewModel.saveCollection(image: nil)
+                self.navigationController?.popViewController(animated: true)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            alertController.addAction(cancelAction)
+            alertController.addAction(confirmAction)
+            self.present(alertController, animated: true)
+        } else {
         viewModel.collection = collection
-        viewModel.saveCollection(image: collectionImageView.image)
-        
+        viewModel.saveCollection(image: self.collectionImageView.image)
         navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func discardButtonTapped(_ sender: Any) {
