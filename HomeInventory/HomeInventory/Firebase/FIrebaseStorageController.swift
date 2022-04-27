@@ -38,10 +38,17 @@ struct FireBaseStorageController {
     
     func loadImageFromCollection(fromCollection collection: Collection, completion: @escaping (Result<UIImage, FirebaseError>) -> Void) {
         guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        
+        if let cachedImage = Network.shared.cache.object(forKey: collection.uuid as NSString) {
+            print(collection.uuid, " <- Cached image path")
+            completion(.success(cachedImage))
+            return
+        }
+        
         storage.child("users")
             .child(uid)
             .child(collection.imagePath)
-            .getData(maxSize: 4000 * 4000) { data, error in
+            .getData(maxSize: 10 * 1024 * 1024) { data, error in
             if let error = error {
                 completion(.failure(.failure(error)))
                 return
@@ -49,6 +56,7 @@ struct FireBaseStorageController {
             guard let data = data,
                   let image = UIImage(data: data)
             else { completion(.failure(.noData)); return }
+                Network.shared.cache.setObject(image, forKey: collection.uuid as NSString)
             completion(.success(image))
         }
     }
@@ -83,10 +91,17 @@ struct FireBaseStorageController {
     
     func loadImageFromItem(fromItem item: Item, completion: @escaping (Result<UIImage, FirebaseError>) -> Void) {
         guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        
+        if let cachedImage = Network.shared.cache.object(forKey: item.uuid as NSString) {
+            print(item.uuid, " <- Cached image path")
+            completion(.success(cachedImage))
+            return
+        }
+        
         storage.child("users")
             .child(uid)
             .child(item.imagePath)
-            .getData(maxSize: 4000 * 4000) { data, error in
+            .getData(maxSize: 10 * 1024 * 1024) { data, error in
             if let error = error {
                 completion(.failure(.failure(error)))
                 return
@@ -94,6 +109,7 @@ struct FireBaseStorageController {
             guard let data = data,
                   let image = UIImage(data: data)
             else { completion(.failure(.noData)); return }
+                Network.shared.cache.setObject(image, forKey: item.uuid as NSString)
             completion(.success(image))
         }
     }

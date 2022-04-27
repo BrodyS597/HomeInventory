@@ -21,6 +21,7 @@ class CreateCollectionVCModel {
     
     func saveCollection(image: UIImage?) {
         guard let collection = collection else { return }
+        Network.shared.cache.setObject(image ?? UIImage.remove, forKey: collection.uuid as NSString)
         viewModel.collections.append(collection)
         FirebaseController().saveCollection(collection)
         

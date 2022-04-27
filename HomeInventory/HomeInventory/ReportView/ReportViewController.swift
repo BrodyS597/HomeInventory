@@ -19,10 +19,9 @@ class ReportViewController: UIViewController {
     // MARK: -Properties
     var viewModel: ReportViewModel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel = ReportViewModel(delegate: self)
-        
     }
     
     private func updateUI() {
