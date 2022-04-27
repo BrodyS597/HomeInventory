@@ -40,11 +40,11 @@ class CreateItemVCModel {
             collection?.items.append(item)
             FirebaseController().saveItemToCollection(item: item, collection: collection!)
             
-            guard let imageData = itemPhotoURL?.pngData() else { return }
+            //guard let imageData = itemPhotoURL?.pngData() else { return }
             if let itemPhotoURL = itemPhotoURL {
                 Network.shared.cache.setObject(itemPhotoURL, forKey: item.uuid as NSString)
+                FireBaseStorageController().saveImageDataToItem(image: itemPhotoURL, toItem: item)
             }
-            FireBaseStorageController().saveImageDataToItem(imageData, toItem: item)
 
             
 //            guard let imagedata = image?.pngData() else { return }

@@ -25,8 +25,10 @@ class CreateCollectionVCModel {
         viewModel.collections.append(collection)
         FirebaseController().saveCollection(collection)
         
-        guard let imageData = image?.pngData() else { return }
-        FireBaseStorageController().saveImageDataToCollection(imageData, toCollection: collection)
+        //guard let imageData = image?.pngData() else { return }
+        if let image = image {
+        FireBaseStorageController().saveImageDataToCollection(image: image, toCollection: collection)
+        }
     }
     
     func fetchImage(completion: @escaping (UIImage?) -> Void) {
