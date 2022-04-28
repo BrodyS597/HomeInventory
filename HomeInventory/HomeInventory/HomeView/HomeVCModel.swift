@@ -23,7 +23,7 @@ class HomeVCModel {
         self.fetchCollections()
     }
     
-    private func fetchCollections(){
+    private func fetchCollections() {
         FirebaseController().getCollections { result in
             switch result {
             case .success(let collections):
