@@ -10,18 +10,18 @@ import UIKit
 class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.items.count
+        return viewModel.tupleArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsViewCell", for: indexPath) as? ItemsViewCellCollectionViewCell {
-            FireBaseStorageController().loadImageFromItem(fromItem: viewModel.items[indexPath.row]) { result in
+            FireBaseStorageController().loadImageFromItem(fromItem: viewModel.tupleArray[indexPath.row].0) { result in
                 switch result {
                 case .success(let image):
-                    customCell.configure(with: self.viewModel.items[indexPath.row].itemName, image: image)
+                    customCell.configure(with: self.viewModel.tupleArray[indexPath.row].0.itemName, image: image)
                 case .failure(let error):
                     print(error)
-                    customCell.configure(with: self.viewModel.items[indexPath.row].itemName, image: nil)
+                    customCell.configure(with: self.viewModel.tupleArray[indexPath.row].0.itemName, image: nil)
                 }
             }
             customCell.layer.cornerRadius = customCell.frame.height / 10
@@ -49,11 +49,17 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionV
         self.searchCollectionView.register(UINib(nibName: "ItemsViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemsViewCell")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        searchCollectionView.reloadData()
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     // MARK: -IBActions
     @IBOutlet weak var searchButtonTapped: UISearchBar!
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.items = viewModel.tempItemArray
+        viewModel.tupleArray = viewModel.tempTupleArray
         itemSearchBar.resignFirstResponder()
         performSearch()
         searchCollectionView.reloadData()
@@ -62,41 +68,42 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionV
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         itemSearchBar.resignFirstResponder()
         itemSearchBar.text = nil
-        viewModel.items.removeAll()
-        viewModel.items = viewModel.tempItemArray
+        viewModel.tupleArray.removeAll()
+        viewModel.tupleArray = viewModel.tempTupleArray
         searchCollectionView.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            viewModel.items.removeAll()
-            viewModel.items = viewModel.tempItemArray
+            viewModel.tupleArray.removeAll()
+            viewModel.tupleArray = viewModel.tempTupleArray
             searchCollectionView.reloadData()
         }
     }
     
     func performSearch() {
-        let data = viewModel.items
-        var filteredData = viewModel.items
+        let data = viewModel.tupleArray
+        var filteredData = viewModel.tupleArray
         guard let searchText = itemSearchBar.text else { return }
         if !searchText.isEmpty == true {
-            filteredData = data.filter({ $0.itemName.lowercased().contains(searchText.lowercased()) ||
-                $0.model.lowercased().contains(searchText.lowercased()) ||
-                $0.serialNumber.lowercased().contains(searchText.lowercased()) ||
-                $0.purchaseDate.lowercased().contains(searchText.lowercased()) ||
-                $0.itemCategory.lowercased().contains(searchText.lowercased()) ||
-                $0.notes.lowercased().contains(searchText.lowercased())
+            filteredData = data.filter({ $0.0.itemName.lowercased().contains(searchText.lowercased()) ||
+                $0.0.model.lowercased().contains(searchText.lowercased()) ||
+                $0.0.serialNumber.lowercased().contains(searchText.lowercased()) ||
+                $0.0.purchaseDate.lowercased().contains(searchText.lowercased()) ||
+                $0.0.itemCategory.lowercased().contains(searchText.lowercased()) ||
+                $0.0.notes.lowercased().contains(searchText.lowercased())
             })
         }
-        viewModel.items = filteredData
+        viewModel.tupleArray = filteredData
         searchCollectionView.reloadData()
     }
     
     func collectionView(_ searchCollectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "CreateItemView", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateItemView") as? CreateItemViewController else { return }
-        viewController.viewModel = CreateItemVCModel(item: viewModel.items[indexPath.row], collection: viewModel.collection!)
+        viewController.viewModel = CreateItemVCModel(item: viewModel.tupleArray[indexPath.row].0, collection: viewModel.tupleArray[indexPath.row].1)
         self.navigationController?.pushViewController(viewController, animated: true)
+        self.navigationController?.navigationBar.isHidden = false
     }
 }
 
@@ -107,4 +114,3 @@ extension SearchViewController: SearchViewModelDelegate {
         }
     }
 }
-    

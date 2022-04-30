@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lFE-vh-dBT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -9,16 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search-->
+        <!--Search View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SearchView" id="Y6W-OH-hqX" customClass="SearchViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="SearchViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4f-iX-lLc">
-                                <rect key="frame" x="10" y="54" width="394" height="52"/>
+                                <rect key="frame" x="10" y="98" width="394" height="52"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
@@ -35,7 +35,7 @@
                                 <size key="shadowOffset" width="3" height="-2"/>
                             </label>
                             <searchBar opaque="NO" contentMode="redraw" placeholder="Search for an item by any key word" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hF-iE-rTX">
-                                <rect key="frame" x="0.0" y="116" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="160" width="414" height="51"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" red="0.48985636230000001" green="0.88621413709999997" blue="0.81903934479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nob-yF-Spg">
-                                <rect key="frame" x="0.0" y="177" width="414" height="636"/>
+                                <rect key="frame" x="0.0" y="221" width="414" height="592"/>
                                 <color key="backgroundColor" red="0.1631335616" green="0.1676852107" blue="0.15281078219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="miH-TF-7QS">
                                     <size key="itemSize" width="128" height="128"/>
@@ -144,7 +144,7 @@
                             <constraint firstItem="nob-yF-Spg" firstAttribute="top" secondItem="1hF-iE-rTX" secondAttribute="bottom" constant="10" id="uLM-CI-MTB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="text.magnifyingglass" catalog="system" id="yX9-Rm-7bh"/>
+                    <navigationItem key="navigationItem" id="yo5-o7-SYU"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="itemSearchBar" destination="1hF-iE-rTX" id="GC6-Mr-Fep"/>
@@ -154,7 +154,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-461" y="135"/>
+            <point key="canvasLocation" x="447.82608695652175" y="134.59821428571428"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="pFx-Fv-rVm">
+            <objects>
+                <navigationController restorationIdentifier="SearchView" storyboardIdentifier="SearchView" automaticallyAdjustsScrollViewInsets="NO" id="lFE-vh-dBT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="text.magnifyingglass" catalog="system" id="yX9-Rm-7bh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PMg-a6-HP2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="eKq-K8-nRs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2pU-qU-Meu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-462.31884057971018" y="134.59821428571428"/>
         </scene>
     </scenes>
     <resources>
