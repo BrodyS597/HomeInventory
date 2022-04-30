@@ -29,6 +29,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         groupCollectionView.reloadData()
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -57,11 +58,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateCollectionView") as? CreateCollectionViewController else { return }
             viewController.viewModel = CreateCollectionVCModel(viewModel: viewModel)
             self.navigationController?.pushViewController(viewController, animated: true)
+            self.navigationController?.navigationBar.isHidden = false
         } else {
             let storyboard = UIStoryboard(name: "ItemsView", bundle: nil)
             guard let viewController = storyboard.instantiateViewController(withIdentifier: "ItemsViewController") as? ItemsViewController else { return }
             viewController.viewModel = ItemVCModel(collection: viewModel.collections[indexPath.row - 1], delegate: viewController)
             self.navigationController?.pushViewController(viewController, animated: true)
+            self.navigationController?.navigationBar.isHidden = false
         }
     }
 }

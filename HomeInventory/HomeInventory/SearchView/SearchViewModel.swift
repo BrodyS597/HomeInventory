@@ -18,10 +18,8 @@ class SearchViewModel {
     var collectionsArray: [Collection] = []
     var collection: Collection?
     var item: Item?
-    var items = [Item]()
-    var tempItemArray: [Item] = []
-    //create a search results dict where the key is a string (coll.uuid) & its value is an array of items
-    //
+    var tupleArray: [(Item, Collection)] = []
+    var tempTupleArray: [(Item, Collection)] = []
     
     weak var delegate: SearchViewModelDelegate?
     
@@ -47,17 +45,16 @@ class SearchViewModel {
     func fetchItemDataFrom(collections: [Collection]) {
         let dispatchGroup = DispatchGroup()
         let collectionArray = collectionsArray
-        var tempItemArray = tempItemArray
         for collection in collectionArray {
             dispatchGroup.enter()
             FirebaseController().getItemsFromCollection(collection: collection) { result in
                 switch result {
                 case .success(let items):
-                    tempItemArray += items
-                    self.items += items
-                    //set the key(coll.uuid) and value(items array) here, complete the dictionary
                     
-                    
+                    for item in items {
+                        var tuple = (item, collection)
+                        self.tupleArray.append(tuple)
+                    }
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -66,7 +63,6 @@ class SearchViewModel {
         }
         dispatchGroup.notify(queue: .main) {
             self.collections = collectionArray
-            self.tempItemArray = tempItemArray
             self.delegate?.searchHasData()
         }
     }
