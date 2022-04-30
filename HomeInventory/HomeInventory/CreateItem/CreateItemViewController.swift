@@ -23,7 +23,7 @@ class CreateItemViewController: UIViewController, UITextFieldDelegate {
     // MARK: -Properties
     var viewModel: CreateItemVCModel?
     var itemViewModel: ItemVCModel!
-    var collection: Collection?
+    //var collection: Collection?
     //var item: Item?
     
     override func viewDidLoad() {

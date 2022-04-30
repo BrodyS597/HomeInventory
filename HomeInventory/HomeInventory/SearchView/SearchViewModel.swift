@@ -20,6 +20,9 @@ class SearchViewModel {
     var item: Item?
     var items = [Item]()
     var tempItemArray: [Item] = []
+    //create a search results dict where the key is a string (coll.uuid) & its value is an array of items
+    //
+    
     weak var delegate: SearchViewModelDelegate?
     
     init(delegate: SearchViewModelDelegate) {
@@ -52,6 +55,8 @@ class SearchViewModel {
                 case .success(let items):
                     tempItemArray += items
                     self.items += items
+                    //set the key(coll.uuid) and value(items array) here, complete the dictionary
+                    
                     
                 case .failure(let error):
                     print(error.localizedDescription)

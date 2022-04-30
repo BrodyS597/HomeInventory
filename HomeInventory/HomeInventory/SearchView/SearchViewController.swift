@@ -95,7 +95,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionV
     func collectionView(_ searchCollectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "CreateItemView", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateItemView") as? CreateItemViewController else { return }
-        viewController.viewModel = CreateItemVCModel(item: viewModel.items[indexPath.row], viewModel: self.itemViewModel)
+        viewController.viewModel = CreateItemVCModel(item: viewModel.items[indexPath.row], collection: viewModel.collection!)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

@@ -13,13 +13,13 @@ class CreateItemVCModel {
     // MARK: -Properties
     var item: Item?
     var collection: Collection?
-    private let viewModel: ItemVCModel
+    //private let viewModel: ItemVCModel
     //private let collectionViewModel: HomeVCModel
     //private weak var delegate: ItemVCDelegate?
     
-    init(item: Item?, viewModel: ItemVCModel) {
-        self.viewModel = viewModel
-        self.collection = viewModel.collection
+    init(item: Item?, collection: Collection) {
+        //self.viewModel = viewModel
+        self.collection = collection
         self.item = item
         //self.collectionViewModel = collectionViewModel
    }
