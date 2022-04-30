@@ -23,7 +23,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room/Group name" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BP9-CG-3HA">
-                        <rect key="frame" x="5" y="200" width="195" height="20"/>
+                        <rect key="frame" x="10" y="200" width="190" height="20"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.99980872870000004" green="0.9797020555" blue="0.98312717679999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -40,7 +40,7 @@
                 <constraint firstAttribute="trailing" secondItem="WZZ-67-h0o" secondAttribute="trailing" id="3ts-Ho-GwQ"/>
                 <constraint firstAttribute="bottom" secondItem="WZZ-67-h0o" secondAttribute="bottom" constant="20" id="8c6-yU-HU6"/>
                 <constraint firstItem="BP9-CG-3HA" firstAttribute="top" secondItem="WZZ-67-h0o" secondAttribute="bottom" id="GsJ-1p-eGD"/>
-                <constraint firstItem="BP9-CG-3HA" firstAttribute="leading" secondItem="k4e-ac-qYE" secondAttribute="leading" constant="5" id="Ry1-e6-OsB"/>
+                <constraint firstItem="BP9-CG-3HA" firstAttribute="leading" secondItem="k4e-ac-qYE" secondAttribute="leading" constant="10" id="Ry1-e6-OsB"/>
                 <constraint firstAttribute="bottom" secondItem="BP9-CG-3HA" secondAttribute="bottom" id="Xie-Kc-u3P"/>
                 <constraint firstItem="WZZ-67-h0o" firstAttribute="top" secondItem="k4e-ac-qYE" secondAttribute="top" id="l14-zg-jEi"/>
                 <constraint firstAttribute="trailing" secondItem="BP9-CG-3HA" secondAttribute="trailing" id="tm9-DG-c6s"/>
