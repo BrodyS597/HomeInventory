@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lFE-vh-dBT">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="SearchViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4f-iX-lLc">
-                                <rect key="frame" x="10" y="98" width="394" height="52"/>
+                                <rect key="frame" x="10" y="98" width="408" height="52"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
@@ -35,7 +35,7 @@
                                 <size key="shadowOffset" width="3" height="-2"/>
                             </label>
                             <searchBar opaque="NO" contentMode="redraw" placeholder="Search for an item by any key word" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hF-iE-rTX">
-                                <rect key="frame" x="0.0" y="160" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="160" width="428" height="51"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" red="0.48985636230000001" green="0.88621413709999997" blue="0.81903934479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nob-yF-Spg">
-                                <rect key="frame" x="0.0" y="221" width="414" height="592"/>
+                                <rect key="frame" x="0.0" y="221" width="428" height="622"/>
                                 <color key="backgroundColor" red="0.1631335616" green="0.1676852107" blue="0.15281078219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="miH-TF-7QS">
                                     <size key="itemSize" width="128" height="128"/>
@@ -63,7 +63,7 @@
                                         <size key="customSize" width="128" height="128"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PtL-sT-dMq">
-                                        <rect key="frame" x="143" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="150" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wrF-OO-10e">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -71,7 +71,7 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kUJ-eD-Ixp">
-                                        <rect key="frame" x="286" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="300" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IdJ-Gc-F6t">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -87,7 +87,7 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9Sf-zd-ZrO">
-                                        <rect key="frame" x="143" y="138" width="128" height="128"/>
+                                        <rect key="frame" x="150" y="138" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bA5-bN-ekm">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -95,7 +95,7 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xk1-O2-9Rf">
-                                        <rect key="frame" x="286" y="138" width="128" height="128"/>
+                                        <rect key="frame" x="300" y="138" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="K2z-If-QsZ">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -111,7 +111,7 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3r4-7f-IMR">
-                                        <rect key="frame" x="143" y="276" width="128" height="128"/>
+                                        <rect key="frame" x="150" y="276" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="he4-Dn-MQJ">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -119,7 +119,7 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xKk-d7-IEv">
-                                        <rect key="frame" x="286" y="276" width="128" height="128"/>
+                                        <rect key="frame" x="300" y="276" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3zD-y7-nWp">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -163,7 +163,7 @@
                     <tabBarItem key="tabBarItem" title="Search" image="text.magnifyingglass" catalog="system" id="yX9-Rm-7bh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PMg-a6-HP2">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
