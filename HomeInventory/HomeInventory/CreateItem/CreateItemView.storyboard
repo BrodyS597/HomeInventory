@@ -49,7 +49,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xAU-8s-vgb">
                                 <rect key="frame" x="10" y="115.66666666666669" width="408" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <action selector="itemNameTextField:" destination="KKB-aV-IJq" eventType="editingDidEnd" id="WBf-Dh-Sfb"/>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="u2q-rk-h82"/>
@@ -169,7 +169,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tools, cookware... etc" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ThI-ZI-fwz">
                                 <rect key="frame" x="90.333333333333343" y="579.66666666666663" width="327.66666666666663" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="HJU-K6-xuf"/>
                                 </connections>
