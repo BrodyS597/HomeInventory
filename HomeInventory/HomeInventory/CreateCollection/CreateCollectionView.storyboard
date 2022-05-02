@@ -48,25 +48,43 @@
                                     <outlet property="delegate" destination="1l3-WD-mbL" id="Dio-s0-d1k"/>
                                 </connections>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gCw-j7-NMO">
-                                <rect key="frame" x="10" y="791" width="394" height="31"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gCw-j7-NMO">
+                                <rect key="frame" x="10" y="778" width="394" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fj-nm-xtX">
-                                        <rect key="frame" x="0.0" y="0.0" width="197" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="44"/>
                                         <color key="backgroundColor" red="0.16783997419999999" green="0.17210808399999999" blue="0.15751066799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="4SE-Wp-nyg"/>
+                                        </constraints>
                                         <color key="tintColor" red="1" green="0.3555567858" blue="0.37157648679999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Discard"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Discard">
+                                            <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="2">
+                                                <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="discardButtonTapped:" destination="1l3-WD-mbL" eventType="touchUpInside" id="PYA-Qr-ue8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eaz-hf-cyu">
-                                        <rect key="frame" x="197" y="0.0" width="197" height="31"/>
+                                        <rect key="frame" x="202" y="0.0" width="192" height="44"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="oLN-xH-mRY"/>
+                                        </constraints>
                                         <color key="tintColor" red="0.99980872870000004" green="0.9797020555" blue="0.98312717679999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Create Collection"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Create Collection">
+                                            <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="2">
+                                                <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="saveButtonTapped:" destination="1l3-WD-mbL" eventType="touchUpInside" id="bt9-Fb-Ski"/>
                                         </connections>
