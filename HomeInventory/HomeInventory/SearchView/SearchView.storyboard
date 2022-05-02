@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4f-iX-lLc">
-                                <rect key="frame" x="10" y="98" width="408" height="52"/>
+                                <rect key="frame" x="10" y="98" width="408" height="49.666666666666657"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
@@ -32,10 +32,10 @@
                                 </attributedString>
                                 <color key="highlightedColor" systemColor="tintColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <size key="shadowOffset" width="3" height="-2"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <searchBar opaque="NO" contentMode="redraw" placeholder="Search for an item by any key word" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hF-iE-rTX">
-                                <rect key="frame" x="0.0" y="160" width="428" height="51"/>
+                                <rect key="frame" x="0.0" y="157.66666666666666" width="428" height="51"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" red="0.48985636230000001" green="0.88621413709999997" blue="0.81903934479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nob-yF-Spg">
-                                <rect key="frame" x="0.0" y="221" width="428" height="622"/>
+                                <rect key="frame" x="0.0" y="218.66666666666669" width="428" height="624.33333333333326"/>
                                 <color key="backgroundColor" red="0.1631335616" green="0.1676852107" blue="0.15281078219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="miH-TF-7QS">
                                     <size key="itemSize" width="128" height="128"/>
