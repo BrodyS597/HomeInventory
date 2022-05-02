@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Collection {
+class Collection: Equatable {
     
     // MARK: -Keys
     enum Key {
@@ -65,5 +65,9 @@ class Collection {
         guard let imageURLString = dictionary[Key.imageURL] as? String else { return }
         let imageURL = URL(string: imageURLString)
         self.imageURL = imageURL
+    }
+    
+    static func == (lhs: Collection, rhs: Collection) -> Bool {
+        lhs.uuid == rhs.uuid
     }
 }

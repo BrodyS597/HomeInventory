@@ -18,6 +18,7 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WZZ-67-h0o">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="WZZ-67-h0o" secondAttribute="height" multiplier="1:1" id="lAs-Q3-ZVH"/>
                         </constraints>
@@ -35,6 +36,7 @@
             </view>
             <viewLayoutGuide key="safeArea" id="vR7-zD-TjJ"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="WZZ-67-h0o" firstAttribute="leading" secondItem="k4e-ac-qYE" secondAttribute="leading" id="061-Gv-yIk"/>
                 <constraint firstAttribute="trailing" secondItem="WZZ-67-h0o" secondAttribute="trailing" id="3ts-Ho-GwQ"/>

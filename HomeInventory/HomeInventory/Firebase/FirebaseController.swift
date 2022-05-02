@@ -47,8 +47,20 @@ struct FirebaseController {
                 .collection(Collection.Key.items).document(item.uuid).setData(item.itemData)
     }
     
-    func deleteCollection(_ collection: Collection) {
-        
+    func deleteCollection(_ collection: Collection, completion: ((Result<Bool, FirebaseError>) -> Void)?) {
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
+        database.collection("users")
+            .document(uid)
+            .collection(Collection.Key.collectionType)
+            .document(collection.uuid).delete { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    completion?(.failure(.failure(error)))
+                } else {
+                    FireBaseStorageController().deleteImageFromCollection(fromCollection: collection, completion: completion)
+                    // For loop to delete each item 
+                }
+            }
     }
     
     func deleteItemFromCollection(_ item: Item, collection: Collection) {

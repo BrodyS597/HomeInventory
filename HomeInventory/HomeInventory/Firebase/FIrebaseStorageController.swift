@@ -65,12 +65,19 @@ struct FireBaseStorageController {
             }
     }
     
-    func deleteImageFromCollection(fromCollection collection: Collection) {
+    func deleteImageFromCollection(fromCollection collection: Collection, completion: ((Result<Bool, FirebaseError>) -> Void)?) {
         guard let uid = UserDefaults.standard.string(forKey: "uid") else { return }
         storage.child("users")
             .child(uid)
             .child(collection.imagePath)
-            .delete(completion: nil)
+            .delete { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    completion?(.failure(.failure(error)))
+                } else {
+                    completion?(.success(true))
+                }
+            }
     }
     
     func saveImageDataToItem(image: UIImage, toItem item: Item) {

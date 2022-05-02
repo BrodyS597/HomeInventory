@@ -15,6 +15,7 @@ class HomeVCModel {
     
     // MARK: -Properties
     var collections = [Collection]()
+    var collection: Collection?
     var userID: String?
     private weak var delegate: HomeVCModelDelegate?
     
