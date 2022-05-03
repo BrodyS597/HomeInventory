@@ -129,6 +129,9 @@
                                             <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="PDFButtonTapped:" destination="1kJ-ZU-qps" eventType="touchUpInside" id="pVG-8B-Tsw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67L-T8-xqI">
                                         <rect key="frame" x="206" y="0.0" width="120" height="65"/>
@@ -145,6 +148,9 @@
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="CSVButtonTapped:" destination="1kJ-ZU-qps" eventType="touchUpInside" id="emV-87-ykB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
