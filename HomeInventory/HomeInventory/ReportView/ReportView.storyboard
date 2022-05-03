@@ -111,43 +111,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="86" translatesAutoresizingMaskIntoConstraints="NO" id="TxS-Xn-eHQ">
-                                <rect key="frame" x="51" y="607.66666666666663" width="326" height="65"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bjl-ik-Zmw">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="65"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="l5y-y2-64S"/>
-                                            <constraint firstAttribute="height" constant="65" id="plb-AP-Gzr"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" image="arrow.down.doc" catalog="system" title="PDF">
-                                            <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="3">
-                                                <color key="strokeColor" red="0.48860216140000001" green="0.8860062957" blue="0.8211485744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
-                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67L-T8-xqI">
-                                        <rect key="frame" x="206" y="0.0" width="120" height="65"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="RBr-Fj-o1G"/>
-                                            <constraint firstAttribute="height" constant="65" id="eK3-SO-pza"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" image="arrow.down.doc" catalog="system" title="CSV">
-                                            <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="3">
-                                                <color key="strokeColor" red="0.48980927470000002" green="0.88630360360000005" blue="0.82270747420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67L-T8-xqI">
+                                <rect key="frame" x="134" y="612.66666666666663" width="160" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="RBr-Fj-o1G"/>
+                                    <constraint firstAttribute="height" constant="65" id="eK3-SO-pza"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="arrow.down.doc" catalog="system" title="CSV">
+                                    <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="3">
+                                        <color key="strokeColor" red="0.48980927470000002" green="0.88630360360000005" blue="0.82270747420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="CSVButtonTapped:" destination="1kJ-ZU-qps" eventType="touchUpInside" id="emV-87-ykB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5dE-Ns-MuF"/>
                         <color key="backgroundColor" red="0.16783997419999999" green="0.17210808399999999" blue="0.15751066799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -161,6 +143,7 @@
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="uLK-7i-9hR" secondAttribute="trailing" constant="10" id="5Jg-s0-xJo"/>
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="m7U-o8-QvO" secondAttribute="trailing" constant="10" id="ARy-hL-c3q"/>
                             <constraint firstItem="m7U-o8-QvO" firstAttribute="top" secondItem="5dE-Ns-MuF" secondAttribute="top" constant="20" id="CLP-Uf-vp1"/>
+                            <constraint firstItem="67L-T8-xqI" firstAttribute="top" secondItem="Fmw-IQ-a3K" secondAttribute="bottom" constant="20" id="I0b-aB-ILb"/>
                             <constraint firstItem="9cs-Ym-MSx" firstAttribute="top" secondItem="t6h-h7-KTw" secondAttribute="bottom" constant="10" id="I79-O0-0z4"/>
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="t6h-h7-KTw" secondAttribute="trailing" constant="10" id="KPz-o2-OCA"/>
                             <constraint firstItem="Sab-hW-yZz" firstAttribute="top" secondItem="Dx7-Rf-m0T" secondAttribute="bottom" constant="10" id="N43-up-hML"/>
@@ -170,8 +153,8 @@
                             <constraint firstItem="Fmw-IQ-a3K" firstAttribute="centerX" secondItem="5dE-Ns-MuF" secondAttribute="centerX" id="QhH-Gz-hf2"/>
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="KcS-ZM-o1O" secondAttribute="trailing" constant="10" id="R7i-Nh-hak"/>
                             <constraint firstItem="uLK-7i-9hR" firstAttribute="top" secondItem="m7U-o8-QvO" secondAttribute="bottom" constant="20" id="R9Q-KK-cNO"/>
-                            <constraint firstItem="TxS-Xn-eHQ" firstAttribute="centerX" secondItem="5dE-Ns-MuF" secondAttribute="centerX" id="RX7-PL-9BA"/>
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="Dx7-Rf-m0T" secondAttribute="trailing" constant="20" id="Rvm-FE-cbV"/>
+                            <constraint firstItem="67L-T8-xqI" firstAttribute="centerX" secondItem="5dE-Ns-MuF" secondAttribute="centerX" id="S5S-S9-xF6"/>
                             <constraint firstItem="qDl-rG-Kw9" firstAttribute="leading" secondItem="5dE-Ns-MuF" secondAttribute="leading" constant="10" id="SqJ-AL-U76"/>
                             <constraint firstItem="Fmw-IQ-a3K" firstAttribute="top" secondItem="NwR-2L-A2g" secondAttribute="bottom" constant="20" id="Sru-Cu-8Me"/>
                             <constraint firstItem="xgK-KP-ZDf" firstAttribute="top" secondItem="uLK-7i-9hR" secondAttribute="bottom" constant="10" id="TEq-cp-8wd"/>
@@ -186,7 +169,6 @@
                             <constraint firstItem="Lar-T2-iVZ" firstAttribute="top" secondItem="Sab-hW-yZz" secondAttribute="bottom" constant="10" id="lB6-hG-hJz"/>
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="zvm-51-wcM" secondAttribute="trailing" constant="10" id="lKO-jL-dGy"/>
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="Lar-T2-iVZ" secondAttribute="trailing" constant="20" id="mqN-a6-0JV"/>
-                            <constraint firstItem="TxS-Xn-eHQ" firstAttribute="top" secondItem="Fmw-IQ-a3K" secondAttribute="bottom" constant="15" id="nAQ-N4-22m"/>
                             <constraint firstItem="5dE-Ns-MuF" firstAttribute="trailing" secondItem="9cs-Ym-MSx" secondAttribute="trailing" constant="10" id="nSt-mJ-USX"/>
                             <constraint firstItem="0ZD-ap-HSf" firstAttribute="leading" secondItem="5dE-Ns-MuF" secondAttribute="leading" constant="20" id="qSz-h9-GD9"/>
                             <constraint firstItem="zvm-51-wcM" firstAttribute="top" secondItem="xgK-KP-ZDf" secondAttribute="bottom" constant="30" id="qb1-kk-QaM"/>
