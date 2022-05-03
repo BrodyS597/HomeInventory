@@ -24,10 +24,6 @@ class ReportViewController: UIViewController {
         viewModel = ReportViewModel(delegate: self)
     }
     
-    @IBAction func PDFButtonTapped(_ sender: Any) {
-        
-    }
-    
     @IBAction func CSVButtonTapped(_ sender: Any) {
         print("Exporting as CSV")
         //CSV File Name
