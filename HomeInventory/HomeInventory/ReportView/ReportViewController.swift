@@ -54,19 +54,19 @@ class ReportViewController: UIViewController {
        self.totalValueLabel.text = "\(viewModel.calculateNumberOfItems()) items totaling $\(viewModel.calculateTotalValue())"
         
         if let unwrappedItemHigh = viewModel.calculateItemHigh() {
-            self.itemHighLabel.text = "\(unwrappedItemHigh.itemName),   $\(unwrappedItemHigh.valuePrice)"
+            self.itemHighLabel.text = "\(unwrappedItemHigh.itemName) - $\(unwrappedItemHigh.valuePrice)"
         }
         
         if let unwrappedItemLow = viewModel.calculateItemLow() {
-            self.itemLowLabel.text = "\(unwrappedItemLow.itemName),   $\(unwrappedItemLow.valuePrice)"
+            self.itemLowLabel.text = "\(unwrappedItemLow.itemName) - $\(unwrappedItemLow.valuePrice)"
         }
         
         if let unwrappedHighestCollection = viewModel.calculateRoomHigh() {
-            self.roomHighLabel.text = "\(unwrappedHighestCollection.name),   $\(unwrappedHighestCollection.value)"
+            self.roomHighLabel.text = "\(unwrappedHighestCollection.name) - $\(unwrappedHighestCollection.value)"
         }
         
         if let unwrappedLowestCollection = viewModel.calculateRoomLow() {
-            self.roomLowLabel.text = "\(unwrappedLowestCollection.name),   $\(unwrappedLowestCollection.value)"
+            self.roomLowLabel.text = "\(unwrappedLowestCollection.name) - $\(unwrappedLowestCollection.value)"
         }
     }
 }

@@ -52,7 +52,7 @@ class SearchViewModel {
                 case .success(let items):
                     
                     for item in items {
-                        var tuple = (item, collection)
+                        let tuple = (item, collection)
                         self.tupleArray.append(tuple)
                     }
                 case .failure(let error):
