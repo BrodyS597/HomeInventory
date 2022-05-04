@@ -52,10 +52,6 @@ class CreateCollectionViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func discardButtonTapped(_ sender: Any) {
-        //set all fields to empty and delete collection
-    }
-    
     @objc func collectionImageViewTapped() {
         let picker = UIImagePickerController()
         picker.allowsEditing = true
