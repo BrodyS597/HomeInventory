@@ -189,6 +189,13 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		6D5D4E8028231DC200CABAA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6D6697EB27E8FF1C001683B6 /* CreateCollection */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +211,7 @@
 			children = (
 				6D6AB9AA27DA609E005C21BE /* HomeInventory */,
 				6D6AB9A927DA609E005C21BE /* Products */,
+				6D5D4E8028231DC200CABAA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

@@ -31,11 +31,12 @@ class AccountViewController: UIViewController, MFMailComposeViewControllerDelega
         logoutAlert.addAction(UIAlertAction(title: "Confirm", style: .destructive , handler: { (action: UIAlertAction!) in
             //confirm logic
             self.logout()
+            self.dismiss(animated: true)
             //set to LoginView
-            let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "login")
-            viewController.modalPresentationStyle = .overFullScreen
-            self.present(viewController, animated: true)
+//            let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
+//            let viewController = storyboard.instantiateViewController(withIdentifier: "login")
+//            viewController.modalPresentationStyle = .overFullScreen
+//            self.present(viewController, animated: true)
         }))
         
         logoutAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
