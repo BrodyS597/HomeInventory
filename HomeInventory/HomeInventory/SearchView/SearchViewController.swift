@@ -59,7 +59,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionV
     @IBOutlet weak var searchButtonTapped: UISearchBar!
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.tupleArray = viewModel.tempTupleArray
+        viewModel.tempTupleArray = viewModel.tupleArray
         itemSearchBar.resignFirstResponder()
         performSearch()
         searchCollectionView.reloadData()
@@ -93,6 +93,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionV
                 $0.0.itemCategory.lowercased().contains(searchText.lowercased()) ||
                 $0.0.notes.lowercased().contains(searchText.lowercased())
             })
+        }
+        if filteredData.isEmpty {
+            let emptyResultsAlert = UIAlertController(title: "No items match the keyword you're searching for.", message: "Edit your keyword or cancel the search", preferredStyle: UIAlertController.Style.alert)
+            emptyResultsAlert.addAction(UIAlertAction(title: "Okay", style: .default , handler: { (action: UIAlertAction!) in
+            }))
+            present(emptyResultsAlert, animated: true, completion: nil)
+            return
         }
         viewModel.tupleArray = filteredData
         searchCollectionView.reloadData()
