@@ -23,8 +23,6 @@ class CreateItemViewController: UIViewController, UITextFieldDelegate {
     // MARK: -Properties
     var viewModel: CreateItemVCModel?
     var itemViewModel: ItemVCModel!
-    //var collection: Collection?
-    //var item: Item?
     
     override func viewDidLoad() {
         itemImageView.contentMode = .scaleAspectFit
@@ -70,8 +68,6 @@ class CreateItemViewController: UIViewController, UITextFieldDelegate {
         alertController.addAction(cancelAction)
         alertController.addAction(confirmAction)
         self.present(alertController, animated: true)
-        
-        //AC for confirmaiton if ok, delete item/group
     }
     
     @objc func itemImageViewTapped() {

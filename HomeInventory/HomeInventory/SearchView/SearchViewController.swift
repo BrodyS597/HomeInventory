@@ -59,7 +59,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionV
     @IBOutlet weak var searchButtonTapped: UISearchBar!
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.tupleArrayFilterable = viewModel.tupleArrayFull // causes the filtered count to be the master count when full = filterable
+        viewModel.tupleArrayFilterable = viewModel.tupleArrayFull
         itemSearchBar.resignFirstResponder()
         performSearch()
         searchCollectionView.reloadData()
@@ -98,7 +98,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionV
         if filteredData.isEmpty {
             let emptyResultsAlert = UIAlertController(title: "No items match the keyword you're searching for.", message: "Edit your keyword or cancel the search", preferredStyle: UIAlertController.Style.alert)
             emptyResultsAlert.addAction(UIAlertAction(title: "Okay", style: .default , handler: { (action: UIAlertAction!) in
-                //self.itemSearchBar.text = nil
                 filteredData.removeAll()
                 filteredData = self.viewModel.tupleArrayFull
                 self.searchCollectionView.reloadData()

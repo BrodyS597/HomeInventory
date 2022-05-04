@@ -53,7 +53,7 @@ class Item {
          Key.uuid : self.uuid
         ]
     }
-
+    
     // MARK: -INIT
     init(itemName: String, itemPhotoURL: URL? = nil, model: String, serialNumber: String, purchasePrice: Double, valuePrice: Double, purchaseDate: String, itemCategory: String, notes: String, uuid: String = UUID().uuidString) {
         self.itemName = itemName

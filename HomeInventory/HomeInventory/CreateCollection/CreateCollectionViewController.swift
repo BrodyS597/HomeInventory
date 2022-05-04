@@ -14,7 +14,6 @@ class CreateCollectionViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var collectionImageView: UIImageView!
     @IBOutlet weak var collectionNameTextField: UITextField!
     
-    
     // MARK: -Properties
     var viewModel: CreateCollectionVCModel!
     var itemViewModel: ItemVCModel!
@@ -22,7 +21,6 @@ class CreateCollectionViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         collectionImageView.contentMode = .scaleAspectFit
         collectionImageView.isUserInteractionEnabled = true
-        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(collectionImageViewTapped))
         collectionImageView.addGestureRecognizer(tapGesture)
         super.viewDidLoad()
@@ -48,9 +46,9 @@ class CreateCollectionViewController: UIViewController, UITextFieldDelegate {
             alertController.addAction(confirmAction)
             self.present(alertController, animated: true)
         } else {
-        viewModel.collection = collection
-        viewModel.saveCollection(image: self.collectionImageView.image)
-        navigationController?.popViewController(animated: true)
+            viewModel.collection = collection
+            viewModel.saveCollection(image: self.collectionImageView.image)
+            navigationController?.popViewController(animated: true)
         }
     }
     
@@ -64,15 +62,12 @@ class CreateCollectionViewController: UIViewController, UITextFieldDelegate {
         picker.delegate = self
         picker.sourceType = .photoLibrary
         present(picker, animated: true)
-        //picker
     }
     
     // MARK: -helper Func
     private func updateUI() {
         if let collection = viewModel.collection {
             self.collectionNameTextField.text = collection.name
-            //self.collectionImageView.image = collection.collectionPhotoURL
-            
         }
     }
     

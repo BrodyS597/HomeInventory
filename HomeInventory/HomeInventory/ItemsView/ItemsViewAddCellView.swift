@@ -11,7 +11,6 @@ import UIKit
 class ItemsViewAddCellView: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
-        //initialization code
     }
     
     static func nib() -> UINib {

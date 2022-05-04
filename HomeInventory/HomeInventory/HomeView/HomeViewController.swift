@@ -28,14 +28,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         //Registering the custom collection view with the custom item cell and custom add cell
         self.groupCollectionView.register(UINib(nibName: "HomeViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeViewCell")
         self.groupCollectionView.register(HomeAddCellViewController.nib(), forCellWithReuseIdentifier: "HomeAddCell")
-        //  setupLongGestureRecognizerOnCollection()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         groupCollectionView.reloadData()
         self.navigationController?.navigationBar.isHidden = true
-        //  setupLongGestureRecognizerOnCollection()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -75,15 +73,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
-    // MARK: - 2
-    //    private func setupLongGestureRecognizerOnCollection() {
-    //        let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
-    //        longPressedGesture.minimumPressDuration = 0.5
-    //        longPressedGesture.delegate = self
-    //        longPressedGesture.delaysTouchesBegan = true
-    //        groupCollectionView.addGestureRecognizer(longPressedGesture)
-    //    }
-    
     func deleteAlertController(collectionToDelete: Collection) {
         let alertActionCell = UIAlertController(title: "Would you like to delete this Collection?", message: "This will also delete all the items contained within, and CANNOT be undone.", preferredStyle: .actionSheet)
         
@@ -101,12 +90,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 }
             }
         })
-        
         // Configure Cancel Action Sheet
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
             print("Cancel actionsheet")
         })
-        
         alertActionCell.addAction(deleteAction)
         alertActionCell.addAction(cancelAction)
         self.present(alertActionCell, animated: true, completion: nil)
@@ -116,7 +103,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 extension HomeViewController: HomeCollectionViewCellDelegate {
     func presentAlertToDelete(collection: Collection) {
         deleteAlertController(collectionToDelete: collection)
-      //  self.groupCollectionView.reloadData()
     }
 }
 

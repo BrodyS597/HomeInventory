@@ -8,8 +8,8 @@
 import UIKit
 
 class ReportViewController: UIViewController {
-
-// MARK: -IBOutlets
+    
+    // MARK: -IBOutlets
     @IBOutlet weak var totalValueLabel: UILabel!
     @IBOutlet weak var roomHighLabel: UILabel!
     @IBOutlet weak var roomLowLabel: UILabel!
@@ -49,9 +49,8 @@ class ReportViewController: UIViewController {
         }
     }
     
-    
     private func updateUI() {
-       self.totalValueLabel.text = "\(viewModel.calculateNumberOfItems()) items totaling $\(viewModel.calculateTotalValue())"
+        self.totalValueLabel.text = "\(viewModel.calculateNumberOfItems()) items totaling $\(viewModel.calculateTotalValue())"
         
         if let unwrappedItemHigh = viewModel.calculateItemHigh() {
             self.itemHighLabel.text = "\(unwrappedItemHigh.itemName) - $\(unwrappedItemHigh.valuePrice)"

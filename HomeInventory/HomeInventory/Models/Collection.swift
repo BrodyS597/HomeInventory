@@ -43,7 +43,7 @@ class Collection: Equatable {
          Key.value : self.value,
          Key.uuid : self.uuid]
     }
-
+    
     // MARK: -INIT
     init(name: String, items: [Item], imageURL: URL? = nil, uuid: String = UUID().uuidString) {
         self.name = name
