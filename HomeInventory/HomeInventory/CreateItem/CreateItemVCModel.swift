@@ -13,16 +13,11 @@ class CreateItemVCModel {
     // MARK: -Properties
     var item: Item?
     var collection: Collection?
-    //private let viewModel: ItemVCModel
-    //private let collectionViewModel: HomeVCModel
-    //private weak var delegate: ItemVCDelegate?
     
     init(item: Item?, collection: Collection) {
-        //self.viewModel = viewModel
         self.collection = collection
         self.item = item
-        //self.collectionViewModel = collectionViewModel
-   }
+    }
     
     func saveItem(toCollection: Collection, itemName: String, itemPhotoURL: UIImage?, model: String, serialNumber: String, purchasePrice: Double, valuePrice: Double, purchaseDate: String, itemCategory: String, notes: String) {
         if let item = item {
@@ -55,7 +50,7 @@ class CreateItemVCModel {
     
     func deleteItem() {
         guard let item = item,
-        let collection = collection else { return }
+              let collection = collection else { return }
         FirebaseController().deleteItemFromCollection(item, collection: collection)
     }
     

@@ -52,5 +52,4 @@ class ResetPasswordViewController: UIViewController {
         viewController.modalPresentationStyle = .overFullScreen
         present(viewController, animated: true)
     }
-    
 }

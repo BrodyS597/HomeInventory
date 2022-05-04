@@ -15,7 +15,6 @@ class ItemsViewCellCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     override func prepareForReuse() {

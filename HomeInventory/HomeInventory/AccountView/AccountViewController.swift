@@ -56,8 +56,7 @@ class AccountViewController: UIViewController, MFMailComposeViewControllerDelega
             //add attachment
             if let filePath = Bundle.main.path(forResource: "", ofType: "") {
                 if let data = NSData(contentsOfFile: filePath) {
-                    mail.addAttachmentData(data as Data,
-                                           mimeType: "" , fileName: "")
+                    mail.addAttachmentData(data as Data, mimeType: "" , fileName: "")
                 }
             }
             present(mail, animated: true)

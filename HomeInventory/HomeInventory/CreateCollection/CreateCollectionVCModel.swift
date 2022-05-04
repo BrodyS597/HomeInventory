@@ -22,14 +22,11 @@ class CreateCollectionVCModel {
     func saveCollection(image: UIImage?) {
         guard let collection = collection else { return }
         if let image = image {
-        Network.shared.cache.setObject(image, forKey: collection.uuid as NSString)
+            Network.shared.cache.setObject(image, forKey: collection.uuid as NSString)
             FireBaseStorageController().saveImageDataToCollection(image: image, toCollection: collection)
         }
         viewModel.collections.append(collection)
         FirebaseController().saveCollection(collection)
-        
-        //guard let imageData = image?.pngData() else { return }
-        
     }
     
     func fetchImage(completion: @escaping (UIImage?) -> Void) {

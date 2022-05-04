@@ -14,7 +14,6 @@ protocol ReportViewModelDelegate: ReportViewController {
 class ReportViewModel {
     
     // MARK: -Properties
-    //var collection: [Collection]?
     var collections: [Collection]? {
         didSet {
             delegate?.reportHasData()
@@ -24,21 +23,18 @@ class ReportViewModel {
     
     init(delegate: ReportViewModelDelegate) {
         self.delegate = delegate
-           // self.collection = collection
-            fetchCollectionData()
-        }
+        fetchCollectionData()
+    }
     
     func calculateTotalValue() -> Double {
         //extracting the total value of all items by flatMapping the collection, compactMapping the values, and combining the valuePrice elements with .reduce which starts at 0 and +adds them together, returning the resulting Double.
         if let collection = collections { return collection.compactMap({ $0.value }).reduce(0, +) }
         else { return 0.0 }
-        //collections.compactMap({ $0.value }).reduce(0, +)
     }
     
     func calculateNumberOfItems() -> Int {
         if let collection = collections { return collection.compactMap { $0.items.count }.reduce(0, +) }
         else { return 0 }
-        
     }
     
     func calculateRoomHigh() -> Collection? {

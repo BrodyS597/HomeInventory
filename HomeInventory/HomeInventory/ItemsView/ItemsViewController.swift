@@ -80,9 +80,6 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
             self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
-    
-    // MARK: -Configure Cell
-    //sizing?
 }
 
 extension ItemsViewController: ItemVCDelegate {
