@@ -3,8 +3,8 @@
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,8 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wdg-uk-gOf" userLabel="SpacerView">
+                                <rect key="frame" x="0.0" y="44" width="428" height="848"/>
+                                <color key="backgroundColor" name="lightTeal"/>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vHe-at-Fq6">
-                                <rect key="frame" x="5" y="125" width="418" height="767"/>
+                                <rect key="frame" x="5" y="49" width="418" height="843"/>
                                 <color key="backgroundColor" red="0.48985636230000001" green="0.88621413709999997" blue="0.81903934479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RUe-k5-YZk">
                                     <size key="itemSize" width="128" height="128"/>
@@ -102,46 +106,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room/Group name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEL-Zy-X2t">
-                                <rect key="frame" x="0.0" y="40" width="428" height="80"/>
-                                <color key="backgroundColor" red="0.16793265939999999" green="0.17246246339999999" blue="0.15766197439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="zoT-IO-Ytk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="38"/>
-                                <color key="textColor" red="0.48985636230000001" green="0.88621413709999997" blue="0.81903934479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" systemColor="tintColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZG-Js-MqW">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="40"/>
-                                <color key="backgroundColor" red="0.16793265939999999" green="0.17246246339999999" blue="0.15766197439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="7HV-s1-kq3"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NxL-RI-ee6"/>
-                        <color key="backgroundColor" red="0.48860216140000001" green="0.8860062957" blue="0.8211485744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="offBlack"/>
                         <color key="tintColor" red="0.16783997419999999" green="0.17210808399999999" blue="0.15751066799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xEL-Zy-X2t" firstAttribute="top" secondItem="IZG-Js-MqW" secondAttribute="bottom" id="5wH-92-sAe"/>
-                            <constraint firstItem="NxL-RI-ee6" firstAttribute="trailing" secondItem="xEL-Zy-X2t" secondAttribute="trailing" id="aUF-bQ-kO3"/>
-                            <constraint firstItem="xEL-Zy-X2t" firstAttribute="leading" secondItem="NxL-RI-ee6" secondAttribute="leading" id="f61-71-HIq"/>
-                            <constraint firstItem="IZG-Js-MqW" firstAttribute="leading" secondItem="lzb-gh-n0S" secondAttribute="leading" id="hm4-n4-hP6"/>
+                            <constraint firstItem="NxL-RI-ee6" firstAttribute="trailing" secondItem="Wdg-uk-gOf" secondAttribute="trailing" id="92j-fv-VEH"/>
+                            <constraint firstItem="Wdg-uk-gOf" firstAttribute="leading" secondItem="NxL-RI-ee6" secondAttribute="leading" id="Hrb-y9-IDG"/>
+                            <constraint firstItem="Wdg-uk-gOf" firstAttribute="top" secondItem="NxL-RI-ee6" secondAttribute="top" id="MoP-76-nfO"/>
+                            <constraint firstItem="NxL-RI-ee6" firstAttribute="bottom" secondItem="Wdg-uk-gOf" secondAttribute="bottom" id="fZd-36-oq0"/>
                             <constraint firstItem="NxL-RI-ee6" firstAttribute="trailing" secondItem="vHe-at-Fq6" secondAttribute="trailing" constant="5" id="ix4-Ep-hmJ"/>
                             <constraint firstItem="vHe-at-Fq6" firstAttribute="leading" secondItem="NxL-RI-ee6" secondAttribute="leading" constant="5" id="kjy-up-DFg"/>
-                            <constraint firstAttribute="trailing" secondItem="IZG-Js-MqW" secondAttribute="trailing" id="nts-RU-eFH"/>
-                            <constraint firstItem="IZG-Js-MqW" firstAttribute="top" secondItem="lzb-gh-n0S" secondAttribute="top" id="pTQ-rT-m0r"/>
-                            <constraint firstItem="vHe-at-Fq6" firstAttribute="top" secondItem="xEL-Zy-X2t" secondAttribute="bottom" constant="5" id="sTw-gO-qDF"/>
                             <constraint firstItem="NxL-RI-ee6" firstAttribute="bottom" secondItem="vHe-at-Fq6" secondAttribute="bottom" id="xew-XY-qA3"/>
+                            <constraint firstItem="vHe-at-Fq6" firstAttribute="top" secondItem="NxL-RI-ee6" secondAttribute="top" constant="5" id="zmV-3x-ITP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dS7-zB-y9h"/>
                     <connections>
-                        <outlet property="groupNameLabel" destination="xEL-Zy-X2t" id="15R-PD-p2H"/>
                         <outlet property="itemCollectionView" destination="vHe-at-Fq6" id="IbA-v6-DOh"/>
                     </connections>
                 </viewController>
@@ -151,8 +132,11 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="lightTeal">
+            <color red="0.49019607843137253" green="0.88627450980392153" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="offBlack">
+            <color red="0.16862745098039217" green="0.17254901960784313" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

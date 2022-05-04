@@ -27,11 +27,17 @@ class CreateItemViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         itemImageView.contentMode = .scaleAspectFit
         itemImageView.isUserInteractionEnabled = true
+        navigationController?.navigationBar.backgroundColor = .clear
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(itemImageViewTapped))
         itemImageView.addGestureRecognizer(tapGesture)
         super.viewDidLoad()
         fillItemDetails()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = .black
     }
     
     // MARK: -IBActions

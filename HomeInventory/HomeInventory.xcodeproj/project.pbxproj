@@ -27,6 +27,7 @@
 		6D48081127EA6CAE0003D372 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6D48081027EA6CAE0003D372 /* FirebaseStorage */; };
 		6D48081327EA709D0003D372 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D48081227EA709D0003D372 /* GoogleService-Info.plist */; };
 		6D4B91C4281848540091930E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B91C3281848540091930E /* Network.swift */; };
+		6D5D4E8528233A0400CABAA0 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5D4E8428233A0400CABAA0 /* ColorExtensions.swift */; };
 		6D6697ED27E8FF5E001683B6 /* CreateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6697EC27E8FF5E001683B6 /* CreateCollectionViewController.swift */; };
 		6D6697EF27E8FF88001683B6 /* CreateCollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6697EE27E8FF88001683B6 /* CreateCollectionView.storyboard */; };
 		6D6697F127E8FFA3001683B6 /* CreateCollectionVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6697F027E8FFA3001683B6 /* CreateCollectionVCModel.swift */; };
@@ -76,6 +77,7 @@
 		6D446F4327DAB059006D115E /* CreateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewController.swift; sourceTree = "<group>"; };
 		6D48081227EA709D0003D372 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D4B91C3281848540091930E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		6D5D4E8428233A0400CABAA0 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		6D6697EC27E8FF5E001683B6 /* CreateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCollectionViewController.swift; sourceTree = "<group>"; };
 		6D6697EE27E8FF88001683B6 /* CreateCollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateCollectionView.storyboard; sourceTree = "<group>"; };
 		6D6697F027E8FFA3001683B6 /* CreateCollectionVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCollectionVCModel.swift; sourceTree = "<group>"; };
@@ -196,6 +198,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6D5D4E83282339E400CABAA0 /* Helpers+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6D5D4E8428233A0400CABAA0 /* ColorExtensions.swift */,
+			);
+			path = "Helpers+Extensions";
+			sourceTree = "<group>";
+		};
 		6D6697EB27E8FF1C001683B6 /* CreateCollection */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +236,7 @@
 		6D6AB9AA27DA609E005C21BE /* HomeInventory */ = {
 			isa = PBXGroup;
 			children = (
+				6D5D4E83282339E400CABAA0 /* Helpers+Extensions */,
 				6D4B91C2281848360091930E /* Network */,
 				6DCEC16327F4E922003A5821 /* HomeInventory.entitlements */,
 				6DC4E8E427DFA76C005920A5 /* Firebase */,
@@ -443,6 +454,7 @@
 				6D446F4427DAB059006D115E /* CreateItemViewController.swift in Sources */,
 				6DC4E8E827DFA7E4005920A5 /* FirebaseController.swift in Sources */,
 				6D6697F527E927EF001683B6 /* ItemsViewAddCellView.swift in Sources */,
+				6D5D4E8528233A0400CABAA0 /* ColorExtensions.swift in Sources */,
 				6DC4E8EE27DFE9C4005920A5 /* SearchViewModel.swift in Sources */,
 				6DC4E8DB27DFA3C3005920A5 /* HomeVCModel.swift in Sources */,
 				6DC4E8E627DFA78D005920A5 /* FIrebaseStorageController.swift in Sources */,

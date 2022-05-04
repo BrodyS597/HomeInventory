@@ -30,11 +30,13 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.fetchItems()
-        
+        navigationController?.navigationBar.tintColor = .lightTeal
     }
     
     func updateViews() {
-        groupNameLabel.text = viewModel.collection.name
+        //groupNameLabel.text = viewModel.collection.name
+        self.title = viewModel.collection.name
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
