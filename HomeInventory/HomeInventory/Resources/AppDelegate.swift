@@ -21,6 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Signed in as \(user.uid), email: \(user.email)")
         }
         // Override point for customization after application launch.
+        let attributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.lightTeal,
+            NSAttributedString.Key.font: UIFont(name: "Futura-Medium", size: 38)!
+        ]
+        UINavigationBar.appearance().titleTextAttributes = attributes
         return true
     }
 
