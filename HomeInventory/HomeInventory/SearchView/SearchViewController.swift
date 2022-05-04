@@ -10,18 +10,18 @@ import UIKit
 class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.tupleArray.count
+        return viewModel.tupleArrayFilterable.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsViewCell", for: indexPath) as? ItemsViewCellCollectionViewCell {
-            FireBaseStorageController().loadImageFromItem(fromItem: viewModel.tupleArray[indexPath.row].0) { result in
+            FireBaseStorageController().loadImageFromItem(fromItem: viewModel.tupleArrayFilterable[indexPath.row].0) { result in
                 switch result {
                 case .success(let image):
-                    customCell.configure(with: self.viewModel.tupleArray[indexPath.row].0.itemName, image: image)
+                    customCell.configure(with: self.viewModel.tupleArrayFilterable[indexPath.row].0.itemName, image: image)
                 case .failure(let error):
                     print(error)
-                    customCell.configure(with: self.viewModel.tupleArray[indexPath.row].0.itemName, image: nil)
+                    customCell.configure(with: self.viewModel.tupleArrayFilterable[indexPath.row].0.itemName, image: nil)
                 }
             }
             customCell.layer.cornerRadius = customCell.frame.height / 10
@@ -59,7 +59,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionV
     @IBOutlet weak var searchButtonTapped: UISearchBar!
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.tupleArray = viewModel.tempTupleArray
+        viewModel.tupleArrayFilterable = viewModel.tupleArrayFull // causes the filtered count to be the master count when full = filterable
         itemSearchBar.resignFirstResponder()
         performSearch()
         searchCollectionView.reloadData()
@@ -68,22 +68,23 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionV
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         itemSearchBar.resignFirstResponder()
         itemSearchBar.text = nil
-        viewModel.tupleArray.removeAll()
-        viewModel.tupleArray = viewModel.tempTupleArray
+        viewModel.tupleArrayFilterable.removeAll()
+        viewModel.tupleArrayFilterable = viewModel.tupleArrayFull
         searchCollectionView.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            viewModel.tupleArray.removeAll()
-            viewModel.tupleArray = viewModel.tempTupleArray
+            viewModel.tupleArrayFilterable.removeAll()
+            viewModel.tupleArrayFilterable = viewModel.tupleArrayFull
             searchCollectionView.reloadData()
         }
     }
     
     func performSearch() {
-        let data = viewModel.tupleArray
-        var filteredData = viewModel.tupleArray
+        viewModel.tupleArrayFilterable = viewModel.tupleArrayFull
+        let data = viewModel.tupleArrayFilterable
+        var filteredData = viewModel.tupleArrayFilterable
         guard let searchText = itemSearchBar.text else { return }
         if !searchText.isEmpty == true {
             filteredData = data.filter({ $0.0.itemName.lowercased().contains(searchText.lowercased()) ||
@@ -94,14 +95,25 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionV
                 $0.0.notes.lowercased().contains(searchText.lowercased())
             })
         }
-        viewModel.tupleArray = filteredData
+        if filteredData.isEmpty {
+            let emptyResultsAlert = UIAlertController(title: "No items match the keyword you're searching for.", message: "Edit your keyword or cancel the search", preferredStyle: UIAlertController.Style.alert)
+            emptyResultsAlert.addAction(UIAlertAction(title: "Okay", style: .default , handler: { (action: UIAlertAction!) in
+                //self.itemSearchBar.text = nil
+                filteredData.removeAll()
+                filteredData = self.viewModel.tupleArrayFull
+                self.searchCollectionView.reloadData()
+            }))
+            present(emptyResultsAlert, animated: true, completion: nil)
+            return
+        }
+        viewModel.tupleArrayFilterable = filteredData
         searchCollectionView.reloadData()
     }
     
     func collectionView(_ searchCollectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "CreateItemView", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateItemView") as? CreateItemViewController else { return }
-        viewController.viewModel = CreateItemVCModel(item: viewModel.tupleArray[indexPath.row].0, collection: viewModel.tupleArray[indexPath.row].1)
+        viewController.viewModel = CreateItemVCModel(item: viewModel.tupleArrayFilterable[indexPath.row].0, collection: viewModel.tupleArrayFilterable[indexPath.row].1)
         self.navigationController?.pushViewController(viewController, animated: true)
         self.navigationController?.navigationBar.isHidden = false
     }

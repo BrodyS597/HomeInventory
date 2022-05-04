@@ -45,7 +45,7 @@ class CreateItemViewController: UIViewController, UITextFieldDelegate {
               let serialNumber = serialTextField.text,
               let purchasePrice = purchasePriceTextField.text,
               let valuePrice = valuePriceTextField.text,
-              let purchaseDate = purchasePriceTextField.text,
+              let purchaseDate = purchaseDateTextField.text,
               let itemCategory = categoryTextField.text,
               let notes = notesTextField.text,
               let collection = viewModel?.collection

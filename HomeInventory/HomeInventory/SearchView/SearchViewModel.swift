@@ -18,8 +18,8 @@ class SearchViewModel {
     var collectionsArray: [Collection] = []
     var collection: Collection?
     var item: Item?
-    var tupleArray: [(Item, Collection)] = []
-    var tempTupleArray: [(Item, Collection)] = []
+    var tupleArrayFilterable: [(Item, Collection)] = []
+    var tupleArrayFull: [(Item, Collection)] = []
     
     weak var delegate: SearchViewModelDelegate?
     
@@ -52,8 +52,9 @@ class SearchViewModel {
                 case .success(let items):
                     
                     for item in items {
-                        var tuple = (item, collection)
-                        self.tupleArray.append(tuple)
+                        let tuple = (item, collection)
+                        self.tupleArrayFilterable.append(tuple)
+                        self.tupleArrayFull.append(tuple)
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
