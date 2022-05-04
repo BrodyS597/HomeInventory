@@ -67,6 +67,10 @@ class LoginViewController: UIViewController {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabCon") as? UITabBarController else { return }
                     tabBarController.modalPresentationStyle = .overFullScreen
+                    self.emailAddressTextField.text = ""
+                    self.passwordTextField.text = ""
+                    self.emailAddressTextField.resignFirstResponder()
+                    self.passwordTextField.resignFirstResponder()
                     self.present(tabBarController, animated: true)
                 }
             }

@@ -13,6 +13,9 @@ class HomeAddCellViewController: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         //initialization code
+        contentView.layer.borderWidth = 5
+        contentView.layer.borderColor = UIColor.white.cgColor
+        contentView.layer.cornerRadius = contentView.frame.height / 10
     }
     
     static func nib() -> UINib {

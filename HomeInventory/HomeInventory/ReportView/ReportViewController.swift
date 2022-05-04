@@ -34,7 +34,6 @@ class ReportViewController: UIViewController {
         var csvHead = "Collection, Item, Model, Serial #, Purchase Price, Value Price, Purchase Date, Category, Notes\n"
         guard let collections = viewModel.collections else { return }
         for collection in collections {
-            //csvHead.append("\(collection.name)")
             for item in collection.items {
                 csvHead.append("\(collection.name),\(item.itemName),\(item.model),\(item.serialNumber),\(item.purchasePrice),\(item.valuePrice),\(item.purchaseDate),\(item.itemCategory),\(item.notes)\n")
             }
