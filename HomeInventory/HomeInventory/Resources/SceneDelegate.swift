@@ -44,7 +44,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     
                 case .revoked:
                     print("user logged in before but revoked")
-                    let revokedAlert = UIAlertController(title: "Your Apple ID was revoked from Elden Bling", message: "Please return to the login screen and sign in again.", preferredStyle: UIAlertController.Style.alert)
+                    let revokedAlert = UIAlertController(title: "Your Apple ID was revoked", message: "Please return to the login screen and sign in again.", preferredStyle: UIAlertController.Style.alert)
                     revokedAlert.addAction(UIAlertAction(title: "Okay", style: .default , handler: { (action: UIAlertAction!) in
                     
                     guard let windowScene = scene as? UIWindowScene else { return }
